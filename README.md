@@ -4,13 +4,32 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Create flutter project using
+''' sh
+flutter create <project-name>
+'''
+2. Setup the Ground
+    * This includes creating necessary directories, AppRoutes, Themes, Dependency Injection module, DB schema and more.
+    * Added packages 
+        * connectivity_plus
+        * shared_preferences
+        * get
+        * intl
+        * url_launcher
+        * cached_network_image
+        * flutter_svg
+    * Added AppExport
+        * Constants,
+        * Errors - Exceptions and Failures
+        * NetworkInfo
+    * Added Utils
+    * Added Data helpers
+    * Added Localization
+    * Added Routes
+    * Added Theme
+        * app style and
+        * app decoration
+3. Remaining
+    * More widgets in widget directory
+    * More Routes/Screen in presentation directory
+    * Repository Design system
