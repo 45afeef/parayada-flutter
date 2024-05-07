@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:parayada/presentation/mind_map/domain/mind_map.dart';
-import 'package:parayada/presentation/mind_map/presentation/mind_map_accordion.dart';
+
+import 'domain/mind_map.dart';
+import 'presentation/mind_map_accordion.dart';
 
 Map<String, dynamic> mindmapjson = {
   "name": "The mind map name",

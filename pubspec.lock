@@ -496,6 +496,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+  parayada_ui_collection:
+    dependency: "direct main"
+    description:
+      name: parayada_ui_collection
+      sha256: "9f36b682d9561ca6107f17e79dab0db289c6336186b6ed812e296035ff99b4b9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   path:
     dependency: transitive
     description:

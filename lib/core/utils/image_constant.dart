@@ -1,4 +1,13 @@
 class ImageConstant {
+  static String backgroundImage1 = 'assets/images/backgrounds/1.png';
+  static String backgroundImage2 = 'assets/images/backgrounds/2.png';
+  static String backgroundImage3 = 'assets/images/backgrounds/3.png';
+  static String backgroundImage4 = 'assets/images/backgrounds/4.png';
+
+  static List<String> backgroundImages = [backgroundImage1,backgroundImage2,backgroundImage3,backgroundImage4];
+  
+  // From here onwards the values are not using, this values are there when we copy the default code
+
   static String imgRectangle11251x51 =
       'assets/images/img_rectangle112_51x51.png';
 

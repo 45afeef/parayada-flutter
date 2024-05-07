@@ -44,6 +44,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   json_annotation: ^4.9.0
   accordion: ^2.6.0
+  parayada_ui_collection: ^0.0.1
 
 
 dev_dependencies:
@@ -71,9 +72,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/backgrounds/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
