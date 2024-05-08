@@ -1,4 +1,4 @@
-import '../../core/app_export.dart';
+import '../app_export.dart';
 import '../../data/apiClient/api_client.dart';
 
 /// A class for setting up initial dependencies using GetX dependency injection.

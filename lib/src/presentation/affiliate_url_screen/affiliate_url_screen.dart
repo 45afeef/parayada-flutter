@@ -4,7 +4,7 @@ import '../../core/app_export.dart';
 import '../../widgets/app_bar/appbar_subtitle.dart';
 import '../../widgets/app_bar/custom_app_bar.dart';
 import '../../widgets/custom_text_form_field.dart';
-import './widgets/affiliateurl_item_widget.dart';
+import 'widgets/affiliateurl_item_widget.dart';
 import 'controller/affiliate_url_controller.dart';
 import 'models/affiliateurl_item_model.dart';
 

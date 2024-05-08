@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'core/app_export.dart';
+import 'src/core/app_export.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
