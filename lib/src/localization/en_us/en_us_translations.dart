@@ -299,5 +299,9 @@ final Map<String, String> enUs = {
   "lbl_address": "Address",
   "msg_4517_washington": "4517 Washington Ave. Manchester, Kentucky 39495",
   "lbl_xl": "XL",
-  "lbl_chart_01_pdf": "Chart-01.pdf"
+  "lbl_chart_01_pdf": "Chart-01.pdf",
+  "afeef": "afeef",
+  "lbl_mind_map": "Mind Map",
+  "lbl_memory_trick": "Memory Trick",
+  "lbl_assess": "Assess Now",
 };

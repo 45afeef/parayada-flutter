@@ -45,6 +45,7 @@ dependencies:
   json_annotation: ^4.9.0
   accordion: ^2.6.0
   parayada_ui_collection: ^0.0.1
+  google_fonts: ^6.2.1
 
 
 dev_dependencies:

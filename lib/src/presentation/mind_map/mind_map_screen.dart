@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/laytout.dart';
 import 'domain/mind_map.dart';
 import 'presentation/mind_map_accordion.dart';
 
@@ -132,10 +133,11 @@ class MindMapScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: MindMapAccordion(mindMap: MindMap.fromJson(mindmapjson)),
+    return AppLayout(
+      child: Center(
+        child: MindMapAccordion(
+          mindMap: MindMap.fromJson(mindmapjson),
+        ),
       ),
     );
   }
