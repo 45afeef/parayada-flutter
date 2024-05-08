@@ -21,7 +21,6 @@ class AppLayout extends StatelessWidget {
         foregroundColor: Colors.white,
         backgroundColor: Colors.transparent, // Makes AppBar transparent
         elevation: 0, // Removes shadow from the AppBar
-        leading: Container(), // Empty container to remove back button
       ),
       body: Container(
         decoration: BoxDecoration(

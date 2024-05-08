@@ -1,5 +1,7 @@
 import 'package:accordion/accordion.dart';
 import 'package:flutter/material.dart';
+import 'package:parayada/src/core/app_export.dart';
+import 'package:parayada/src/core/constants/size_constant.dart';
 
 import '../domain/mind_map.dart';
 
@@ -14,7 +16,11 @@ class MindMapAccordion extends StatelessWidget {
       maxOpenSections: 1, // Automatically close sections when opening a new one
       children: [
         AccordionSection(
-          header: Text(mindMap.name), // Customize the header
+          header: Padding(
+            padding: SizeConstant.largePadding,
+            child: Text(mindMap.name),
+          ), // Customize the header
+          headerBackgroundColor: Colors.green,
 
           content: Column(
             children: [
@@ -38,7 +44,11 @@ class MindMapAccordion extends StatelessWidget {
         maxOpenSections: 1,
         children: [
           AccordionSection(
-            header: Text(node.name), // Customize the header for each node
+            header: Padding(
+              padding: SizeConstant.smallPadding,
+              child: Text(node.name),
+            ), // Customize the header for each node
+            headerBackgroundColor: ColorConstant.amber700,
             content: Column(
               children: [
                 // Display the content for each node
