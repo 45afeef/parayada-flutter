@@ -1,8 +1,7 @@
 import 'package:accordion/accordion.dart';
 import 'package:flutter/material.dart';
-import 'package:parayada/src/core/app_export.dart';
-import 'package:parayada/src/core/constants/size_constant.dart';
 
+import '../../../core/app_export.dart';
 import '../domain/mind_map.dart';
 
 class MindMapAccordion extends StatelessWidget {

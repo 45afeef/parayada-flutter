@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:parayada_ui_collection/duolingo/icon_button.dart';
 
 import '../../core/app_export.dart';
-import '../../widgets/laytout.dart';
 
 class LevelsScreen extends StatefulWidget {
   const LevelsScreen({super.key});

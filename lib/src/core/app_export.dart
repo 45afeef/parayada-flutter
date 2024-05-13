@@ -8,6 +8,7 @@ export '../routes/app_routes.dart';
 export '../theme/app_decoration.dart';
 export '../theme/app_style.dart';
 export '../widgets/custom_image_view.dart';
+export '../widgets/laytout.dart';
 export 'constants/constants.dart';
 export 'errors/exceptions.dart';
 export 'network/network_info.dart';
