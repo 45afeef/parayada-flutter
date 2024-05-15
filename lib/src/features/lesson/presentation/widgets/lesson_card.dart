@@ -44,17 +44,18 @@ class LessonCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  DuolingoIconButton(
-                      borderWidth: 4,
-                      padding: const EdgeInsets.all(18),
-                      child: const Icon(
-                        Icons.account_tree_rounded,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {
-                        Get.toNamed(AppRoutes.mindMapScreen,
-                            arguments: lesson.value.mindMaps);
-                      }),
+                  if (lesson.value.mindMaps != null)
+                    DuolingoIconButton(
+                        borderWidth: 4,
+                        padding: const EdgeInsets.all(18),
+                        child: const Icon(
+                          Icons.account_tree_rounded,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          Get.toNamed(AppRoutes.mindMapScreen,
+                              arguments: lesson.value.mindMaps![0]);
+                        }),
                   DuolingoButton(
                       padding: const EdgeInsets.all(12),
                       borderWidth: 4,
