@@ -5,11 +5,11 @@ import '../core/constants/image_constant.dart';
 class AppLayout extends StatelessWidget {
   const AppLayout({
     super.key,
-    this.child,
+    required this.child,
     this.title,
   });
 
-  final Widget? child;
+  final Widget child;
   final Widget? title;
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class AppLayout extends StatelessWidget {
             fit: BoxFit.cover, // Covers the entire widget area
           ),
         ),
-        child: child,
+        child: SafeArea(child: child),
       ),
     );
   }
