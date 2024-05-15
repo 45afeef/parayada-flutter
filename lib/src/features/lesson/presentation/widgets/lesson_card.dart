@@ -32,6 +32,11 @@ class LessonCard extends StatelessWidget {
                     TextEditingController(text: lesson.value.description),
                 readOnly: true,
               ),
+              if (lesson.value.externalLinks != null)
+                IconButton(
+                    onPressed: () =>
+                        launchUrl(Uri.parse(lesson.value.externalLinks![0])),
+                    icon: const Icon(Icons.launch)),
               const Gap(),
               if (lesson.value.topics != null)
                 ChipList(values: lesson.value.topics!),

@@ -11,7 +11,8 @@ class LessonController extends GetxController {
   final Rx<Lesson> lesson = Rx<Lesson>(Lesson(
     title: 'title',
     description: 'description',
-    topics: ['one', 'two', 'three', 'four', 'five'],
+    topics: ['one', 'two', 'three', 'four', 'five','one', 'two', 'three', 'four', 'five','one', 'two', 'three', 'four', 'five',],
+    externalLinks: ['https://www.google.com'],
     memoryTricks: [
       'This is the first Memory Trick',
       'This is the second Memory Trick',

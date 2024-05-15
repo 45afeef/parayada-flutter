@@ -6,6 +6,7 @@ import '../../mind_map/domain/mind_map.dart';
 class Lesson {
   final String title;
   final String description;
+  final List<String>? externalLinks;
   final List<String>? topics; //List<Topic>
   final List<MindMap>? mindMaps;
   final List<String>? memoryTricks; // List<Assessment> assessments;
@@ -13,6 +14,7 @@ class Lesson {
   Lesson({
     required this.title,
     required this.description,
+    this.externalLinks,
     this.topics,
     this.mindMaps,
     this.memoryTricks,
