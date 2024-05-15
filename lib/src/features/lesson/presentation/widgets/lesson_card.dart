@@ -6,6 +6,7 @@ import 'package:parayada_ui_collection/duolingo/icon_button.dart';
 import '../../../../core/app_export.dart';
 import '../../../../widgets/gap.dart';
 import '../../domain/lesson_entity.dart';
+import 'chip_list.dart';
 
 class LessonCard extends StatelessWidget {
   final Rx<Lesson> lesson;
@@ -32,36 +33,8 @@ class LessonCard extends StatelessWidget {
                 readOnly: true,
               ),
               const Gap(),
-              SizedBox(
-                height: 20,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    if (lesson.value.topics != null)
-                      ...lesson.value.topics!.map((e) => Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 2),
-                            child: Container(
-                              height: 20,
-                              decoration: BoxDecoration(
-                                  color: Colors.greenAccent[100],
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(24)),
-                                  border: Border.all(
-                                      color: Colors.green, width: 1)),
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
-                              child: Center(
-                                child: Text(
-                                  e,
-                                  style: const TextStyle(
-                                      color: Colors.green, fontSize: 10),
-                                ),
-                              ),
-                            ),
-                          )),
-                  ],
-                ),
-              ),
+              if (lesson.value.topics != null)
+                ChipList(values: lesson.value.topics!),
               const Gap(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
