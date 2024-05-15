@@ -28,26 +28,28 @@ class LessonCard extends StatelessWidget {
                 style: AppTextStyle.contentStyleNormal),
             const Gap(),
             SizedBox(
-              height: 50,
+              height: 20,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   if (lesson.value.topics != null)
                     ...lesson.value.topics!.map((e) => Container(
                           margin: const EdgeInsets.symmetric(horizontal: 2),
-                          child: Chip(
-                            backgroundColor: Colors.greenAccent[100],
+                          child: Container(
+                            height: 20,
+                            decoration: BoxDecoration(
+                                color: Colors.greenAccent[100],
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(24)),
+                                border:
+                                    Border.all(color: Colors.green, width: 1)),
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100),
-                              side: const BorderSide(
-                                  color: Colors.green,
-                                  width: 1), // Black border
-                            ),
-                            label: Text(
+                            child: Center(
+                              child: Text(
                               e,
                               style: const TextStyle(
                                   color: Colors.green, fontSize: 10),
+                              ),
                             ),
                           ),
                         )),
