@@ -7,10 +7,13 @@ class AppLayout extends StatelessWidget {
     super.key,
     required this.child,
     this.title,
+    this.actions,
   });
 
   final Widget child;
   final Widget? title;
+  final List<Widget>? actions;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +24,7 @@ class AppLayout extends StatelessWidget {
         foregroundColor: Colors.white,
         backgroundColor: Colors.transparent, // Makes AppBar transparent
         elevation: 0, // Removes shadow from the AppBar
+        actions: actions,
       ),
       body: Container(
         decoration: BoxDecoration(

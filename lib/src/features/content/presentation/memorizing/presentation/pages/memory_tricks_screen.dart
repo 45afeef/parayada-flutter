@@ -12,6 +12,14 @@ class MemoryTrickScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<MemoryTrick> memoryTricks = Get.arguments as List<MemoryTrick>;
     return AppLayout(
+      title: const Text("Memory Tricks"),
+      actions: [
+        IconButton(
+            onPressed: () {
+              throw UnimplementedError();
+            },
+            icon: const Icon(Icons.add_circle))
+      ],
       child: CardSwiper(
         numberOfCardsDisplayed: 2,
         cardsCount: memoryTricks.length,

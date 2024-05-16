@@ -76,8 +76,10 @@ class LessonCard extends StatelessWidget {
                           color: Colors.white,
                         ),
                         onPressed: () {
-                          Get.toNamed(AppRoutes.memoryTricksScreen,
-                              arguments: lesson.value.memoryTricks);
+                          Get.toNamed(
+                            AppRoutes.memoryTricksScreen,
+                            arguments: lesson.value.memoryTricks,
+                          );
                         }),
                 ],
               ),
