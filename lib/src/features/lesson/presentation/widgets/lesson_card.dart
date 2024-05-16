@@ -66,15 +66,16 @@ class LessonCard extends StatelessWidget {
                         style: const TextStyle(color: Colors.white),
                       ),
                       onPressed: () {}),
-                  DuolingoIconButton(
-                      borderWidth: 4,
-                      padding: const EdgeInsets.all(18),
-                      color: Colors.red,
-                      child: const Icon(
-                        Icons.add_home_work,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {}),
+                  if (lesson.value.memoryTricks != null)
+                    DuolingoIconButton(
+                        borderWidth: 4,
+                        padding: const EdgeInsets.all(18),
+                        color: Colors.red,
+                        child: const Icon(
+                          Icons.add_home_work,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {}),
                 ],
               ),
               const Gap(),
