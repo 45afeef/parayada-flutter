@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:parayada/src/features/content/presentation/memorizing/presentation/pages/memory_tricks_screen.dart';
 
 import '../features/affiliate_url_screen/affiliate_url_screen.dart';
 import '../features/affiliate_url_screen/binding/affiliate_url_binding.dart';
+import '../features/content/presentation/memorizing/presentation/pages/memory_tricks_screen.dart';
 import '../features/lesson/application/lesson_binding.dart';
 import '../features/lesson/presentation/pages/lesson_screen.dart';
 import '../features/levels/levels_screen.dart';

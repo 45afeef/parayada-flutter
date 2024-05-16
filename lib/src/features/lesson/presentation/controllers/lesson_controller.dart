@@ -1,6 +1,5 @@
-import 'package:parayada/src/features/content/presentation/memorizing/domain/memory_trick.dart';
-
 import '../../../../core/app_export.dart';
+import '../../../content/presentation/memorizing/domain/memory_trick.dart';
 import '../../../mind_map/domain/mind_map.dart';
 import '../../data/repositories/local_repo.dart';
 import '../../domain/lesson_entity.dart';

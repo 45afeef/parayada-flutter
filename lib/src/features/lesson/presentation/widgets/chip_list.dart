@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:parayada/src/core/app_export.dart';
 
+import '../../../../core/app_export.dart';
 import '../../../../widgets/custom_chip.dart';
 
 class ChipList extends StatelessWidget {

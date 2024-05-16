@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:parayada/src/features/content/presentation/memorizing/domain/memory_trick.dart';
-import 'package:parayada/src/widgets/custom_chip.dart';
 
 import '../../../../../../core/constants/size_constant.dart';
+import '../../../../../../widgets/custom_chip.dart';
+import '../../domain/memory_trick.dart';
 
 class MemoryTrickCard extends StatelessWidget {
   final MemoryTrick trick;
