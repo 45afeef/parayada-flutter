@@ -49,10 +49,13 @@ class Assessment extends Content {
   }
 
   // Implement these methods to get data from AssessmentItems
-  int getTotalScore() {
-    // TODO - complete the method
+  double getTotalScore() {
     // Logic to sum scores from all AssessmentItems
-    return 0;
+    double totalScore = 0;
+    for (AssessmentItem item in items) {
+      totalScore += item.calculateScore();
+    }
+    return totalScore;
   }
 
   double getAverageTimePerItem() {

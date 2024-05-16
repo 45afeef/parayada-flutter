@@ -2,10 +2,13 @@ import '../assessment_item.dart';
 
 // TODO - start working on this
 class OneWordQuestion extends OpenEndedAssessmentItem {
-  OneWordQuestion(super.question, super.score, super.startTime, super.endTime);
+  OneWordQuestion({
+    required super.question,
+  });
 
   @override
-  void calculateScore() {
+  double calculateScore() {
     // TODO: implement calculateScore
+    return 0.0;
   }
 }

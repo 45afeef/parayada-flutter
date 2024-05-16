@@ -2,45 +2,39 @@ import '../../../domain/content.dart';
 
 abstract class AssessmentItem extends Content {
   String question;
-  double score;
-  DateTime startTime;
-  DateTime endTime;
+  double? score;
+  DateTime? startTime;
 
+  DateTime? endTime;
   // Abstract methods that subclasses must implement
-  void start() {
+  void started() {
     startTime = DateTime.now();
     // Additional logic specific to starting an assessment item
   }
 
-  void end() {
+  void ended() {
     endTime = DateTime.now();
     // Additional logic specific to ending an assessment item
   }
-  
-  void calculateScore();
 
-  AssessmentItem(
-    this.question,
-    this.score,
-    this.startTime,
-    this.endTime,
-  );
+  double calculateScore();
+
+  // Method to update the score after calculation
+  void updateScore(double calculatedScore) {
+    score = calculatedScore;
+  }
+
+  AssessmentItem({required this.question});
 }
 
 abstract class ClosedEndedAssessmentItem extends AssessmentItem {
-  ClosedEndedAssessmentItem(
-    super.question,
-    super.score,
-    super.startTime,
-    super.endTime,
-  );
+  ClosedEndedAssessmentItem({
+    required super.question,
+  });
 }
 
 abstract class OpenEndedAssessmentItem extends AssessmentItem {
-  OpenEndedAssessmentItem(
-    super.question,
-    super.score,
-    super.startTime,
-    super.endTime,
-  );
+  OpenEndedAssessmentItem({
+    required super.question,
+  });
 }
