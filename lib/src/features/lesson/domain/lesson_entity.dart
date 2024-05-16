@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../content/presentation/memorizing/domain/memory_trick.dart';
 import '../../mind_map/domain/mind_map.dart';
 
 @JsonSerializable(explicitToJson: true)
@@ -9,7 +10,7 @@ class Lesson {
   final List<String>? externalLinks;
   final List<String>? topics; //List<Topic>
   final List<MindMap>? mindMaps;
-  final List<String>? memoryTricks; // List<Assessment> assessments;
+  final List<MemoryTrick>? memoryTricks; // List<Assessment> assessments;
 
   Lesson({
     required this.title,

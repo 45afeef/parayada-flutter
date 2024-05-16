@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:parayada/src/features/content/presentation/memorizing/presentation/pages/memory_tricks_screen.dart';
 
 import '../features/affiliate_url_screen/affiliate_url_screen.dart';
 import '../features/affiliate_url_screen/binding/affiliate_url_binding.dart';
@@ -16,6 +17,8 @@ class AppRoutes {
 
   static const String lessonsScreen = '/lessons';
 
+  static const String memoryTricksScreen = '/memory-trick';
+
   static const String initialRoute = '/home';
 
   static List<GetPage> pages = [
@@ -32,5 +35,9 @@ class AppRoutes {
         name: lessonsScreen,
         page: () => const LessonScreen(),
         binding: LessonBinding()),
+    GetPage(
+      name: memoryTricksScreen,
+      page: () => const MemoryTrickScreen(),
+    )
   ];
 }

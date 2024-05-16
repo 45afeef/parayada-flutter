@@ -75,7 +75,10 @@ class LessonCard extends StatelessWidget {
                           Icons.add_home_work,
                           color: Colors.white,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          Get.toNamed(AppRoutes.memoryTricksScreen,
+                              arguments: lesson.value.memoryTricks);
+                        }),
                 ],
               ),
               const Gap(),
