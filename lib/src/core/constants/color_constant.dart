@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class ColorConstant {
@@ -77,4 +75,19 @@ class ColorConstant {
     buffer.write(hexString.replaceFirst('#', ''));
     return Color(int.parse(buffer.toString(), radix: 16));
   }
+
+  static List<ColorCombo> monoChromaticColorList = [
+    ColorCombo(Colors.red[100]!, Colors.red),
+    ColorCombo(Colors.blue[100]!, Colors.blue),
+    ColorCombo(Colors.green[100]!, Colors.green),
+    ColorCombo(const Color.fromARGB(255, 255, 200, 242),
+        const Color.fromARGB(255, 210, 58, 174)),
+    ColorCombo(Colors.yellow[100]!, const Color.fromARGB(255, 255, 196, 59)),
+  ];
+}
+
+class ColorCombo {
+  Color light;
+  Color dark;
+  ColorCombo(this.light, this.dark);
 }

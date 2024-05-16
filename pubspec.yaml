@@ -48,6 +48,7 @@ dependencies:
     # path: '../packages/parayada_ui_collection'
   google_fonts: ^6.2.1
   markdown_editor_plus: ^0.2.13
+  flutter_card_swiper: ^7.0.1
 
 
 dev_dependencies:

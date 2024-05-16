@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parayada/src/core/app_export.dart';
 
 import '../../../../widgets/custom_chip.dart';
 
@@ -30,25 +31,9 @@ class ChipList extends StatelessWidget {
     );
   }
 
-  _ColorCombo _getColorForIndex(int index) {
-    // Define your list of colors here
-    final List<_ColorCombo> chipColors = [
-      _ColorCombo(Colors.white54, Colors.black26),
-      _ColorCombo(Colors.red[100]!, Colors.red),
-      _ColorCombo(Colors.blue[100]!, Colors.blue),
-      _ColorCombo(Colors.green[100]!, Colors.green),
-      _ColorCombo(const Color.fromARGB(255, 255, 200, 242),
-          const Color.fromARGB(255, 210, 58, 174)),
-      _ColorCombo(Colors.yellow[100]!, const Color.fromARGB(255, 255, 196, 59)),
-    ];
-
+  ColorCombo _getColorForIndex(int index) {
     // Cycle through the colors
-    return chipColors[index % chipColors.length];
+    return ColorConstant.monoChromaticColorList[
+        index % ColorConstant.monoChromaticColorList.length];
   }
-}
-
-class _ColorCombo {
-  Color light;
-  Color dark;
-  _ColorCombo(this.light, this.dark);
 }

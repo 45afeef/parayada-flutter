@@ -32,16 +32,16 @@ class LessonController extends GetxController {
     ],
     externalLinks: ['https://www.google.com'],
     memoryTricks: [
-      MemoryTrick('This is the first Memory Trick', MemoryTrickType.acronyms),
-      MemoryTrick('This is the second Memory Trick', MemoryTrickType.acrostic),
+      MemoryTrick('This is the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is the first Memory TrickThis is the first Memory TrickThis is the first Memory Trick', MemoryTrickType.acronyms),
+      MemoryTrick('This the second Memory TrickThis is the second Memory TrickThis is the second Memory Trick', MemoryTrickType.acrostic),
       MemoryTrick(
-          'This is the third Memory Trick', MemoryTrickType.association),
-      MemoryTrick('This is the forth Memory Trick', MemoryTrickType.chunking),
+          'This is the third Memory TrickThis is the third Memory TrickThis is the third Memory TrickThis is the third Memory Trick', MemoryTrickType.association),
+      MemoryTrick('This is the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the forth Memory TrickThis is the forth Memory TrickThis is the forth Memory TrickThis is the forth Memory Trick', MemoryTrickType.chunking),
       MemoryTrick(
-          'This is the fifth Memory Trick', MemoryTrickType.methodOfLoci),
-      MemoryTrick('This is the sixth Memory Trick', MemoryTrickType.mindPalace),
+          'This is the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the fifth Memory TrickThis is the fifth Memory TrickThis is the fifth Memory TrickThis is the fifth Memory Trick', MemoryTrickType.methodOfLoci),
+      MemoryTrick('This is the sixth Memory TrickThis is the sixth Memory TrickThis is the sixth Memory TrickThis is the sixth Memory Trick', MemoryTrickType.mindPalace),
       MemoryTrick(
-          'This is the seventh Memory Trick', MemoryTrickType.songOrRhymes),
+          'This is the seventh Memory TrickThis is the seventh Memory TrickThis is the seventh Memory TrickThis is the seventh Memory Trick', MemoryTrickType.songOrRhymes),
     ],
     mindMaps: [
       MindMap(
