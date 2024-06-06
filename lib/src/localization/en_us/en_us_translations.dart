@@ -304,4 +304,9 @@ final Map<String, String> enUs = {
   "lbl_mind_map": "Mind Map",
   "lbl_memory_trick": "Memory Trick",
   "lbl_assess": "Assess Now",
+  "lbl_unsupported_assessment_item":
+      "This version of app doesn't support this type of assessment items",
+  "lbl_yes": "Yes",
+  "lbl_no": "No",
+  "lbl_time_spent": "Time spent: ",
 };
