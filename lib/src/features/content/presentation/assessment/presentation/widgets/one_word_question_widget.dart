@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:parayada/src/features/content/presentation/assessment/presentation/assessment_screen.dart';
+import 'package:parayada_ui_collection/duolingo/button.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../../../../../widgets/gap.dart';
 import '../../domain/open_ended/one_word.dart';
 
-class OneWordQuestionWidget extends StatelessWidget {
-  final OneWordQuestion item;
-
-  const OneWordQuestionWidget(
-    this.item, {
+class OneWordQuestionWidget extends AssessmentWidget<OneWordQuestion> {
+  const OneWordQuestionWidget({
     super.key,
+    required super.item,
+    required super.onResponse,
   });
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController controller = TextEditingController();
+
     return Card(
         child: Padding(
       padding: SizeConstant.largePadding,
@@ -24,7 +27,11 @@ class OneWordQuestionWidget extends StatelessWidget {
           const Gap(),
           const Divider(),
           const Gap(),
-          const TextField(),
+          TextField(controller: controller),
+          const Gap(gap: SizeConstant.large),
+          DuolingoButton(
+              child: const Text('Submit'),
+              onPressed: () => onResponse(controller.text))
         ],
       ),
     ));

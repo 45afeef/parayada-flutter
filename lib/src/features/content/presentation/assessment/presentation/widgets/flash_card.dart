@@ -4,15 +4,13 @@ import 'package:parayada_ui_collection/duolingo/button.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../domain/closed_ended/flashcard.dart';
+import '../assessment_screen.dart';
 
-class FlashCardWidget extends StatelessWidget {
-  final FlashCard item;
-  final void Function(String) onResponse;
-
-  const FlashCardWidget(
-    this.item, {
+class FlashCardWidget extends AssessmentWidget<FlashCard> {
+  const FlashCardWidget({
     super.key,
-    required this.onResponse,
+    required super.item,
+    required super.onResponse,
   });
 
   @override

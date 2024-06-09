@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:parayada/src/features/content/presentation/assessment/presentation/assessment_screen.dart';
 
 import '../../../../../../core/constants/size_constant.dart';
 import '../../../../../../widgets/gap.dart';
 import '../../domain/closed_ended/mcq.dart';
 
-class MCQWidget extends StatelessWidget {
-  final MCQ item;
-
-  const MCQWidget(
-    this.item, {
+class MCQWidget extends AssessmentWidget<MCQ> {
+  const MCQWidget({
     super.key,
+    required super.item,
+    required super.onResponse,
   });
 
   @override
@@ -27,11 +27,15 @@ class MCQWidget extends StatelessWidget {
           ),
         ).animate(delay: 400.microseconds).fade().slideX(),
         const Gap(gap: SizeConstant.large),
+        // Options
         ...item.options.asMap().entries.map(
               (e) => Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(e.value),
+                child: InkWell(
+                  onTap: () => onResponse(e.value),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(e.value),
+                  ),
                 ),
               )
                   .animate(delay: (e.key * 300 + 500).milliseconds)
