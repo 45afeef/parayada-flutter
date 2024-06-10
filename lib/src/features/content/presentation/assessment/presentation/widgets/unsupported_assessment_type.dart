@@ -6,7 +6,7 @@ class UnSupportedAssessmentItemTypeWidget extends AssessmentWidget {
   UnSupportedAssessmentItemTypeWidget({super.key})
       : super(
           item: null,
-          onResponse: (String _) {},
+          onResponse: (_) {},
         );
 
   @override

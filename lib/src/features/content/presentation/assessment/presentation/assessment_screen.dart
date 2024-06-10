@@ -95,5 +95,5 @@ abstract class AssessmentWidget<T> extends StatelessWidget {
   /// The callback that is called when the button is tapped or otherwise activated.
   ///
   /// If this is set to null, the button will be disabled.
-  final void Function(String) onResponse;
+  final void Function(dynamic) onResponse;
 }

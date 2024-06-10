@@ -7,11 +7,11 @@ import '../../../../../../widgets/gap.dart';
 import '../../domain/open_ended/one_word.dart';
 
 class OneWordQuestionWidget extends AssessmentWidget<OneWordQuestion> {
-  const OneWordQuestionWidget({
+  OneWordQuestionWidget({
     super.key,
     required super.item,
-    required super.onResponse,
-  });
+    required void Function(String) onResponse,
+  }) : super(onResponse: (s) => onResponse(s));
 
   @override
   Widget build(BuildContext context) {

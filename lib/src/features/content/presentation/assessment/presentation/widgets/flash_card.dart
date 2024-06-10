@@ -7,11 +7,11 @@ import '../../domain/closed_ended/flashcard.dart';
 import '../assessment_screen.dart';
 
 class FlashCardWidget extends AssessmentWidget<FlashCard> {
-  const FlashCardWidget({
+  FlashCardWidget({
     super.key,
     required super.item,
-    required super.onResponse,
-  });
+    required void Function(bool) onResponse,
+  }) : super(onResponse: (b) => onResponse(b));
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +39,12 @@ class FlashCardWidget extends AssessmentWidget<FlashCard> {
                 children: [
                   DuolingoButton(
                     color: ColorConstant.green600,
-                    onPressed: () => onResponse('True'),
+                    onPressed: () => onResponse(true),
                     child: Text('lbl_yes'.tr),
                   ),
                   DuolingoButton(
                     color: ColorConstant.red700,
-                    onPressed: () => onResponse('False'),
+                    onPressed: () => onResponse(false),
                     child: Text("lbl_no".tr),
                   ),
                 ],
