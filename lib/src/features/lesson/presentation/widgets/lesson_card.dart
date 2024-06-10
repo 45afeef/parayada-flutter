@@ -58,14 +58,17 @@ class LessonCard extends StatelessWidget {
                         }),
                   DuolingoButton(
                       padding: const EdgeInsets.all(12),
-                      borderWidth: 4,
-                      elevation: const Offset(4, 8),
+                      radius: const BorderRadius.all(Radius.circular(12)),
+                      borderWidth: 2,
+                      elevation: const Offset(0, 8),
                       color: Colors.blue,
                       child: Text(
                         "lbl_assess".tr,
                         style: const TextStyle(color: Colors.white),
                       ),
-                      onPressed: () {}),
+                      onPressed: () {
+                        Get.toNamed(AppRoutes.assessmentScreen);
+                      }),
                   if (lesson.value.memoryTricks != null)
                     DuolingoIconButton(
                         borderWidth: 4,

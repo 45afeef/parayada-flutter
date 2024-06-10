@@ -29,7 +29,7 @@ class LessonController extends GetxController {
       'four',
       'five',
     ],
-    externalLinks: ['https://www.google.com'],
+    externalLinks: ['https://www.youtube.com/?w=coasdc8zxz'],
     memoryTricks: [
       MemoryTrick('This is the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is the first Memory TrickThis is the first Memory TrickThis is the first Memory Trick', MemoryTrickType.acronyms),
       MemoryTrick('This the second Memory TrickThis is the second Memory TrickThis is the second Memory Trick', MemoryTrickType.acrostic),
@@ -51,6 +51,7 @@ class LessonController extends GetxController {
             MindMapNode(name: 'Forth', connectedNodes: []),
           ]))
     ],
+    
   ));
 
   Future<void> fetchUser(int id) async {

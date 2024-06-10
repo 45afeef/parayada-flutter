@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:parayada/src/features/content/presentation/assessment/presentation/widgets/unsupported_assessment_type.dart';
 
 import '../../../../../core/app_export.dart';
 import '../domain/assessment_item.dart';
@@ -11,6 +10,7 @@ import 'controllers/assessment_controller.dart';
 import 'widgets/flash_card.dart';
 import 'widgets/mcq.dart';
 import 'widgets/one_word_question_widget.dart';
+import 'widgets/unsupported_assessment_type.dart';
 
 class AssessmentScreen extends GetWidget<AssessmentController> {
   const AssessmentScreen({super.key});
@@ -63,7 +63,7 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
         Text('lbl_time_spent'.tr,
             style: const TextStyle(fontWeight: FontWeight.bold)),
         Obx(() => Text(controller
-            .getTimeSpentOnQuestion(controller.currentQuestionIndex.value))),
+            .getTimeSpentOnQuestion(controller.currentQuestionIndex))),
       ],
       child: PageView(
         onPageChanged: (value) {

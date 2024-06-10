@@ -4,9 +4,14 @@ import '../../../../../../core/app_export.dart';
 import '../../domain/assessment.dart';
 import '../../domain/closed_ended/flashcard.dart';
 import '../../domain/closed_ended/mcq.dart';
+import '../../domain/closed_ended/true_or_false.dart';
 import '../../domain/open_ended/one_word.dart';
 
 class AssessmentController extends GetxController {
+  /// [userAnswer] is a hashmap of user selected answer, it can be predefined in case of assessment is closed type,
+  /// or it will be user generated or typed answer.
+  var userAnswer = <int, dynamic>{};
+
   /// [totalTimeSpent] will count every single second spent on the question. This actually counts the total seconds
   /// that the respective questions shown on the screen
   var totalTimeSpent = <int, int>{}.obs;
@@ -15,13 +20,13 @@ class AssessmentController extends GetxController {
   /// if the question don't allow multi attempt, then the time taken for first attempt will be recorded.
   var responseTimeTaken = <int, int>{}.obs;
 
-  /// Stores the current question index. this helss in managing the state and context
-  var currentQuestionIndex = 0.obs;
+  /// Stores the current question index. this helps in managing the state and context
+  var currentQuestionIndex = 0;
 
   Timer? _timer;
 
   void startExam() {
-    currentQuestionIndex.value = 0;
+    currentQuestionIndex = 0;
 
     // Start or reset the timer when the exam starts
     _timer?.cancel();
@@ -31,7 +36,7 @@ class AssessmentController extends GetxController {
 
   void setCurrentQuestion(int questionIndex) {
     // Update the current question index and start time
-    currentQuestionIndex.value = questionIndex;
+    currentQuestionIndex = questionIndex;
   }
 
   String getTimeSpentOnQuestion(int questionIndex) {
@@ -47,7 +52,7 @@ class AssessmentController extends GetxController {
   }
 
   /// IMPROVEMENT APPRECIATED.
-  /// WHY
+  /// WHY ?
   /// why we use [timeSpent] as 1?
   /// the private method [_updateElapsedTime] is invoked by the timer with an interval of 1 second
   /// so the extra time spent on current question will always be 1 second more than the previous
@@ -56,11 +61,6 @@ class AssessmentController extends GetxController {
   /// Hope this don't affect the quality of assessmentItem level student analytics
   ///
   /// IGNORED
-  /// Potential User Behaviour
-  /// This way of working have a potential bug, or user workaround to overcome the counting
-  /// behaviour, if the student/user switch between questions before 1 second timeframe.
-  /// This will result in 0 time taken by the student even if he spent 1 hour
-  ///
   /// Current method of timer will miscount the time spent. because we are using only one timer and not
   /// reseting it for each questions.
   /// Hope this don't affect the quality of assessmentItem level student analytics
@@ -69,15 +69,19 @@ class AssessmentController extends GetxController {
     var timeSpent = 1;
 
     // Update the total time for the current question
-    if (totalTimeSpent.containsKey(currentQuestionIndex.value)) {
-      totalTimeSpent[currentQuestionIndex.value] =
-          totalTimeSpent[currentQuestionIndex.value]! + timeSpent;
+    if (totalTimeSpent.containsKey(currentQuestionIndex)) {
+      totalTimeSpent[currentQuestionIndex] =
+          totalTimeSpent[currentQuestionIndex]! + timeSpent;
     } else {
-      totalTimeSpent[currentQuestionIndex.value] = timeSpent;
+      totalTimeSpent[currentQuestionIndex] = timeSpent;
     }
 
     // This will trigger the Obx widget to rebuild every second
     totalTimeSpent.refresh();
+  }
+
+  void setUserAnswer(dynamic) {
+    userAnswer[currentQuestionIndex] = dynamic;
   }
 
   @override
@@ -87,7 +91,7 @@ class AssessmentController extends GetxController {
     // reset all variables
     totalTimeSpent = <int, int>{}.obs;
     responseTimeTaken = <int, int>{}.obs;
-    currentQuestionIndex = (-1).obs;
+    currentQuestionIndex = -1;
 
     super.onClose();
   }
@@ -98,14 +102,18 @@ class AssessmentController extends GetxController {
     name: 'name',
     assessmentType: AssessmentType.summative,
     items: [
-      FlashCard(question: 'question', explanation: 'explanation'),
+      FlashCard(
+          question: 'This is the first question in first flash card',
+          explanation: 'explanation'),
       MCQ(
           question: 'What is the capital of France?',
           options: ['Paris', 'Rome', 'Berlin', 'Madrid']),
       MCQ(
           question: 'Which element has the chemical symbol O?',
           options: ['Oxygen', 'Gold', 'Iron', 'Helium']),
-      FlashCard(question: 'question', explanation: 'explanation'),
+      FlashCard(
+          question: 'question in Second flash card',
+          explanation: 'explanation'),
       MCQ(question: 'Who wrote Romeo and Juliet?', options: [
         'William Shakespeare',
         'Charles Dickens',
@@ -135,6 +143,9 @@ class AssessmentController extends GetxController {
       MCQ(
           question: 'What is the main ingredient in sushi?',
           options: ['Rice', 'Fish', 'Cheese', 'Beef']),
+      TrueOrFalse(
+          question: 'The only true or false question',
+          options: ["more", "wow"]),
       MCQ(
           question: 'What is the hardest natural substance?',
           options: ['Diamond', 'Gold', 'Iron', 'Quartz'])
