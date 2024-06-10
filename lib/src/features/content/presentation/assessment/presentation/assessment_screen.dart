@@ -24,34 +24,18 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
     AssessmentWidget buildAssessmentWidget(AssessmentItem assessmentItem) {
       if (assessmentItem is MCQ) {
         return MCQWidget(
-          item: assessmentItem,
-          onResponse: (response) {
-            ScaffoldMessenger.of(context).clearSnackBars();
-            ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Clicked the MCQ Option $response')));
-          },
-        );
+            item: assessmentItem,
+            onResponse: (res) => controller.setUserResponse(res, context));
       }
       if (assessmentItem is FlashCard) {
         return FlashCardWidget(
-          item: assessmentItem,
-          onResponse: (response) {
-            ScaffoldMessenger.of(context).clearSnackBars();
-
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Text('Clicked the FlashCard Option $response')));
-          },
-        );
+            item: assessmentItem,
+            onResponse: (res) => controller.setUserResponse(res, context));
       }
       if (assessmentItem is OneWordQuestion) {
         return OneWordQuestionWidget(
-          item: assessmentItem,
-          onResponse: (response) {
-            ScaffoldMessenger.of(context).clearSnackBars();
-            ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Typed One Word answer is: $response')));
-          },
-        );
+            item: assessmentItem,
+            onResponse: (res) => controller.setUserResponse(res, context));
       }
 
       // Unsupported AssessmentItem type

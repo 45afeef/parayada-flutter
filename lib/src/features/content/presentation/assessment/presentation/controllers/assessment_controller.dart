@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
+
 import '../../../../../../core/app_export.dart';
 import '../../domain/assessment.dart';
 import '../../domain/closed_ended/flashcard.dart';
@@ -80,8 +82,12 @@ class AssessmentController extends GetxController {
     totalTimeSpent.refresh();
   }
 
-  void setUserAnswer(dynamic) {
-    userAnswer[currentQuestionIndex] = dynamic;
+  void setUserResponse(response, BuildContext context) {
+    userAnswer[currentQuestionIndex] = response;
+    ScaffoldMessenger.of(context).clearSnackBars();
+
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('User selected : $response')));
   }
 
   @override
