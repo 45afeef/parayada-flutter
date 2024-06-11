@@ -60,8 +60,7 @@ class Assessment extends Content {
   double getTotalScore() {
     // Logic to sum scores from all AssessmentItems
     double totalScore = 0;
-    for (AssessmentItem item in items) {
-    }
+    for (AssessmentItem item in items) {}
     return totalScore;
   }
 
@@ -72,11 +71,23 @@ class Assessment extends Content {
   }
 }
 
-class AssessmentResult {}
+class AssessmentResult {
+  Map<int, AssessmentItemResponse> studentResponse;
+
+  AssessmentResult({Map<int, AssessmentItemResponse>? initialResponse})
+      : studentResponse = initialResponse ?? {};
+
+  void setItemResponse(int index, AssessmentItemResponse response) =>
+      studentResponse[index] = response;
+
+  AssessmentItemResponse? getItemResponse(int index) => studentResponse[index];
+
+  
+}
 
 /// Assessments are mainly conduts for many reasons. I'm listing some of the core
-/// reasons 
-/// 
+/// reasons
+///
 /// 1. Identifying Mistakes
 /// 2. Identifying Knowlege and Knowlege Gaps
 /// 3. Identifying Confusions

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:parayada/src/features/content/presentation/assessment/domain/assessment_item.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../domain/assessment.dart';
@@ -10,21 +11,13 @@ import '../../domain/closed_ended/true_or_false.dart';
 import '../../domain/open_ended/one_word.dart';
 
 class AssessmentController extends GetxController {
-  /// [userAnswer] is a hashmap of user selected answer, it can be predefined in case of assessment
-  /// is closed type, or it will be user generated or typed answer.
-  var userAnswer = <int, dynamic>{};
-
-  /// [totalTimeSpent] will count every single second spent on the question. This actually counts 
-  /// the total seconds that the respective questions shown on the screen
-  var totalTimeSpent = <int, int>{}.obs;
-
-  /// [responseTimeTaken] record the time spent by the user on the respective question till his/her
-  /// final attempt. Ff the question don't allow multi attempt, then the time taken for first 
-  /// attempt will be recorded.
-  var responseTimeTaken = <int, int>{}.obs;
+  /// AssessmentResult class will handle all the data storing related tasks in cache or memory
+  /// This will collect and update the user input and time taken by each question, in
+  /// AssessmentItemResponse object
+  Rx<AssessmentResult> assessmentResult = AssessmentResult().obs;
 
   /// Stores the current question index. this helps in managing the state and context
-  var currentQuestionIndex = 0;
+  int currentQuestionIndex = 0;
 
   Timer? _timer;
 
@@ -45,7 +38,12 @@ class AssessmentController extends GetxController {
   String getTimeSpentOnQuestion(int questionIndex) {
     // Return the total time spent on a specific question
 
-    int seconds = totalTimeSpent[questionIndex] ?? 0;
+    int seconds = assessmentResult
+            .value.studentResponse[questionIndex]?.timeTakenInMillisecond ??
+        0;
+    seconds ~/= 1000;
+
+    // int seconds = totalTimeSpent[questionIndex] ?? 0;
 
     int minutes = seconds ~/ 60;
     int remainingSeconds = seconds % 60;
@@ -72,19 +70,24 @@ class AssessmentController extends GetxController {
     var timeSpent = 1;
 
     // Update the total time for the current question
-    if (totalTimeSpent.containsKey(currentQuestionIndex)) {
-      totalTimeSpent[currentQuestionIndex] =
-          totalTimeSpent[currentQuestionIndex]! + timeSpent;
+    if (assessmentResult.value.studentResponse
+        .containsKey(currentQuestionIndex)) {
+      assessmentResult.value.studentResponse[currentQuestionIndex]!
+          .incrementTimeTaken(timeSpent * 1000);
     } else {
-      totalTimeSpent[currentQuestionIndex] = timeSpent;
+      AssessmentItemResponse response =
+          AssessmentItemResponse(timeTakenInMillisecond: timeSpent * 1000);
+      assessmentResult.value.setItemResponse(currentQuestionIndex, response);
     }
 
     // This will trigger the Obx widget to rebuild every second
-    totalTimeSpent.refresh();
+    assessmentResult.refresh();
   }
 
-  void handleStudentResponse(response, BuildContext context) {
-    userAnswer[currentQuestionIndex] = response;
+  void handleStudentResponse(dynamic response, BuildContext context) {
+    assessmentResult.value.studentResponse[currentQuestionIndex]!
+        .updateResponse(response.toString());
+
     ScaffoldMessenger.of(context).clearSnackBars();
 
     ScaffoldMessenger.of(context)
@@ -96,8 +99,7 @@ class AssessmentController extends GetxController {
     _timer?.cancel(); // Cancel the timer to prevent memory leaks
 
     // reset all variables
-    totalTimeSpent = <int, int>{}.obs;
-    responseTimeTaken = <int, int>{}.obs;
+    assessmentResult = AssessmentResult().obs;
     currentQuestionIndex = -1;
 
     super.onClose();
