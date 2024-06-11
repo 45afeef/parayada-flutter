@@ -10,16 +10,17 @@ import '../../domain/closed_ended/true_or_false.dart';
 import '../../domain/open_ended/one_word.dart';
 
 class AssessmentController extends GetxController {
-  /// [userAnswer] is a hashmap of user selected answer, it can be predefined in case of assessment is closed type,
-  /// or it will be user generated or typed answer.
+  /// [userAnswer] is a hashmap of user selected answer, it can be predefined in case of assessment
+  /// is closed type, or it will be user generated or typed answer.
   var userAnswer = <int, dynamic>{};
 
-  /// [totalTimeSpent] will count every single second spent on the question. This actually counts the total seconds
-  /// that the respective questions shown on the screen
+  /// [totalTimeSpent] will count every single second spent on the question. This actually counts 
+  /// the total seconds that the respective questions shown on the screen
   var totalTimeSpent = <int, int>{}.obs;
 
-  /// [responseTimeTaken] record the time spent by the user on the respective question till his/her final attempt.
-  /// if the question don't allow multi attempt, then the time taken for first attempt will be recorded.
+  /// [responseTimeTaken] record the time spent by the user on the respective question till his/her
+  /// final attempt. Ff the question don't allow multi attempt, then the time taken for first 
+  /// attempt will be recorded.
   var responseTimeTaken = <int, int>{}.obs;
 
   /// Stores the current question index. this helps in managing the state and context
@@ -63,8 +64,8 @@ class AssessmentController extends GetxController {
   /// Hope this don't affect the quality of assessmentItem level student analytics
   ///
   /// IGNORED
-  /// Current method of timer will miscount the time spent. because we are using only one timer and not
-  /// reseting it for each questions.
+  /// Current method of timer will miscount the time spent. because we are using only one timer and
+  /// not reseting it for each questions.
   /// Hope this don't affect the quality of assessmentItem level student analytics
   void _updateElapsedTime() {
     // Calculate the time spent on the current question
@@ -82,7 +83,7 @@ class AssessmentController extends GetxController {
     totalTimeSpent.refresh();
   }
 
-  void setUserResponse(response, BuildContext context) {
+  void handleStudentResponse(response, BuildContext context) {
     userAnswer[currentQuestionIndex] = response;
     ScaffoldMessenger.of(context).clearSnackBars();
 
