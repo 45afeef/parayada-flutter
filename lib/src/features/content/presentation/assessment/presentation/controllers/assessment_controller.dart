@@ -30,10 +30,8 @@ class AssessmentController extends GetxController {
         const Duration(seconds: 1), (Timer t) => _updateElapsedTime());
   }
 
-  void setCurrentQuestion(int questionIndex) {
-    // Update the current question index and start time
-    currentQuestionIndex = questionIndex;
-  }
+  // Update the current question index and start time
+  set currentQuestion(int index) => currentQuestionIndex = index;
 
   String getTimeSpentOnQuestion(int questionIndex) {
     // Return the total time spent on a specific question

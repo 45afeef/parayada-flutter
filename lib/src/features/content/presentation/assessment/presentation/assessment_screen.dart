@@ -51,7 +51,7 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
       ],
       child: PageView(
         onPageChanged: (value) {
-          controller.setCurrentQuestion(value);
+          controller.currentQuestionIndex = value;
           HapticFeedback.lightImpact();
         },
         scrollDirection: Axis.vertical,
