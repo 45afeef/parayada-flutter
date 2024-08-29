@@ -15,7 +15,7 @@ class CompletedWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -25,7 +25,15 @@ class CompletedWidget extends StatelessWidget {
               const Gap(gap: SizeConstant.large),
               DuolingoButton(
                 onPressed: () => throw UnimplementedError(),
-                child: Text('lbl_submit'.tr),
+                color: Colors.red,
+                child: Text(
+                  'lbl_submit'.tr,
+                  style: TextStyle(
+                    color: ColorConstant.whiteA700,
+                    fontSize: SizeConstant.contentFontLarge,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               )
             ],
           ),
