@@ -9,6 +9,9 @@ enum MemoryTrickType {
   songOrRhymes,
   story,
   mindPalace,
+  pegs,
+  pao,
+  mnemonics,
 }
 
 class MemoryTrick extends Content {
