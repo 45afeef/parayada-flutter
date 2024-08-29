@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:parayada/src/features/content/presentation/assessment/presentation/assessment_screen.dart';
+
+import '../assessment_screen.dart';
 
 class UnSupportedAssessmentItemTypeWidget extends AssessmentWidget {
   UnSupportedAssessmentItemTypeWidget({super.key})

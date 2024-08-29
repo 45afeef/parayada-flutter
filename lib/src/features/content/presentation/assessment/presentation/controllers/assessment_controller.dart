@@ -33,6 +33,12 @@ class AssessmentController extends GetxController {
   // Update the current question index and start time
   set currentQuestion(int index) => currentQuestionIndex = index;
 
+  String? getSelectionFor(AssessmentItem item) {
+    final index = assessment.items.indexOf(item);
+
+    return assessmentResult.value.studentResponse[index]?.studentAnswer;
+  }
+
   String getTimeSpentOnQuestion(int questionIndex) {
     // Return the total time spent on a specific question
 
@@ -82,14 +88,17 @@ class AssessmentController extends GetxController {
     assessmentResult.refresh();
   }
 
+  // TODO - find out how to remove context and use GetX for snackbar
   void handleStudentResponse(dynamic response, BuildContext context) {
     assessmentResult.value.studentResponse[currentQuestionIndex]!
         .updateResponse(response.toString());
 
+    // TODO - remove snackbar
     ScaffoldMessenger.of(context).clearSnackBars();
-
     ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text('User selected : $response')));
+
+    assessmentResult.refresh(); // Notify listeners about the change
   }
 
   @override

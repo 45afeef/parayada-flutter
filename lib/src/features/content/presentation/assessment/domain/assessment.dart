@@ -74,15 +74,15 @@ class Assessment extends Content {
 class AssessmentResult {
   Map<int, AssessmentItemResponse> studentResponse;
 
+  // Constructor
   AssessmentResult({Map<int, AssessmentItemResponse>? initialResponse})
       : studentResponse = initialResponse ?? {};
 
+  // Methods
   void setItemResponse(int index, AssessmentItemResponse response) =>
       studentResponse[index] = response;
 
   AssessmentItemResponse? getItemResponse(int index) => studentResponse[index];
-
-  
 }
 
 /// Assessments are mainly conduts for many reasons. I'm listing some of the core

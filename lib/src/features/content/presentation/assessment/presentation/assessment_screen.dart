@@ -22,24 +22,27 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
     controller.startExam();
 
     // handle the UI of each assessment item based on type
-    AssessmentWidget buildAssessmentWidget(AssessmentItem assessmentItem) {
+    Widget buildAssessmentWidget(AssessmentItem assessmentItem) {
       if (assessmentItem is MCQ) {
-        return MCQWidget(
+        return Obx(
+          () => MCQWidget(
             item: assessmentItem,
-            onResponse: (res) =>
-                controller.handleStudentResponse(res, context));
+            selectedAnswer: controller.getSelectionFor(assessmentItem),
+            onResponse: (res) => controller.handleStudentResponse(res, context),
+          ),
+        );
       }
       if (assessmentItem is FlashCard) {
         return FlashCardWidget(
-            item: assessmentItem,
-            onResponse: (res) =>
-                controller.handleStudentResponse(res, context));
+          item: assessmentItem,
+          onResponse: (res) => controller.handleStudentResponse(res, context),
+        );
       }
       if (assessmentItem is OneWordQuestion) {
         return OneWordQuestionWidget(
-            item: assessmentItem,
-            onResponse: (res) =>
-                controller.handleStudentResponse(res, context));
+          item: assessmentItem,
+          onResponse: (res) => controller.handleStudentResponse(res, context),
+        );
       }
 
       // Unsupported AssessmentItem type
