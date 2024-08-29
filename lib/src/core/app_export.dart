@@ -1,5 +1,6 @@
 export 'package:connectivity_plus/connectivity_plus.dart';
 export 'package:get/get.dart';
+export 'package:parayada_ui_collection/duolingo/button.dart';
 export 'package:url_launcher/url_launcher.dart';
 
 export '../data/models/selectionPopupModel/selection_popup_model.dart';

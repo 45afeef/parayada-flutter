@@ -7,6 +7,7 @@ import '../domain/closed_ended/flashcard.dart';
 import '../domain/closed_ended/mcq.dart';
 import '../domain/open_ended/one_word.dart';
 import 'controllers/assessment_controller.dart';
+import 'widgets/completed.dart';
 import 'widgets/flash_card.dart';
 import 'widgets/mcq.dart';
 import 'widgets/one_word_question_widget.dart';
@@ -25,17 +26,20 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
       if (assessmentItem is MCQ) {
         return MCQWidget(
             item: assessmentItem,
-            onResponse: (res) => controller.handleStudentResponse(res, context));
+            onResponse: (res) =>
+                controller.handleStudentResponse(res, context));
       }
       if (assessmentItem is FlashCard) {
         return FlashCardWidget(
             item: assessmentItem,
-            onResponse: (res) => controller.handleStudentResponse(res, context));
+            onResponse: (res) =>
+                controller.handleStudentResponse(res, context));
       }
       if (assessmentItem is OneWordQuestion) {
         return OneWordQuestionWidget(
             item: assessmentItem,
-            onResponse: (res) => controller.handleStudentResponse(res, context));
+            onResponse: (res) =>
+                controller.handleStudentResponse(res, context));
       }
 
       // Unsupported AssessmentItem type
@@ -51,16 +55,21 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
       ],
       child: PageView(
         onPageChanged: (value) {
-          controller.currentQuestionIndex = value;
-          HapticFeedback.lightImpact();
+          if (value.isLowerThan(controller.assessment.items.length)) {
+            controller.currentQuestionIndex = value;
+          }
+          HapticFeedback.mediumImpact();
         },
         scrollDirection: Axis.vertical,
-        children: controller.assessment.items
-            .map((assessmentItem) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(child: buildAssessmentWidget(assessmentItem)),
-                ))
-            .toList(),
+        children: [
+          ...controller.assessment.items.map(
+            (assessmentItem) => Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(child: buildAssessmentWidget(assessmentItem)),
+            ),
+          ),
+          const CompletedWidget()
+        ],
       ),
     );
   }

@@ -306,7 +306,11 @@ final Map<String, String> enUs = {
   "lbl_assess": "Assess Now",
   "lbl_unsupported_assessment_item":
       "This version of app doesn't support this type of assessment items",
+  "lbl_submit": "Submit",
   "lbl_yes": "Yes",
   "lbl_no": "No",
   "lbl_time_spent": "Time spent: ",
+  "lbl_assessment_end_screen":
+      "You have completed all the questions in this Assessment.",
+  "lbl_do_you_want_to_submit": "Do you want to submit",
 };

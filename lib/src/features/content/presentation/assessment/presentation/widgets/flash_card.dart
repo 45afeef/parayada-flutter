@@ -1,6 +1,5 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:parayada_ui_collection/duolingo/button.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../domain/closed_ended/flashcard.dart';
@@ -34,7 +33,7 @@ class FlashCardWidget extends AssessmentWidget<FlashCard> {
             Positioned(
               bottom: 10,
               width: 300,
-              child: ButtonBar(
+              child: OverflowBar(
                 alignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   DuolingoButton(
