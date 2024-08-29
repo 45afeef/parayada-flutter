@@ -9,9 +9,12 @@ import '../features/lesson/application/lesson_binding.dart';
 import '../features/lesson/presentation/pages/lesson_screen.dart';
 import '../features/levels/levels_screen.dart';
 import '../features/mind_map/mind_map_screen.dart';
+import '../features/onboarding/onboarding_screen.dart';
 
 class AppRoutes {
   static const String affiliateUrlScreen = '/affiliate_url_screen';
+
+  static const String homeScreen = '/';
 
   static const String mindMapScreen = '/mindmap';
 
@@ -23,7 +26,7 @@ class AppRoutes {
 
   static const String memoryTricksScreen = '/memory-trick';
 
-  static const String initialRoute = '/home';
+  static const String onboardingScreen = '/onboarding';
 
   static List<GetPage> pages = [
     GetPage(
@@ -32,7 +35,8 @@ class AppRoutes {
         bindings: [
           AffiliateUrlBinding(),
         ]),
-    GetPage(name: initialRoute, page: () => const LevelsScreen()),
+    GetPage(name: homeScreen, page: () => const LevelsScreen()),
+    GetPage(name: onboardingScreen, page: () => const OnboardingScreen()),
     GetPage(name: mindMapScreen, page: () => const MindMapScreen()),
     GetPage(name: levelsScreen, page: () => const LevelsScreen()),
     GetPage(

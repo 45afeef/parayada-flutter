@@ -1,5 +1,6 @@
 //ignore: unused_import
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -27,5 +28,15 @@ class PrefUtils {
   /// Clears all data from the SharedPreferences instance.
   void clearPreferencesData() async {
     _sharedPreferences!.clear();
+  }
+
+  /// Check whether the user has already visited the onboarding screen
+  bool get isVisitedOnboarding {
+    return _sharedPreferences?.getBool('isVisitedOnboarding') ?? false;
+  }
+
+  /// Set the value of 'isVisitedOnboarding' to true of false
+  set onboardingVisitStatus(bool isVisited) {
+    _sharedPreferences?.setBool('isVisitedOnboarding', isVisited);
   }
 }

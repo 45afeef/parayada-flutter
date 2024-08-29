@@ -36,7 +36,9 @@ class MyApp extends StatelessWidget {
       transitionDuration: const Duration(milliseconds: 300),
       title: 'Parayada',
       initialBinding: InitialBindings(),
-      initialRoute: AppRoutes.initialRoute,
+      initialRoute: PrefUtils().isVisitedOnboarding
+          ? AppRoutes.homeScreen
+          : AppRoutes.onboardingScreen,
       getPages: AppRoutes.pages,
     );
   }
