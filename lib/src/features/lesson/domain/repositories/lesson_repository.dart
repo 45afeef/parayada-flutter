@@ -1,11 +1,11 @@
 // Define the interface for the repository
-import '../../data/model/lesson_model.dart';
+import '../../data/model/lesson/model.dart';
 // import '../lesson_entity.dart';
 
 abstract class LessonRepository {
-  Future<Lesson> getLesson(int id);
-  Future<List<Lesson>> getAllLessons();
-  Future<void> saveLesson(Lesson lesson);
+  Future<LessonModel> getLesson(int id);
+  Future<List<LessonModel>> getAllLessons();
+  Future<void> saveLesson(LessonModel lesson);
   Future<void> deleteLesson(int id);
 }
 

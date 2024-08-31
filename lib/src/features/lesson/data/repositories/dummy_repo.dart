@@ -1,7 +1,11 @@
-import '../model/lesson/model.dart';
-import '../../domain/repositories/lesson_repository.dart';
+import 'dart:convert';
 
-class LocalLessonRepository extends LessonRepository {
+import 'package:flutter/services.dart' show rootBundle;
+
+import '../../domain/repositories/lesson_repository.dart';
+import '../model/lesson/model.dart';
+
+class DummyLessonRepo extends LessonRepository {
   @override
   Future<void> deleteLesson(int id) {
     // TODO: implement deleteLesson
@@ -15,9 +19,11 @@ class LocalLessonRepository extends LessonRepository {
   }
 
   @override
-  Future<LessonModel> getLesson(int id) {
-    // TODO: implement getLesson
-    throw UnimplementedError();
+  Future<LessonModel> getLesson(int id) async {
+    final input = await rootBundle.loadString('assets/dumy_lesson.json');
+
+    var map = jsonDecode(input);
+    return LessonModel.fromJson(map);
   }
 
   @override

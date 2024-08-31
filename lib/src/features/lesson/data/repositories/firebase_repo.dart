@@ -1,4 +1,4 @@
-import '../model/lesson_model.dart';
+import '../model/lesson/model.dart';
 import '../../domain/repositories/lesson_repository.dart';
 
 class FirebaseLessonReopsitory extends LessonRepository {
@@ -9,19 +9,19 @@ class FirebaseLessonReopsitory extends LessonRepository {
   }
 
   @override
-  Future<List<Lesson>> getAllLessons() {
+  Future<List<LessonModel>> getAllLessons() {
     // TODO: implement getAllLessons
     throw UnimplementedError();
   }
 
   @override
-  Future<Lesson> getLesson(int id) {
+  Future<LessonModel> getLesson(int id) {
     // TODO: implement getLesson
     throw UnimplementedError();
   }
 
   @override
-  Future<void> saveLesson(Lesson lesson) {
+  Future<void> saveLesson(LessonModel lesson) {
     // TODO: implement saveLesson
     throw UnimplementedError();
   }

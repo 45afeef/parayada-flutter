@@ -1,9 +1,6 @@
-import 'package:json_annotation/json_annotation.dart';
-
 import '../../content/presentation/memorizing/domain/memory_trick.dart';
 import '../../mind_map/domain/mind_map.dart';
 
-@JsonSerializable(explicitToJson: true)
 class Lesson {
   final String title;
   final String description;
@@ -20,4 +17,6 @@ class Lesson {
     this.mindMaps,
     this.memoryTricks,
   });
+
+  factory Lesson.empty() => Lesson(title: '', description: '');
 }

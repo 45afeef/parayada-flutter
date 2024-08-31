@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:markdown_editor_plus/markdown_editor_plus.dart';
-import 'package:parayada_ui_collection/duolingo/button.dart';
 import 'package:parayada_ui_collection/duolingo/icon_button.dart';
 
 import '../../../../core/app_export.dart';
@@ -9,7 +8,7 @@ import '../../domain/lesson_entity.dart';
 import 'chip_list.dart';
 
 class LessonCard extends StatelessWidget {
-  final Rx<Lesson> lesson;
+  final Lesson lesson;
 
   const LessonCard({
     super.key,
@@ -26,25 +25,23 @@ class LessonCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(lesson.value.title, style: AppTextStyle.h1Style),
+              Text(lesson.title, style: AppTextStyle.h1Style),
               MarkdownAutoPreview(
-                controller:
-                    TextEditingController(text: lesson.value.description),
+                controller: TextEditingController(text: lesson.description),
                 readOnly: true,
               ),
-              if (lesson.value.externalLinks != null)
+              if (lesson.externalLinks != null)
                 IconButton(
                     onPressed: () =>
-                        launchUrl(Uri.parse(lesson.value.externalLinks![0])),
+                        launchUrl(Uri.parse(lesson.externalLinks![0])),
                     icon: const Icon(Icons.launch)),
               const Gap(),
-              if (lesson.value.topics != null)
-                ChipList(values: lesson.value.topics!),
+              if (lesson.topics != null) ChipList(values: lesson.topics!),
               const Gap(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  if (lesson.value.mindMaps != null)
+                  if (lesson.mindMaps != null)
                     DuolingoIconButton(
                         borderWidth: 4,
                         padding: const EdgeInsets.all(18),
@@ -54,7 +51,7 @@ class LessonCard extends StatelessWidget {
                         ),
                         onPressed: () {
                           Get.toNamed(AppRoutes.mindMapScreen,
-                              arguments: lesson.value.mindMaps![0]);
+                              arguments: lesson.mindMaps![0]);
                         }),
                   DuolingoButton(
                       padding: const EdgeInsets.all(12),
@@ -69,7 +66,7 @@ class LessonCard extends StatelessWidget {
                       onPressed: () {
                         Get.toNamed(AppRoutes.assessmentScreen);
                       }),
-                  if (lesson.value.memoryTricks != null)
+                  if (lesson.memoryTricks != null)
                     DuolingoIconButton(
                         borderWidth: 4,
                         padding: const EdgeInsets.all(18),
@@ -81,7 +78,7 @@ class LessonCard extends StatelessWidget {
                         onPressed: () {
                           Get.toNamed(
                             AppRoutes.memoryTricksScreen,
-                            arguments: lesson.value.memoryTricks,
+                            arguments: lesson.memoryTricks,
                           );
                         }),
                 ],

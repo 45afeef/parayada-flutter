@@ -9,13 +9,16 @@ class LessonScreen extends GetWidget<LessonController> {
 
   @override
   Widget build(BuildContext context) {
+    // TODO - Important make sure this is called only once
+    controller.fetchLesson(1);
+
     return AppLayout(
       child: Center(
         child: Padding(
           padding: SizeConstant.smallPadding,
-          child: LessonCard(
-            lesson: controller.lesson,
-          ),
+          child: controller.lesson.value != null
+              ? Obx(() => LessonCard(lesson: controller.lesson.value!))
+              : const Text("loading"),
         ),
       ),
     );

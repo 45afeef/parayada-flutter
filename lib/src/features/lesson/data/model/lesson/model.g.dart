@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'lesson_model.dart';
+part of 'model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Lesson _$LessonFromJson(Map<String, dynamic> json) => Lesson(
+LessonModel _$LessonModelFromJson(Map<String, dynamic> json) => LessonModel(
       title: json['title'] as String,
       description: json['description'] as String,
       topics:
@@ -16,7 +16,8 @@ Lesson _$LessonFromJson(Map<String, dynamic> json) => Lesson(
           .toList(),
     );
 
-Map<String, dynamic> _$LessonToJson(Lesson instance) => <String, dynamic>{
+Map<String, dynamic> _$LessonModelToJson(LessonModel instance) =>
+    <String, dynamic>{
       'title': instance.title,
       'description': instance.description,
       'topics': instance.topics,
