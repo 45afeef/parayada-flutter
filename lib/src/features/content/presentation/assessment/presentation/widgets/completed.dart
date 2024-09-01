@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parayada/src/widgets/gap.dart';
+import '../../../../../../widgets/gap.dart';
 
 import '../../../../../../core/app_export.dart';
 

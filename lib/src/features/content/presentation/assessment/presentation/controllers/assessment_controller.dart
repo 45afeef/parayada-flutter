@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:parayada/src/features/content/presentation/assessment/domain/assessment_item.dart';
+import '../../domain/assessment_item.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../domain/assessment.dart';

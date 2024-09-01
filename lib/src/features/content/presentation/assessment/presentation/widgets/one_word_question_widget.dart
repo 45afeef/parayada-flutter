@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parayada/src/features/content/presentation/assessment/presentation/assessment_screen.dart';
+import '../assessment_screen.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../../../../../widgets/gap.dart';
