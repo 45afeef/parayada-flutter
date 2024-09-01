@@ -1,8 +1,7 @@
-import 'package:parayada/src/features/lesson/data/model/lesson/mapper.dart';
-import 'package:parayada/src/features/lesson/data/repositories/dummy_repo.dart';
-
 import '../../../../core/app_export.dart';
+import '../../data/model/lesson/mapper.dart';
 import '../../data/model/lesson/model.dart';
+import '../../data/repositories/dummy_repo.dart';
 import '../../domain/lesson_entity.dart';
 import '../../domain/repositories/lesson_repository.dart';
 
@@ -11,7 +10,7 @@ class LessonController extends GetxController {
 
   final LessonRepository _repo = DummyLessonRepo();
 
-  Rx<Lesson?> lesson = Lesson.empty().obs;
+  Rx<Lesson> lesson = Lesson.empty().obs;
 
   Future<Lesson> fetchLesson(int id) async {
     LessonModel response = await _repo.getLesson(id);

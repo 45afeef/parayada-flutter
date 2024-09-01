@@ -20,7 +20,7 @@ class DummyLessonRepo extends LessonRepository {
 
   @override
   Future<LessonModel> getLesson(int id) async {
-    final input = await rootBundle.loadString('assets/dumy_lesson.json');
+    final input = await rootBundle.loadString('assets/dummy_lesson.json');
 
     var map = jsonDecode(input);
     return LessonModel.fromJson(map);

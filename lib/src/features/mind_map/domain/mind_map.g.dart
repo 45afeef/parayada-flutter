@@ -11,7 +11,7 @@ MindMapNode _$MindMapNodeFromJson(Map<String, dynamic> json) => MindMapNode(
       description: json['description'] as String?,
       image: json['image'] as String?,
       excerpt: json['excerpt'] as String?,
-      connectedNodes: (json['connectedNodes'] as List<dynamic>)
+      children: (json['children'] as List<dynamic>)
           .map((e) => MindMapNode.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -22,7 +22,7 @@ Map<String, dynamic> _$MindMapNodeToJson(MindMapNode instance) =>
       'description': instance.description,
       'image': instance.image,
       'excerpt': instance.excerpt,
-      'connectedNodes': instance.connectedNodes.map((e) => e.toJson()).toList(),
+      'children': instance.children.map((e) => e.toJson()).toList(),
     };
 
 MindMap _$MindMapFromJson(Map<String, dynamic> json) => MindMap(

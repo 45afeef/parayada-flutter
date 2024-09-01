@@ -1,0 +1,102 @@
+{
+    "title": "This is the title of the lesson",
+    "description": "This is the description of the lesson",
+    "topics": [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five"
+    ],
+    "externalLinks": [
+        "https://www.youtube.com/?w=coasdc8zxz"
+    ],
+    "memoryTricks": [
+        {
+            "content": "This is the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is the first Memory TrickThis is the first Memory TrickThis is the first Memory Trick",
+            "type": "acronyms"
+        },
+        {
+            "content": "This the second Memory TrickThis is the second Memory TrickThis is the second Memory Trick",
+            "type": "acrostic"
+        },
+        {
+            "content": "This is the third Memory TrickThis is the third Memory TrickThis is the third Memory TrickThis is the third Memory Trick",
+            "type": "association"
+        },
+        {
+            "content": "This is the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the forth Memory TrickThis is the forth Memory TrickThis is the forth Memory TrickThis is the forth Memory Trick",
+            "type": "chunking"
+        },
+        {
+            "content": "This is the first Memory TrickThis is theis the first Memory TrickThis is theis the first Memory TrickThis is theis the fifth Memory TrickThis is the fifth Memory TrickThis is the fifth Memory TrickThis is the fifth Memory Trick",
+            "type": "methodOfLoci"
+        },
+        {
+            "content": "This is the sixth Memory TrickThis is the sixth Memory TrickThis is the sixth Memory TrickThis is the sixth Memory Trick",
+            "type": "mindPalace"
+        },
+        {
+            "content": "This is the seventh Memory TrickThis is the seventh Memory TrickThis is the seventh Memory TrickThis is the seventh Memory Trick",
+            "type": "songOrRhymes"
+        }
+    ],
+    "mindMaps": [
+        {
+            "name": "Mind Map Name",
+            "caption":"This is the caption of the mind map",
+            "rootNode": {
+                "name": "Root Node Name",
+                "description":"This is the description of the Mind Map",
+                "image":"dummy-image-url.png",
+                "excerpt":"This is the excerpt of the lesson",
+                "children": [
+                    {
+                        "name": "3",
+                        "children": [
+                            {
+                                "name": "3.1",
+                                "children": []
+                            },
+                            {
+                                "name": "3.2",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2",
+                        "children": [
+                            {
+                                "name": "2.1",
+                                "children": []
+                            },
+                            {
+                                "name": "2.3",
+                                "children": []
+                            },
+                            {
+                                "name": "2.2",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "1",
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ]
+}

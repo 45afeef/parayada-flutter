@@ -29,7 +29,7 @@ class MindMapAccordion extends StatelessWidget {
                 Text('Description: ${mindMap.rootNode.description}'),
               // Add more content as needed
               // Recursively build the child nodes
-              ..._buildChildNodes(mindMap.rootNode.connectedNodes),
+              ..._buildChildNodes(mindMap.rootNode.children),
             ],
           ),
         ),
@@ -53,7 +53,7 @@ class MindMapAccordion extends StatelessWidget {
                 // Display the content for each node
                 if (node.description != null) Text('${node.description}'),
                 // Add more content as needed
-                ..._buildChildNodes(node.connectedNodes)
+                ..._buildChildNodes(node.children)
               ],
             ),
           ),

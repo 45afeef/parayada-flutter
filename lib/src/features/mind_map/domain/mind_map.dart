@@ -8,17 +8,15 @@ class MindMapNode {
   String? description;
   String? image;
   String? excerpt;
-  List<MindMapNode> connectedNodes;
+  List<MindMapNode> children;
 
   MindMapNode({
     required this.name,
     this.description,
     this.image,
     this.excerpt,
-    required this.connectedNodes,
+    required this.children,
   });
-
-
 
   // A factory constructor that initializes an instance from a JSON map.
   factory MindMapNode.fromJson(Map<String, dynamic> json) =>
