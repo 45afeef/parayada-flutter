@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'color_constant.dart';
+
 class SizeConstant {
   // sizes
   static const double xsmall = 2;
@@ -57,12 +59,10 @@ class AppTextStyle {
 
   static const TextStyle h5Style = TextStyle(
     fontSize: SizeConstant.h5,
-    fontWeight: FontWeight.bold,
   );
 
   static const TextStyle h6Style = TextStyle(
     fontSize: SizeConstant.h6,
-    fontWeight: FontWeight.bold,
   );
 
   static TextStyle contentStyleNormal = GoogleFonts.nunito(
@@ -71,6 +71,17 @@ class AppTextStyle {
 
   static TextStyle contentStyleSmall = GoogleFonts.nunito(
     fontSize: SizeConstant.contentFontSmall,
+    color: Colors.grey,
   );
   // Add other text styles here
+
+  static TextStyle currectAnswer = contentStyleNormal.copyWith(
+    color: ColorConstant.green600,
+    fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle choosenAnswer = contentStyleNormal.copyWith(
+    color: ColorConstant.blueA100,
+    fontWeight: FontWeight.bold,
+  );
 }

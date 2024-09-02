@@ -4,6 +4,7 @@ import '../features/affiliate_url_screen/affiliate_url_screen.dart';
 import '../features/affiliate_url_screen/binding/affiliate_url_binding.dart';
 import '../features/content/presentation/assessment/application/assessment_binding.dart';
 import '../features/content/presentation/assessment/presentation/assessment_screen.dart';
+import '../features/content/presentation/assessment/presentation/result/presentation/result_screen.dart';
 import '../features/content/presentation/memorizing/presentation/pages/memory_tricks_screen.dart';
 import '../features/lesson/application/lesson_binding.dart';
 import '../features/lesson/presentation/pages/lesson_screen.dart';
@@ -23,6 +24,8 @@ class AppRoutes {
   static const String lessonsScreen = '/lessons';
 
   static const String assessmentScreen = '/assessment';
+
+  static const String resultScreen = '/result';
 
   static const String memoryTricksScreen = '/memory-trick';
 
@@ -49,6 +52,7 @@ class AppRoutes {
       page: () => const AssessmentScreen(),
       binding: AssessmentBinding(),
     ),
+    GetPage(name: resultScreen, page: () => const AssessmentResultScreen()),
     GetPage(
       name: memoryTricksScreen,
       page: () => const MemoryTrickScreen(),

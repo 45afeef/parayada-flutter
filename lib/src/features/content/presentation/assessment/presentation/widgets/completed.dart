@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import '../../../../../../widgets/gap.dart';
 
 import '../../../../../../core/app_export.dart';
+import '../../../../../../widgets/gap.dart';
 
 class CompletedWidget extends StatelessWidget {
   const CompletedWidget({
     super.key,
+    required this.onComplete,
   });
+
+  final Function() onComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +24,12 @@ class CompletedWidget extends StatelessWidget {
             children: [
               Text('lbl_assessment_end_screen'.tr),
               const Gap(),
+              const Divider(),
+              const Gap(),
               Text('lbl_do_you_want_to_submit'.tr),
               const Gap(gap: SizeConstant.large),
               DuolingoButton(
-                onPressed: () => throw UnimplementedError(),
+                onPressed: onComplete,
                 color: Colors.red,
                 child: Text(
                   'lbl_submit'.tr,

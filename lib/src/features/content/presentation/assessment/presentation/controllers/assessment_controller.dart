@@ -37,7 +37,7 @@ class AssessmentController extends GetxController {
 
     // Start or reset the timer when the exam starts
     _timer?.cancel();
-    _timer = Timer.periodic(1.seconds, (Timer t) => _updateElapsedTime());
+    _timer = Timer.periodic(1.seconds, (_) => _updateElapsedTime());
   }
 
   /// IMPROVEMENT APPRECIATED.
@@ -94,12 +94,7 @@ class AssessmentController extends GetxController {
     return assessmentResult.value.studentResponse[index]?.studentAnswer;
   }
 
-  String _getTimeSpentOnQuestion(int questionIndex) {
-    // Return the total time spent on a specific question
-
-    int seconds = assessmentResult
-            .value.studentResponse[questionIndex]?.timeTakenInMillisecond ??
-        0;
+  String formatedSeconds(int seconds) {
     seconds ~/= 1000;
     int minutes = seconds ~/ 60;
     int remainingSeconds = seconds % 60;
@@ -107,6 +102,16 @@ class AssessmentController extends GetxController {
     String formattedTime =
         '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
     return formattedTime;
+  }
+
+  String _getTimeSpentOnQuestion(int questionIndex) {
+    // Return the total time spent on a specific question
+
+    int seconds = assessmentResult
+            .value.studentResponse[questionIndex]?.timeTakenInMillisecond ??
+        0;
+
+    return formatedSeconds(seconds);
   }
 
   Future<Assessment> fetchAssessment() async {
@@ -119,12 +124,16 @@ class AssessmentController extends GetxController {
 
   @override
   void onClose() {
+    stopExam();
+
+    super.onClose();
+  }
+
+  void stopExam() {
     _timer?.cancel(); // Cancel the timer to prevent memory leaks
 
     // reset all variables
     assessmentResult = AssessmentResult().obs;
     currentQuestionIndex = -1;
-
-    super.onClose();
   }
 }

@@ -73,7 +73,9 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
                   child: Center(child: buildAssessmentWidget(assessmentItem)),
                 ),
               ),
-              const CompletedWidget()
+              CompletedWidget(onComplete: () {
+                Get.toNamed(AppRoutes.resultScreen);
+              })
             ],
           )),
     );
