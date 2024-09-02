@@ -52,13 +52,13 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
       return UnSupportedAssessmentItemTypeWidget();
     }
 
-    return Obx(() => AppLayout(
-          actions: [
-            Text('lbl_time_spent'.tr,
-                style: const TextStyle(fontWeight: FontWeight.bold)),
-            Text(controller.timeSpentOnCurrentQuestion),
-          ],
-          child: PageView(
+    return AppLayout(
+      actions: [
+        Text('lbl_time_spent'.tr,
+            style: const TextStyle(fontWeight: FontWeight.bold)),
+        Obx(() => Text(controller.timeSpentOnCurrentQuestion)),
+      ],
+      child: Obx(() => PageView(
             onPageChanged: (value) {
               if (value.isLowerThan(controller.assessment.value.items.length)) {
                 controller.currentQuestion = value;
@@ -75,8 +75,8 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
               ),
               const CompletedWidget()
             ],
-          ),
-        ));
+          )),
+    );
   }
 }
 
