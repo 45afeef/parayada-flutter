@@ -13,6 +13,7 @@ AssessmentModel _$AssessmentFromJson(Map<String, dynamic> json) =>
           case 'match_the_following':
             item = _$MatchTheFollowingFromJson(e);
           case 'mcq':
+          case 'true_or_false':
             item = _$McqFromJson(e);
           case 'one_word_question':
           default:

@@ -142,7 +142,7 @@
             ]
         },
         {
-            "type": "TrueOrFalse",
+            "type": "true_or_false",
             "question": "The only true or false question",
             "options": [
                 "more",
