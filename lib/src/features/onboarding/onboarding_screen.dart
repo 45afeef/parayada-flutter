@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:parayada_ui_collection/duolingo/button.dart';
 
 import '../../core/app_export.dart';
 
@@ -97,7 +96,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       onPressed: () {
                         if (currentItemIndex + 1 == items.length) {
                           PrefUtils().onboardingVisitStatus = true;
-                          Get.toNamed(AppRoutes.homeScreen);
+                          Get.offAllNamed(AppRoutes.homeScreen);
                         } else {
                           setState(() => currentItemIndex++);
                         }

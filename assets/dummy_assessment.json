@@ -1,0 +1,41 @@
+{
+    "name": "This is the First Term Exam",
+    "type": "screening",
+    "items": [
+        {
+            "type": "one_word_question",
+            "question": "What is your thoughts about Albert Eienstien"
+        },
+        {
+            "type": "mcq",
+            "question": "This is the question No One",
+            "options": [
+                "One",
+                "Two",
+                "Three",
+                "Four"
+            ]
+        },
+        {
+            "type": "flashcard",
+            "question": "This is the question No One",
+            "explanation": "This is the explanation"
+        },
+        {
+            "type": "match_the_following",
+            "question": "This is the question No Two",
+            "leftSideItems": [
+                "This",
+                "is",
+                "the",
+                "explanation"
+            ],
+            "rightSideItems": [
+                "This",
+                "is",
+                "the",
+                "explanation"
+            ]
+        }
+    ]
+}

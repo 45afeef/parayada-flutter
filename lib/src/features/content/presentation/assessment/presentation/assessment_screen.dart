@@ -18,8 +18,11 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
 
   @override
   Widget build(BuildContext context) {
-    // Invoke the startExam method of AssessmentController
-    controller.startExam();
+    controller.fetchAssessment().then(
+          (value) =>
+              // Invoke the startExam method of AssessmentController
+              controller.startExam(),
+        );
 
     // handle the UI of each assessment item based on type
     Widget buildAssessmentWidget(AssessmentItem assessmentItem) {
@@ -49,32 +52,31 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
       return UnSupportedAssessmentItemTypeWidget();
     }
 
-    return AppLayout(
-      actions: [
-        Text('lbl_time_spent'.tr,
-            style: const TextStyle(fontWeight: FontWeight.bold)),
-        Obx(() => Text(controller
-            .getTimeSpentOnQuestion(controller.currentQuestionIndex))),
-      ],
-      child: PageView(
-        onPageChanged: (value) {
-          if (value.isLowerThan(controller.assessment.items.length)) {
-            controller.currentQuestionIndex = value;
-          }
-          HapticFeedback.mediumImpact();
-        },
-        scrollDirection: Axis.vertical,
-        children: [
-          ...controller.assessment.items.map(
-            (assessmentItem) => Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(child: buildAssessmentWidget(assessmentItem)),
-            ),
+    return Obx(() => AppLayout(
+          actions: [
+            Text('lbl_time_spent'.tr,
+                style: const TextStyle(fontWeight: FontWeight.bold)),
+            Text(controller.timeSpentOnCurrentQuestion),
+          ],
+          child: PageView(
+            onPageChanged: (value) {
+              if (value.isLowerThan(controller.assessment.value.items.length)) {
+                controller.currentQuestion = value;
+              }
+              HapticFeedback.mediumImpact();
+            },
+            scrollDirection: Axis.vertical,
+            children: [
+              ...controller.assessment.value.items.map(
+                (assessmentItem) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: buildAssessmentWidget(assessmentItem)),
+                ),
+              ),
+              const CompletedWidget()
+            ],
           ),
-          const CompletedWidget()
-        ],
-      ),
-    );
+        ));
   }
 }
 

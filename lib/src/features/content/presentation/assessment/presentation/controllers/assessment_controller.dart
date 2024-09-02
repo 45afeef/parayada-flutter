@@ -1,59 +1,43 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import '../../domain/assessment_item.dart';
+import 'package:parayada/src/features/content/presentation/assessment/data/repositories/dummy_repo.dart';
+import 'package:parayada/src/features/content/presentation/assessment/domain/repositories/assessment_repository.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../domain/assessment.dart';
-import '../../domain/closed_ended/flashcard.dart';
-import '../../domain/closed_ended/mcq.dart';
-import '../../domain/closed_ended/true_or_false.dart';
-import '../../domain/open_ended/one_word.dart';
+import '../../domain/assessment_item.dart';
 
 class AssessmentController extends GetxController {
+  static AssessmentController get call => Get.find();
+
+  final AssessmentRepository _repo = DummyAssessmentRepo();
+
   /// AssessmentResult class will handle all the data storing related tasks in cache or memory
   /// This will collect and update the user input and time taken by each question, in
   /// AssessmentItemResponse object
   Rx<AssessmentResult> assessmentResult = AssessmentResult().obs;
+  Rx<Assessment> assessment = Assessment.empty().obs;
 
   /// Stores the current question index. this helps in managing the state and context
   int currentQuestionIndex = 0;
 
   Timer? _timer;
 
+  // Update the current question index and start time
+  set currentQuestion(int index) => currentQuestionIndex = index;
+
+  String get timeSpentOnCurrentQuestion =>
+      _getTimeSpentOnQuestion(currentQuestionIndex);
+
   void startExam() {
+    if (assessment.value == Assessment.empty()) return;
+
     currentQuestionIndex = 0;
 
     // Start or reset the timer when the exam starts
     _timer?.cancel();
-    _timer = Timer.periodic(
-        const Duration(seconds: 1), (Timer t) => _updateElapsedTime());
-  }
-
-  // Update the current question index and start time
-  set currentQuestion(int index) => currentQuestionIndex = index;
-
-  String? getSelectionFor(AssessmentItem item) {
-    final index = assessment.items.indexOf(item);
-
-    return assessmentResult.value.studentResponse[index]?.studentAnswer;
-  }
-
-  String getTimeSpentOnQuestion(int questionIndex) {
-    // Return the total time spent on a specific question
-
-    int seconds = assessmentResult
-            .value.studentResponse[questionIndex]?.timeTakenInMillisecond ??
-        0;
-    seconds ~/= 1000;
-
-    // int seconds = totalTimeSpent[questionIndex] ?? 0;
-
-    int minutes = seconds ~/ 60;
-    int remainingSeconds = seconds % 60;
-    String formattedTime =
-        '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
-    return formattedTime;
+    _timer = Timer.periodic(1.seconds, (Timer t) => _updateElapsedTime());
   }
 
   /// IMPROVEMENT APPRECIATED.
@@ -95,10 +79,42 @@ class AssessmentController extends GetxController {
 
     // TODO - remove snackbar
     ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text('User selected : $response')));
+
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('User selected : $response'),
+      behavior: SnackBarBehavior.floating,
+    ));
 
     assessmentResult.refresh(); // Notify listeners about the change
+  }
+
+  String? getSelectionFor(AssessmentItem item) {
+    final index = assessment.value.items.indexOf(item);
+
+    return assessmentResult.value.studentResponse[index]?.studentAnswer;
+  }
+
+  String _getTimeSpentOnQuestion(int questionIndex) {
+    // Return the total time spent on a specific question
+
+    int seconds = assessmentResult
+            .value.studentResponse[questionIndex]?.timeTakenInMillisecond ??
+        0;
+    seconds ~/= 1000;
+    int minutes = seconds ~/ 60;
+    int remainingSeconds = seconds % 60;
+
+    String formattedTime =
+        '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
+    return formattedTime;
+  }
+
+  Future<Assessment> fetchAssessment() async {
+    Assessment response = await _repo.getAssessment(1);
+
+    assessment.value = response;
+
+    return response;
   }
 
   @override
@@ -111,60 +127,4 @@ class AssessmentController extends GetxController {
 
     super.onClose();
   }
-
-  static AssessmentController get call => Get.find();
-
-  final Assessment assessment = Assessment(
-    name: 'name',
-    assessmentType: AssessmentType.summative,
-    items: [
-      FlashCard(
-          question: 'This is the first question in first flash card',
-          explanation: 'explanation'),
-      MCQ(
-          question: 'What is the capital of France?',
-          options: ['Paris', 'Rome', 'Berlin', 'Madrid']),
-      MCQ(
-          question: 'Which element has the chemical symbol O?',
-          options: ['Oxygen', 'Gold', 'Iron', 'Helium']),
-      FlashCard(
-          question: 'question in Second flash card',
-          explanation: 'explanation'),
-      MCQ(question: 'Who wrote Romeo and Juliet?', options: [
-        'William Shakespeare',
-        'Charles Dickens',
-        'Jane Austen',
-        'Mark Twain'
-      ]),
-      OneWordQuestion(
-          question: 'Who is commonly known as the father of India?'),
-      MCQ(
-          question: 'What is the largest planet in our solar system?',
-          options: ['Jupiter', 'Mars', 'Earth', 'Venus']),
-      MCQ(
-          question: 'What is the boiling point of water?',
-          options: ['100°C', '90°C', '120°C', '80°C']),
-      MCQ(question: 'Who painted the Mona Lisa?', options: [
-        'Leonardo da Vinci',
-        'Vincent Van Gogh',
-        'Pablo Picasso',
-        'Claude Monet'
-      ]),
-      MCQ(
-          question: 'What is the currency of Japan?',
-          options: ['Yen', 'Dollar', 'Euro', 'Won']),
-      MCQ(
-          question: 'How many continents are there on Earth?',
-          options: ['Seven', 'Six', 'Five', 'Eight']),
-      MCQ(
-          question: 'What is the main ingredient in sushi?',
-          options: ['Rice', 'Fish', 'Cheese', 'Beef']),
-      TrueOrFalse(
-          question: 'The only true or false question',
-          options: ["more", "wow"]),
-      MCQ(
-          question: 'What is the hardest natural substance?',
-          options: ['Diamond', 'Gold', 'Iron', 'Quartz'])
-    ],
-  );
 }

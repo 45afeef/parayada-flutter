@@ -43,6 +43,9 @@ class Assessment extends Content {
     required this.assessmentType,
     required this.items,
   });
+
+  factory Assessment.empty() =>
+      Assessment(name: '', assessmentType: AssessmentType.ipsative, items: []);
 }
 
 class AssessmentResult {
