@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/app_export.dart';
+import '../../domain/lesson_entity.dart';
 import '../controllers/lesson_controller.dart';
 import '../widgets/lesson_card.dart';
 
@@ -16,8 +17,8 @@ class LessonScreen extends GetWidget<LessonController> {
       child: Center(
         child: Padding(
           padding: SizeConstant.smallPadding,
-          child: controller.lesson.value != null
-              ? Obx(() => LessonCard(lesson: controller.lesson.value!))
+          child: controller.lesson.value != Lesson.empty()
+              ? Obx(() => LessonCard(lesson: controller.lesson.value))
               : const Text("loading"),
         ),
       ),

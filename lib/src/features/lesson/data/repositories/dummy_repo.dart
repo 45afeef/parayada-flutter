@@ -5,7 +5,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import '../../domain/repositories/lesson_repository.dart';
 import '../model/lesson/model.dart';
 
-class DummyLessonRepo extends LessonRepository {
+class DummyLessonRepo implements LessonRepository {
   @override
   Future<void> deleteLesson(int id) {
     // TODO: implement deleteLesson

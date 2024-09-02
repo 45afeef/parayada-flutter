@@ -9,15 +9,11 @@ abstract class AssessmentItem extends Content {
 }
 
 abstract class ClosedEndedAssessmentItem extends AssessmentItem {
-  ClosedEndedAssessmentItem({
-    required super.question,
-  });
+  ClosedEndedAssessmentItem({required super.question});
 }
 
 abstract class OpenEndedAssessmentItem extends AssessmentItem {
-  OpenEndedAssessmentItem({
-    required super.question,
-  });
+  OpenEndedAssessmentItem({required super.question});
 }
 
 /// This class [AssessmentItemResponse] is a common result class for all [AssessmentItem]s
@@ -29,7 +25,7 @@ class AssessmentItemResponse {
 
   /// True only if the studentAnswer is atleast 90% similar to currentAnswer
   bool? isCurrect;
-  
+
   double? markScored;
 
   AssessmentItemResponse({

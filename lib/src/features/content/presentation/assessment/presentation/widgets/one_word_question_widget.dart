@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../assessment_screen.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../../../../../widgets/gap.dart';
 import '../../domain/open_ended/one_word.dart';
+import '../assessment_screen.dart';
 
 class OneWordQuestionWidget extends AssessmentWidget<OneWordQuestion> {
   OneWordQuestionWidget({
@@ -29,6 +29,7 @@ class OneWordQuestionWidget extends AssessmentWidget<OneWordQuestion> {
           TextField(controller: controller),
           const Gap(gap: SizeConstant.large),
           DuolingoButton(
+              elevation: const Offset(0, 6),
               child: const Text('Submit'),
               onPressed: () => onResponse(controller.text))
         ],

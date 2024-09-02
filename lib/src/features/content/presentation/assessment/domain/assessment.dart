@@ -37,38 +37,12 @@ class Assessment extends Content {
   final String name;
   final AssessmentType assessmentType;
   final List<AssessmentItem> items;
-  Map<String, dynamic> performanceResults;
 
   Assessment({
     required this.name,
     required this.assessmentType,
     required this.items,
-    this.performanceResults = const {},
   });
-
-  // Method to calculate and store performance after assessment completion
-  void calculatePerformance() {
-    performanceResults = {
-      'totalScore': getTotalScore(),
-      'averageTimePerItem': getAverageTimePerItem(),
-      // Other performance metrics
-    };
-  }
-
-  // TODO - Find an alternative as item.calculateScore() method is deprecated
-  // Implement these methods to get data from AssessmentItems
-  double getTotalScore() {
-    // Logic to sum scores from all AssessmentItems
-    double totalScore = 0;
-    for (AssessmentItem item in items) {}
-    return totalScore;
-  }
-
-  double getAverageTimePerItem() {
-    // TODO - complete the method
-    // Logic to calculate average time taken per AssessmentItem
-    throw UnimplementedError();
-  }
 }
 
 class AssessmentResult {
