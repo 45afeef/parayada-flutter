@@ -72,18 +72,12 @@ class AssessmentController extends GetxController {
     assessmentResult.refresh();
   }
 
-  // TODO - find out how to remove context and use GetX for snackbar
   void handleStudentResponse(dynamic response, BuildContext context) {
     assessmentResult.value.studentResponse[currentQuestionIndex]!
         .updateResponse(response.toString());
 
-    // TODO - remove snackbar
-    ScaffoldMessenger.of(context).clearSnackBars();
-
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text('User selected : $response'),
-      behavior: SnackBarBehavior.floating,
-    ));
+    Get.closeAllSnackbars();
+    Get.snackbar('Selected Answer is', response.toString());
 
     assessmentResult.refresh(); // Notify listeners about the change
   }

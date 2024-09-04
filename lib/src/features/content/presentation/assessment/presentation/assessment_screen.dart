@@ -4,11 +4,13 @@ import 'package:flutter/services.dart';
 import '../../../../../core/app_export.dart';
 import '../domain/assessment_item.dart';
 import '../domain/closed_ended/flashcard.dart';
+import '../domain/closed_ended/match_the_following.dart';
 import '../domain/closed_ended/mcq.dart';
 import '../domain/open_ended/one_word.dart';
 import 'controllers/assessment_controller.dart';
 import 'widgets/completed.dart';
 import 'widgets/flash_card.dart';
+import 'widgets/match_the_tollowing_widget.dart';
 import 'widgets/mcq.dart';
 import 'widgets/one_word_question_widget.dart';
 import 'widgets/unsupported_assessment_type.dart';
@@ -43,6 +45,12 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
       }
       if (assessmentItem is OneWordQuestion) {
         return OneWordQuestionWidget(
+          item: assessmentItem,
+          onResponse: (res) => controller.handleStudentResponse(res, context),
+        );
+      }
+      if (assessmentItem is MatchTheFollowing) {
+        return MatchTheFollowingWidget(
           item: assessmentItem,
           onResponse: (res) => controller.handleStudentResponse(res, context),
         );
