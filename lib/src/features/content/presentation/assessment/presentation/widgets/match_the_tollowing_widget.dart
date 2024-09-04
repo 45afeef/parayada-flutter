@@ -30,32 +30,43 @@ class _MatchTheFollowingWidgetState extends State<MatchTheFollowingWidget> {
     Colors.green,
     Colors.red,
     Colors.blue,
-    Colors.pink,
     Colors.amber,
     Colors.deepPurple,
     Colors.lightGreen,
     Colors.cyan,
+    Colors.pink,
   ];
 
   void matchItems() {
-    // Check if there is one from both side is selected now
-    if (currentSelectedLeftItem == null || currentSelectedRightItem == null) {
-      return;
-    }
-
     var color = selectedColors[0];
-    selectedColors.removeAt(0);
 
     var i = {
       'color': color,
       'left': currentSelectedLeftItem,
       'right': currentSelectedRightItem,
     };
+
     setState(() {
-      matchedItems.add(i);
+      if (matchedItems.contains(i)) {
+        matchedItems.remove(i);
+      } else {
+        matchedItems.add(i);
+      }
+    });
+
+    if (currentSelectedLeftItem != null && currentSelectedRightItem != null) {
+      selectedColors.removeAt(0);
       currentSelectedLeftItem = null;
       currentSelectedRightItem = null;
-    });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    widget.item.leftSideItems.shuffle();
+    widget.item.rightSideItems.shuffle();
   }
 
   @override
@@ -86,6 +97,7 @@ class _MatchTheFollowingWidgetState extends State<MatchTheFollowingWidget> {
                       } else {
                         currentSelectedLeftItem = null;
                       }
+                      print('woo');
                     },
                   ),
                   // Right side items
@@ -103,6 +115,7 @@ class _MatchTheFollowingWidgetState extends State<MatchTheFollowingWidget> {
                         } else {
                           currentSelectedRightItem = null;
                         }
+                        print('woo');
                       }),
                 ],
               ),
@@ -130,8 +143,6 @@ class MtfItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    items.shuffle();
-
     Colors.grey;
 
     return Column(
