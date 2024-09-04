@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:parayada/src/core/app_export.dart';
 
+import '../../../../../../core/app_export.dart';
 import '../../domain/closed_ended/match_the_following.dart';
 
 class MatchTheFollowingWidget extends StatefulWidget {
@@ -46,12 +46,14 @@ class _MatchTheFollowingWidgetState extends State<MatchTheFollowingWidget> {
       'right': currentSelectedRightItem,
     };
 
+    var match = matchedItems
+        .firstWhereOrNull((e) => e['left'] == null || e['right'] == null);
+
     setState(() {
-      if (matchedItems.contains(i)) {
-        matchedItems.remove(i);
-      } else {
-        matchedItems.add(i);
+      if (match != null) {
+        matchedItems.remove(match);
       }
+      matchedItems.add(i);
     });
 
     if (currentSelectedLeftItem != null && currentSelectedRightItem != null) {
@@ -91,13 +93,9 @@ class _MatchTheFollowingWidgetState extends State<MatchTheFollowingWidget> {
                       ...widget.item.leftSideItems.map((e) => '$e --')
                     ],
                     onSelection: (value) {
-                      if (currentSelectedLeftItem != value) {
-                        currentSelectedLeftItem = value;
-                        matchItems();
-                      } else {
-                        currentSelectedLeftItem = null;
-                      }
-                      print('woo');
+                      currentSelectedLeftItem = value;
+
+                      matchItems();
                     },
                   ),
                   // Right side items
@@ -109,13 +107,9 @@ class _MatchTheFollowingWidgetState extends State<MatchTheFollowingWidget> {
                         ...widget.item.rightSideItems.map((e) => '$e --')
                       ],
                       onSelection: (value) {
-                        if (currentSelectedRightItem != value) {
-                          currentSelectedRightItem = value;
-                          matchItems();
-                        } else {
-                          currentSelectedRightItem = null;
-                        }
-                        print('woo');
+                        currentSelectedRightItem = value;
+
+                        matchItems();
                       }),
                 ],
               ),
@@ -134,17 +128,17 @@ class MtfItems extends StatelessWidget {
     required this.onSelection,
     required this.matchedItems,
     required this.place,
+    this.unSelectedColor = Colors.grey,
   });
 
   final String place;
   final List<String> items;
   final List<Map<String, dynamic>> matchedItems;
   final ValueChanged<String> onSelection;
+  final Color unSelectedColor;
 
   @override
   Widget build(BuildContext context) {
-    Colors.grey;
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -153,11 +147,11 @@ class MtfItems extends StatelessWidget {
             (element) => element[place] == e,
           );
 
-          Color color = match?['color'] ?? Colors.grey;
+          Color color = match?['color'] ?? unSelectedColor;
           return Item(
             selectionColor: color,
             text: e,
-            onSelection: onSelection,
+            onSelection: match == null ? onSelection : (_) {},
           );
         }),
       ],
