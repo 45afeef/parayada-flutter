@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:parayada/src/features/content/presentation/assessment/data/models/assessment_model.dart';
 
 import '../../domain/repositories/assessment_repository.dart';
+import '../models/assessment_model.dart';
 
 class DummyAssessmentRepo implements AssessmentRepository {
   @override

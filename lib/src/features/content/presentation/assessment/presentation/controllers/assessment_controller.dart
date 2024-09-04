@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:parayada/src/features/content/presentation/assessment/data/repositories/dummy_repo.dart';
-import 'package:parayada/src/features/content/presentation/assessment/domain/repositories/assessment_repository.dart';
 
 import '../../../../../../core/app_export.dart';
+import '../../data/repositories/dummy_repo.dart';
 import '../../domain/assessment.dart';
 import '../../domain/assessment_item.dart';
+import '../../domain/repositories/assessment_repository.dart';
 
 class AssessmentController extends GetxController {
   static AssessmentController get call => Get.find();

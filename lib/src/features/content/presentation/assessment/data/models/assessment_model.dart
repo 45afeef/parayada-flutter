@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:parayada/src/features/content/presentation/assessment/domain/assessment_item.dart';
 
 import '../../domain/assessment.dart';
+import '../../domain/assessment_item.dart';
 import '../../domain/closed_ended/flashcard.dart';
 import '../../domain/closed_ended/match_the_following.dart';
 import '../../domain/closed_ended/mcq.dart';
