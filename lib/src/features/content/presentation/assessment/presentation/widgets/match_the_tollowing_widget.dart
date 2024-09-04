@@ -3,14 +3,60 @@ import 'package:flutter/services.dart';
 import 'package:parayada/src/core/app_export.dart';
 
 import '../../domain/closed_ended/match_the_following.dart';
-import '../assessment_screen.dart';
 
-class MatchTheFollowingWidget extends AssessmentWidget<MatchTheFollowing> {
+class MatchTheFollowingWidget extends StatefulWidget {
   const MatchTheFollowingWidget({
     super.key,
-    required super.item,
-    required super.onResponse,
+    required this.item,
+    required this.onResponse,
   });
+
+  final MatchTheFollowing item;
+  final void Function(dynamic) onResponse;
+
+  @override
+  State<MatchTheFollowingWidget> createState() =>
+      _MatchTheFollowingWidgetState();
+}
+
+class _MatchTheFollowingWidgetState extends State<MatchTheFollowingWidget> {
+  List<Map<String, dynamic>> matchedItems =
+      []; // Keys are - leftItem, rightItem, Color
+
+  String? currentSelectedLeftItem;
+  String? currentSelectedRightItem;
+
+  final List<Color> selectedColors = [
+    Colors.green,
+    Colors.red,
+    Colors.blue,
+    Colors.pink,
+    Colors.amber,
+    Colors.deepPurple,
+    Colors.lightGreen,
+    Colors.cyan,
+  ];
+
+  void matchItems() {
+    // Check if there is one from both side is selected now
+    if (currentSelectedLeftItem == null || currentSelectedRightItem == null) {
+      return;
+    }
+
+    var color = selectedColors[0];
+    selectedColors.removeAt(0);
+
+    var i = {
+      'color': color,
+      'left': currentSelectedLeftItem,
+      'right': currentSelectedRightItem,
+    };
+    setState(() {
+      matchedItems.add(i);
+      currentSelectedLeftItem = null;
+      currentSelectedRightItem = null;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +66,44 @@ class MatchTheFollowingWidget extends AssessmentWidget<MatchTheFollowing> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Text(item.question),
+            Text(widget.item.question),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   // Left side items
                   MtfItems(
-                      items: [...item.leftSideItems, ...item.leftSideItems]),
+                    place: 'left',
+                    matchedItems: matchedItems,
+                    items: [
+                      ...widget.item.leftSideItems,
+                      ...widget.item.leftSideItems.map((e) => '$e --')
+                    ],
+                    onSelection: (value) {
+                      if (currentSelectedLeftItem != value) {
+                        currentSelectedLeftItem = value;
+                        matchItems();
+                      } else {
+                        currentSelectedLeftItem = null;
+                      }
+                    },
+                  ),
                   // Right side items
                   MtfItems(
-                      items: [...item.rightSideItems, ...item.rightSideItems]),
+                      place: 'right',
+                      matchedItems: matchedItems,
+                      items: [
+                        ...widget.item.rightSideItems,
+                        ...widget.item.rightSideItems.map((e) => '$e --')
+                      ],
+                      onSelection: (value) {
+                        if (currentSelectedRightItem != value) {
+                          currentSelectedRightItem = value;
+                          matchItems();
+                        } else {
+                          currentSelectedRightItem = null;
+                        }
+                      }),
                 ],
               ),
             ),
@@ -45,44 +118,71 @@ class MtfItems extends StatelessWidget {
   const MtfItems({
     super.key,
     required this.items,
+    required this.onSelection,
+    required this.matchedItems,
+    required this.place,
   });
 
+  final String place;
   final List<String> items;
-
-  final Color unSelectedColor = Colors.grey;
-  final List<Color> selectedColors = const [
-    Colors.green,
-    Colors.red,
-    Colors.blue,
-    Colors.pink,
-    Colors.amber,
-    Colors.deepPurple,
-    Colors.lightGreen,
-    Colors.cyan,
-  ];
+  final List<Map<String, dynamic>> matchedItems;
+  final ValueChanged<String> onSelection;
 
   @override
   Widget build(BuildContext context) {
     items.shuffle();
+
+    Colors.grey;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        ...items.map((e) => SizedBox(
-              width: 140,
-              child: DuolingoButton(
-                color: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                radius: const BorderRadius.all(Radius.circular(8)),
-                shadowColor: Colors.greenAccent[700],
-                border: Border.all(color: Colors.greenAccent[700]!, width: 2),
-                elevation: const Offset(0, 4),
-                onPressed: () {
-                  HapticFeedback.lightImpact();
-                },
-                child: Center(child: Text(e)),
-              ),
-            ))
+        ...items.map((e) {
+          Map<String, dynamic>? match = matchedItems.firstWhereOrNull(
+            (element) => element[place] == e,
+          );
+
+          Color color = match?['color'] ?? Colors.grey;
+          return Item(
+            selectionColor: color,
+            text: e,
+            onSelection: onSelection,
+          );
+        }),
       ],
+    );
+  }
+}
+
+class Item extends StatelessWidget {
+  const Item({
+    super.key,
+    required this.selectionColor,
+    required this.text,
+    required this.onSelection,
+  });
+
+  final Color selectionColor;
+  final String text;
+  final ValueChanged<String> onSelection;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 140,
+      child: DuolingoButton(
+        color: Colors.white,
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        radius: const BorderRadius.all(Radius.circular(8)),
+        shadowColor: selectionColor,
+        border: Border.all(color: selectionColor, width: 2),
+        elevation: const Offset(0, 4),
+        onPressed: () {
+          HapticFeedback.lightImpact();
+          onSelection(text);
+        },
+        child: Center(child: Text(text)),
+      ),
     );
   }
 }
