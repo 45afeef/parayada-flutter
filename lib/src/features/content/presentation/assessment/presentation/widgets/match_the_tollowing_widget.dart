@@ -78,6 +78,7 @@ class _MatchTheFollowingWidgetState extends State<MatchTheFollowingWidget> {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(widget.item.question),
             Expanded(
@@ -114,6 +115,22 @@ class _MatchTheFollowingWidgetState extends State<MatchTheFollowingWidget> {
                 ],
               ),
             ),
+            DuolingoButton(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                radius: BorderRadius.circular(8),
+                color: Colors.green,
+                child: const Center(child: Text("Submit")),
+                onPressed: () {
+                  var answer = matchedItems
+                      .where((a) => a['left'] != null && a['right'] != null)
+                      .toList()
+                      .fold({}, (a, b) {
+                    a[b['left']] = b['right'];
+                    return a;
+                  });
+
+                  widget.onResponse(answer);
+                })
           ],
         ),
       ),
