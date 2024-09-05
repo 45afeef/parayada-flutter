@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../core/constants/image_constant.dart';
@@ -33,7 +35,16 @@ class AppLayout extends StatelessWidget {
             fit: BoxFit.cover, // Covers the entire widget area
           ),
         ),
-        child: SafeArea(child: child),
+        child: SafeArea(
+            child: MediaQuery.of(context).size.width > 550
+                ? Center(
+                    child: SizedBox(
+                      width:
+                          min(MediaQuery.of(context).size.width * 0.80, 1000),
+                      child: child,
+                    ),
+                  )
+                : child),
       ),
     );
   }
