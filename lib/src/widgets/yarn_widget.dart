@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
 
+/// A custom widget that connects widgets with the same tag using a virtual yarn.
 class YarnWidget extends StatefulWidget {
   final String tag;
   final Widget child;
+  final Color color;
+  final double width;
 
-  const YarnWidget({super.key, required this.tag, required this.child});
+  /// Creates a YarnWidget.
+  ///
+  /// The [tag] is used to identify widgets that should be connected.
+  /// The [child] is the widget to be displayed.
+  /// The [color] is the color of the yarn connecting the widgets.
+  /// The [width] is the width of the yarn connecting the widgets.
+  const YarnWidget({
+    super.key,
+    required this.tag,
+    required this.child,
+    this.color = Colors.blue,
+    this.width = 2.0,
+  });
 
   @override
   State<YarnWidget> createState() => _YarnWidgetState();
@@ -37,7 +52,8 @@ class _YarnWidgetState extends State<YarnWidget> {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      foregroundPainter: _YarnPainter(tag: widget.tag, key: _key),
+      foregroundPainter: _YarnPainter(
+          tag: widget.tag, key: _key, color: widget.color, width: widget.width),
       child: KeyedSubtree(key: _key, child: widget.child),
     );
   }
@@ -46,8 +62,15 @@ class _YarnWidgetState extends State<YarnWidget> {
 class _YarnPainter extends CustomPainter {
   final String tag;
   final GlobalKey key;
+  final Color color;
+  final double width;
 
-  _YarnPainter({required this.tag, required this.key});
+  _YarnPainter({
+    required this.tag,
+    required this.key,
+    required this.color,
+    required this.width,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -71,8 +94,8 @@ class _YarnPainter extends CustomPainter {
           .globalToLocal(otherBox.localToGlobal(otherBox.paintBounds.center));
 
       final paint = Paint()
-        ..color = Colors.blue
-        ..strokeWidth = 2.0;
+        ..color = color
+        ..strokeWidth = width;
 
       canvas.drawLine(
         currentPosition,
