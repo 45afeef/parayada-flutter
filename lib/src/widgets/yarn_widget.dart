@@ -52,7 +52,7 @@ class _YarnWidgetState extends State<YarnWidget> {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      foregroundPainter: _YarnPainter(
+      painter: _YarnPainter(
           tag: widget.tag, key: _key, color: widget.color, width: widget.width),
       child: KeyedSubtree(key: _key, child: widget.child),
     );
@@ -107,6 +107,6 @@ class _YarnPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
+    return false;
   }
 }

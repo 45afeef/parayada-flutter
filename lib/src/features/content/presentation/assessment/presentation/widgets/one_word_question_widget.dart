@@ -30,7 +30,7 @@ class OneWordQuestionWidget extends AssessmentWidget<OneWordQuestion> {
           const Gap(gap: SizeConstant.large),
           DuolingoButton(
               elevation: const Offset(0, 6),
-              child: const Text('Submit'),
+              child: Text('lbl_submit'.tr,),
               onPressed: () => onResponse(controller.text))
         ],
       ),
