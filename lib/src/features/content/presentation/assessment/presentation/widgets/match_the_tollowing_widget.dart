@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../../../core/app_export.dart';
-import '../../../../../../widgets/yarn_widget.dart';
 import '../../domain/closed_ended/match_the_following.dart';
 
 class MatchTheFollowingWidget extends StatefulWidget {
@@ -190,21 +189,18 @@ class Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 140,
-      child: YarnWidget(
-        tag: text,
-        child: DuolingoButton(
-          color: Colors.white,
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          radius: const BorderRadius.all(Radius.circular(8)),
-          shadowColor: selectionColor,
-          border: Border.all(color: selectionColor, width: 2),
-          elevation: const Offset(0, 4),
-          onPressed: () {
-            HapticFeedback.lightImpact();
-            onSelection(text);
-          },
-          child: Center(child: Text(text)),
-        ),
+      child: DuolingoButton(
+        color: Colors.white,
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        radius: const BorderRadius.all(Radius.circular(8)),
+        shadowColor: selectionColor,
+        border: Border.all(color: selectionColor, width: 2),
+        elevation: const Offset(0, 4),
+        onPressed: () {
+          HapticFeedback.lightImpact();
+          onSelection(text);
+        },
+        child: Center(child: Text(text)),
       ),
     );
   }
