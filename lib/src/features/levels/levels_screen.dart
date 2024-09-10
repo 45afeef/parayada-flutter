@@ -11,30 +11,36 @@ class LevelsScreen extends StatefulWidget {
 }
 
 class _LevelsScreenState extends State<LevelsScreen> {
-  int index = 0;
-
   @override
   Widget build(BuildContext context) {
     return AppLayout(
-      child: Center(
-        child: ListWheelScrollView(
-          itemExtent: 112,
-          children: [
-            ...List.generate(
-                50,
-                (index) => Container(
-                      margin: const EdgeInsets.all(16),
-                      width: 80,
-                      height: 80,
-                      child: DuolingoIconButton(
-                        child: Align(child: Text('${index + 1}')),
-                        onPressed: () {
-                          Get.toNamed(AppRoutes.lessonsScreen);
-                        },
-                      ),
-                    )),
-          ],
-        ),
+      child: ListView.builder(
+        itemCount: 50,
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              child: Transform(
+                alignment: Alignment.bottomCenter,
+                transform: Matrix4.identity()
+                  ..rotateX(0.7)
+                  ..rotateY(-0),
+                child: SizedBox(
+                  width: 80,
+                  height: 80,
+                  child: DuolingoIconButton(
+                    borderWidth: 3,
+                    onPressed: () {
+                      Get.toNamed(AppRoutes.lessonsScreen);
+                    },
+                    padding: EdgeInsets.zero,
+                    child: Align(child: Text('${index + 1}')),
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
