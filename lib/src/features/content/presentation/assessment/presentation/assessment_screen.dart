@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../../core/app_export.dart';
+import '../domain/assessment.dart';
 import '../domain/assessment_item.dart';
 import '../domain/closed_ended/flashcard.dart';
 import '../domain/closed_ended/match_the_following.dart';
@@ -20,12 +21,6 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
 
   @override
   Widget build(BuildContext context) {
-    controller.fetchAssessment().then(
-          (value) =>
-              // Invoke the startExam method of AssessmentController
-              controller.startExam(),
-        );
-
     // handle the UI of each assessment item based on type
     Widget buildAssessmentWidget(AssessmentItem assessmentItem) {
       if (assessmentItem is MCQ) {
@@ -66,8 +61,21 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
             style: const TextStyle(fontWeight: FontWeight.bold)),
         Obx(() => Text(controller.timeSpentOnCurrentQuestion)),
       ],
-      child: Obx(() => PageView(
+      child: FutureBuilder<Assessment>(
+        future: controller.fetchAssessment(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return Card(child: Text('error_loading_assessemnt'.tr));
+          }
+          if (!snapshot.hasData) {
+            return const CircularProgressIndicator();
+          }
+
+          controller.startExam();
+          return PageView(
             onPageChanged: (value) {
+              // Update the current Question.
+              // Why this check - to make sure the last page is shown well. as the last page is not a question page. but a submit page.
               if (value.isLowerThan(controller.assessment.value.items.length)) {
                 controller.currentQuestion = value;
               }
@@ -85,7 +93,9 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
                 Get.toNamed(AppRoutes.resultScreen);
               })
             ],
-          )),
+          );
+        },
+      ),
     );
   }
 }

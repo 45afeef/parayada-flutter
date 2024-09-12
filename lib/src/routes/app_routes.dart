@@ -21,7 +21,7 @@ class AppRoutes {
 
   static const String levelsScreen = '/levels';
 
-  static const String lessonsScreen = '/lessons';
+  static const String lessonScreen = '/lessons';
 
   static const String assessmentScreen = '/assessment';
 
@@ -43,7 +43,7 @@ class AppRoutes {
     GetPage(name: mindMapScreen, page: () => const MindMapScreen()),
     GetPage(name: levelsScreen, page: () => const LevelsScreen()),
     GetPage(
-      name: lessonsScreen,
+      name: lessonScreen,
       page: () => const LessonScreen(),
       binding: LessonBinding(),
     ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:parayada/src/features/lesson/presentation/widgets/lesson_card.dart';
 
 import '../../../../core/app_export.dart';
-import '../../domain/lesson_entity.dart';
 import '../controllers/lesson_controller.dart';
-import '../widgets/lesson_card.dart';
 
 class LessonScreen extends GetWidget<LessonController> {
   const LessonScreen({super.key});
@@ -11,16 +11,26 @@ class LessonScreen extends GetWidget<LessonController> {
   @override
   Widget build(BuildContext context) {
     // TODO - Important make sure this is called only once
-    controller.fetchLesson(1);
+    final future = controller.fetchLesson(1);
 
     return AppLayout(
       child: Center(
         child: Padding(
-          padding: SizeConstant.smallPadding,
-          child: controller.lesson.value != Lesson.empty()
-              ? Obx(() => LessonCard(lesson: controller.lesson.value))
-              : const Text("loading"),
-        ),
+            padding: SizeConstant.smallPadding,
+            child: FutureBuilder(
+                future: future,
+                builder: (context, snapshort) {
+                  if (snapshort.hasError) {
+                    return Card(child: Text("error_fetching_lesson".tr));
+                  }
+                  if (!snapshort.hasData) {
+                    return const CircularProgressIndicator();
+                  }
+                  
+                  return LessonCard(lesson: snapshort.data!)
+                      .animate(delay: const Duration(milliseconds: 100))
+                      .scale();
+                })),
       ),
     );
   }

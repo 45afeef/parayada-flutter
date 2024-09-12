@@ -1,6 +1,6 @@
 {
     "title": "This is the title of the lesson",
-    "description": "This is the description of the lesson",
+    "description": "#This is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the *description* of the lesson\nThis is the ~description~ of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\n#This is the description of the lesson\n##This is the description of the lesson\n###This is the description of the lesson\n####This is the description of the lesson\nThis is the <h2>description</h2> of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\nThis is the description of the lesson\n",
     "topics": [
         "one",
         "two",
@@ -54,12 +54,12 @@
     "mindMaps": [
         {
             "name": "Mind Map Name",
-            "caption":"This is the caption of the mind map",
+            "caption": "This is the caption of the mind map",
             "rootNode": {
                 "name": "Root Node Name",
-                "description":"This is the description of the Mind Map",
-                "image":"dummy-image-url.png",
-                "excerpt":"This is the excerpt of the lesson",
+                "description": "This is the description of the Mind Map",
+                "image": "dummy-image-url.png",
+                "excerpt": "This is the excerpt of the lesson",
                 "children": [
                     {
                         "name": "3",

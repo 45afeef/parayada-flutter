@@ -64,7 +64,8 @@ class LessonCard extends StatelessWidget {
                         style: const TextStyle(color: Colors.white),
                       ),
                       onPressed: () {
-                        Get.toNamed(AppRoutes.assessmentScreen);
+                        Get.toNamed(AppRoutes.assessmentScreen,
+                            arguments: {'id': lesson});
                       }),
                   if (lesson.memoryTricks != null)
                     DuolingoIconButton(
