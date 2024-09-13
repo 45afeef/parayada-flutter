@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'mind_map.dart';
+part of 'mind_map_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,53 +14,53 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-MindMapNode _$MindMapNodeFromJson(Map<String, dynamic> json) {
-  return _MindMapNode.fromJson(json);
+MindMapNodeModel _$MindMapNodeModelFromJson(Map<String, dynamic> json) {
+  return _MindMapNodeModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$MindMapNode {
+mixin _$MindMapNodeModel {
   String get name => throw _privateConstructorUsedError;
-  List<MindMapNode> get children => throw _privateConstructorUsedError;
+  List<MindMapNodeModel> get children => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
   String? get excerpt => throw _privateConstructorUsedError;
 
-  /// Serializes this MindMapNode to a JSON map.
+  /// Serializes this MindMapNodeModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of MindMapNode
+  /// Create a copy of MindMapNodeModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MindMapNodeCopyWith<MindMapNode> get copyWith =>
+  $MindMapNodeModelCopyWith<MindMapNodeModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MindMapNodeCopyWith<$Res> {
-  factory $MindMapNodeCopyWith(
-          MindMapNode value, $Res Function(MindMapNode) then) =
-      _$MindMapNodeCopyWithImpl<$Res, MindMapNode>;
+abstract class $MindMapNodeModelCopyWith<$Res> {
+  factory $MindMapNodeModelCopyWith(
+          MindMapNodeModel value, $Res Function(MindMapNodeModel) then) =
+      _$MindMapNodeModelCopyWithImpl<$Res, MindMapNodeModel>;
   @useResult
   $Res call(
       {String name,
-      List<MindMapNode> children,
+      List<MindMapNodeModel> children,
       String? description,
       String? image,
       String? excerpt});
 }
 
 /// @nodoc
-class _$MindMapNodeCopyWithImpl<$Res, $Val extends MindMapNode>
-    implements $MindMapNodeCopyWith<$Res> {
-  _$MindMapNodeCopyWithImpl(this._value, this._then);
+class _$MindMapNodeModelCopyWithImpl<$Res, $Val extends MindMapNodeModel>
+    implements $MindMapNodeModelCopyWith<$Res> {
+  _$MindMapNodeModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MindMapNode
+  /// Create a copy of MindMapNodeModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -79,7 +79,7 @@ class _$MindMapNodeCopyWithImpl<$Res, $Val extends MindMapNode>
       children: null == children
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
-              as List<MindMapNode>,
+              as List<MindMapNodeModel>,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -97,30 +97,30 @@ class _$MindMapNodeCopyWithImpl<$Res, $Val extends MindMapNode>
 }
 
 /// @nodoc
-abstract class _$$MindMapNodeImplCopyWith<$Res>
-    implements $MindMapNodeCopyWith<$Res> {
-  factory _$$MindMapNodeImplCopyWith(
-          _$MindMapNodeImpl value, $Res Function(_$MindMapNodeImpl) then) =
-      __$$MindMapNodeImplCopyWithImpl<$Res>;
+abstract class _$$MindMapNodeModelImplCopyWith<$Res>
+    implements $MindMapNodeModelCopyWith<$Res> {
+  factory _$$MindMapNodeModelImplCopyWith(_$MindMapNodeModelImpl value,
+          $Res Function(_$MindMapNodeModelImpl) then) =
+      __$$MindMapNodeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String name,
-      List<MindMapNode> children,
+      List<MindMapNodeModel> children,
       String? description,
       String? image,
       String? excerpt});
 }
 
 /// @nodoc
-class __$$MindMapNodeImplCopyWithImpl<$Res>
-    extends _$MindMapNodeCopyWithImpl<$Res, _$MindMapNodeImpl>
-    implements _$$MindMapNodeImplCopyWith<$Res> {
-  __$$MindMapNodeImplCopyWithImpl(
-      _$MindMapNodeImpl _value, $Res Function(_$MindMapNodeImpl) _then)
+class __$$MindMapNodeModelImplCopyWithImpl<$Res>
+    extends _$MindMapNodeModelCopyWithImpl<$Res, _$MindMapNodeModelImpl>
+    implements _$$MindMapNodeModelImplCopyWith<$Res> {
+  __$$MindMapNodeModelImplCopyWithImpl(_$MindMapNodeModelImpl _value,
+      $Res Function(_$MindMapNodeModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MindMapNode
+  /// Create a copy of MindMapNodeModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -131,7 +131,7 @@ class __$$MindMapNodeImplCopyWithImpl<$Res>
     Object? image = freezed,
     Object? excerpt = freezed,
   }) {
-    return _then(_$MindMapNodeImpl(
+    return _then(_$MindMapNodeModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -139,7 +139,7 @@ class __$$MindMapNodeImplCopyWithImpl<$Res>
       children: null == children
           ? _value._children
           : children // ignore: cast_nullable_to_non_nullable
-              as List<MindMapNode>,
+              as List<MindMapNodeModel>,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -158,23 +158,23 @@ class __$$MindMapNodeImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MindMapNodeImpl implements _MindMapNode {
-  const _$MindMapNodeImpl(
+class _$MindMapNodeModelImpl implements _MindMapNodeModel {
+  const _$MindMapNodeModelImpl(
       {required this.name,
-      required final List<MindMapNode> children,
+      required final List<MindMapNodeModel> children,
       this.description,
       this.image,
       this.excerpt})
       : _children = children;
 
-  factory _$MindMapNodeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MindMapNodeImplFromJson(json);
+  factory _$MindMapNodeModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MindMapNodeModelImplFromJson(json);
 
   @override
   final String name;
-  final List<MindMapNode> _children;
+  final List<MindMapNodeModel> _children;
   @override
-  List<MindMapNode> get children {
+  List<MindMapNodeModel> get children {
     if (_children is EqualUnmodifiableListView) return _children;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_children);
@@ -189,14 +189,14 @@ class _$MindMapNodeImpl implements _MindMapNode {
 
   @override
   String toString() {
-    return 'MindMapNode(name: $name, children: $children, description: $description, image: $image, excerpt: $excerpt)';
+    return 'MindMapNodeModel(name: $name, children: $children, description: $description, image: $image, excerpt: $excerpt)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MindMapNodeImpl &&
+            other is _$MindMapNodeModelImpl &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._children, _children) &&
             (identical(other.description, description) ||
@@ -215,37 +215,38 @@ class _$MindMapNodeImpl implements _MindMapNode {
       image,
       excerpt);
 
-  /// Create a copy of MindMapNode
+  /// Create a copy of MindMapNodeModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MindMapNodeImplCopyWith<_$MindMapNodeImpl> get copyWith =>
-      __$$MindMapNodeImplCopyWithImpl<_$MindMapNodeImpl>(this, _$identity);
+  _$$MindMapNodeModelImplCopyWith<_$MindMapNodeModelImpl> get copyWith =>
+      __$$MindMapNodeModelImplCopyWithImpl<_$MindMapNodeModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MindMapNodeImplToJson(
+    return _$$MindMapNodeModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _MindMapNode implements MindMapNode {
-  const factory _MindMapNode(
+abstract class _MindMapNodeModel implements MindMapNodeModel {
+  const factory _MindMapNodeModel(
       {required final String name,
-      required final List<MindMapNode> children,
+      required final List<MindMapNodeModel> children,
       final String? description,
       final String? image,
-      final String? excerpt}) = _$MindMapNodeImpl;
+      final String? excerpt}) = _$MindMapNodeModelImpl;
 
-  factory _MindMapNode.fromJson(Map<String, dynamic> json) =
-      _$MindMapNodeImpl.fromJson;
+  factory _MindMapNodeModel.fromJson(Map<String, dynamic> json) =
+      _$MindMapNodeModelImpl.fromJson;
 
   @override
   String get name;
   @override
-  List<MindMapNode> get children;
+  List<MindMapNodeModel> get children;
   @override
   String? get description;
   @override
@@ -253,54 +254,56 @@ abstract class _MindMapNode implements MindMapNode {
   @override
   String? get excerpt;
 
-  /// Create a copy of MindMapNode
+  /// Create a copy of MindMapNodeModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MindMapNodeImplCopyWith<_$MindMapNodeImpl> get copyWith =>
+  _$$MindMapNodeModelImplCopyWith<_$MindMapNodeModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-MindMap _$MindMapFromJson(Map<String, dynamic> json) {
-  return _MindMap.fromJson(json);
+MindMapModel _$MindMapModelFromJson(Map<String, dynamic> json) {
+  return _MindMapModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$MindMap {
+mixin _$MindMapModel {
   String get name => throw _privateConstructorUsedError;
-  MindMapNode get rootNode => throw _privateConstructorUsedError;
+  MindMapNodeModel get rootNode => throw _privateConstructorUsedError;
   String? get caption => throw _privateConstructorUsedError;
 
-  /// Serializes this MindMap to a JSON map.
+  /// Serializes this MindMapModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of MindMap
+  /// Create a copy of MindMapModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MindMapCopyWith<MindMap> get copyWith => throw _privateConstructorUsedError;
+  $MindMapModelCopyWith<MindMapModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MindMapCopyWith<$Res> {
-  factory $MindMapCopyWith(MindMap value, $Res Function(MindMap) then) =
-      _$MindMapCopyWithImpl<$Res, MindMap>;
+abstract class $MindMapModelCopyWith<$Res> {
+  factory $MindMapModelCopyWith(
+          MindMapModel value, $Res Function(MindMapModel) then) =
+      _$MindMapModelCopyWithImpl<$Res, MindMapModel>;
   @useResult
-  $Res call({String name, MindMapNode rootNode, String? caption});
+  $Res call({String name, MindMapNodeModel rootNode, String? caption});
 
-  $MindMapNodeCopyWith<$Res> get rootNode;
+  $MindMapNodeModelCopyWith<$Res> get rootNode;
 }
 
 /// @nodoc
-class _$MindMapCopyWithImpl<$Res, $Val extends MindMap>
-    implements $MindMapCopyWith<$Res> {
-  _$MindMapCopyWithImpl(this._value, this._then);
+class _$MindMapModelCopyWithImpl<$Res, $Val extends MindMapModel>
+    implements $MindMapModelCopyWith<$Res> {
+  _$MindMapModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MindMap
+  /// Create a copy of MindMapModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -317,7 +320,7 @@ class _$MindMapCopyWithImpl<$Res, $Val extends MindMap>
       rootNode: null == rootNode
           ? _value.rootNode
           : rootNode // ignore: cast_nullable_to_non_nullable
-              as MindMapNode,
+              as MindMapNodeModel,
       caption: freezed == caption
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
@@ -325,39 +328,40 @@ class _$MindMapCopyWithImpl<$Res, $Val extends MindMap>
     ) as $Val);
   }
 
-  /// Create a copy of MindMap
+  /// Create a copy of MindMapModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $MindMapNodeCopyWith<$Res> get rootNode {
-    return $MindMapNodeCopyWith<$Res>(_value.rootNode, (value) {
+  $MindMapNodeModelCopyWith<$Res> get rootNode {
+    return $MindMapNodeModelCopyWith<$Res>(_value.rootNode, (value) {
       return _then(_value.copyWith(rootNode: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$MindMapImplCopyWith<$Res> implements $MindMapCopyWith<$Res> {
-  factory _$$MindMapImplCopyWith(
-          _$MindMapImpl value, $Res Function(_$MindMapImpl) then) =
-      __$$MindMapImplCopyWithImpl<$Res>;
+abstract class _$$MindMapModelImplCopyWith<$Res>
+    implements $MindMapModelCopyWith<$Res> {
+  factory _$$MindMapModelImplCopyWith(
+          _$MindMapModelImpl value, $Res Function(_$MindMapModelImpl) then) =
+      __$$MindMapModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, MindMapNode rootNode, String? caption});
+  $Res call({String name, MindMapNodeModel rootNode, String? caption});
 
   @override
-  $MindMapNodeCopyWith<$Res> get rootNode;
+  $MindMapNodeModelCopyWith<$Res> get rootNode;
 }
 
 /// @nodoc
-class __$$MindMapImplCopyWithImpl<$Res>
-    extends _$MindMapCopyWithImpl<$Res, _$MindMapImpl>
-    implements _$$MindMapImplCopyWith<$Res> {
-  __$$MindMapImplCopyWithImpl(
-      _$MindMapImpl _value, $Res Function(_$MindMapImpl) _then)
+class __$$MindMapModelImplCopyWithImpl<$Res>
+    extends _$MindMapModelCopyWithImpl<$Res, _$MindMapModelImpl>
+    implements _$$MindMapModelImplCopyWith<$Res> {
+  __$$MindMapModelImplCopyWithImpl(
+      _$MindMapModelImpl _value, $Res Function(_$MindMapModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MindMap
+  /// Create a copy of MindMapModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -366,7 +370,7 @@ class __$$MindMapImplCopyWithImpl<$Res>
     Object? rootNode = null,
     Object? caption = freezed,
   }) {
-    return _then(_$MindMapImpl(
+    return _then(_$MindMapModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -374,7 +378,7 @@ class __$$MindMapImplCopyWithImpl<$Res>
       rootNode: null == rootNode
           ? _value.rootNode
           : rootNode // ignore: cast_nullable_to_non_nullable
-              as MindMapNode,
+              as MindMapNodeModel,
       caption: freezed == caption
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
@@ -385,30 +389,30 @@ class __$$MindMapImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MindMapImpl implements _MindMap {
-  const _$MindMapImpl(
+class _$MindMapModelImpl implements _MindMapModel {
+  const _$MindMapModelImpl(
       {required this.name, required this.rootNode, this.caption});
 
-  factory _$MindMapImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MindMapImplFromJson(json);
+  factory _$MindMapModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MindMapModelImplFromJson(json);
 
   @override
   final String name;
   @override
-  final MindMapNode rootNode;
+  final MindMapNodeModel rootNode;
   @override
   final String? caption;
 
   @override
   String toString() {
-    return 'MindMap(name: $name, rootNode: $rootNode, caption: $caption)';
+    return 'MindMapModel(name: $name, rootNode: $rootNode, caption: $caption)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MindMapImpl &&
+            other is _$MindMapModelImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.rootNode, rootNode) ||
                 other.rootNode == rootNode) &&
@@ -419,41 +423,42 @@ class _$MindMapImpl implements _MindMap {
   @override
   int get hashCode => Object.hash(runtimeType, name, rootNode, caption);
 
-  /// Create a copy of MindMap
+  /// Create a copy of MindMapModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MindMapImplCopyWith<_$MindMapImpl> get copyWith =>
-      __$$MindMapImplCopyWithImpl<_$MindMapImpl>(this, _$identity);
+  _$$MindMapModelImplCopyWith<_$MindMapModelImpl> get copyWith =>
+      __$$MindMapModelImplCopyWithImpl<_$MindMapModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MindMapImplToJson(
+    return _$$MindMapModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _MindMap implements MindMap {
-  const factory _MindMap(
+abstract class _MindMapModel implements MindMapModel {
+  const factory _MindMapModel(
       {required final String name,
-      required final MindMapNode rootNode,
-      final String? caption}) = _$MindMapImpl;
+      required final MindMapNodeModel rootNode,
+      final String? caption}) = _$MindMapModelImpl;
 
-  factory _MindMap.fromJson(Map<String, dynamic> json) = _$MindMapImpl.fromJson;
+  factory _MindMapModel.fromJson(Map<String, dynamic> json) =
+      _$MindMapModelImpl.fromJson;
 
   @override
   String get name;
   @override
-  MindMapNode get rootNode;
+  MindMapNodeModel get rootNode;
   @override
   String? get caption;
 
-  /// Create a copy of MindMap
+  /// Create a copy of MindMapModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MindMapImplCopyWith<_$MindMapImpl> get copyWith =>
+  _$$MindMapModelImplCopyWith<_$MindMapModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
