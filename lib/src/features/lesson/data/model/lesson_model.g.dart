@@ -19,7 +19,7 @@ _$LessonModelImpl _$$LessonModelImplFromJson(Map<String, dynamic> json) =>
           ?.map((e) => MindMap.fromJson(e as Map<String, dynamic>))
           .toList(),
       memoryTricks: (json['memoryTricks'] as List<dynamic>?)
-          ?.map((e) => MemoryTrick.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => MemoryTrickModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

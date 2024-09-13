@@ -1,18 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'memory_trick.dart';
+part of 'memory_trick_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MemoryTrickImpl _$$MemoryTrickImplFromJson(Map<String, dynamic> json) =>
-    _$MemoryTrickImpl(
+_$MemoryTrickModelImpl _$$MemoryTrickModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MemoryTrickModelImpl(
       content: json['content'] as String,
       type: $enumDecode(_$MemoryTrickTypeEnumMap, json['type']),
     );
 
-Map<String, dynamic> _$$MemoryTrickImplToJson(_$MemoryTrickImpl instance) =>
+Map<String, dynamic> _$$MemoryTrickModelImplToJson(
+        _$MemoryTrickModelImpl instance) =>
     <String, dynamic>{
       'content': instance.content,
       'type': _$MemoryTrickTypeEnumMap[instance.type]!,

@@ -25,7 +25,8 @@ mixin _$LessonModel {
   List<String>? get externalLinks => throw _privateConstructorUsedError;
   List<String>? get topics => throw _privateConstructorUsedError;
   List<MindMap>? get mindMaps => throw _privateConstructorUsedError;
-  List<MemoryTrick>? get memoryTricks => throw _privateConstructorUsedError;
+  List<MemoryTrickModel>? get memoryTricks =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this LessonModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +50,7 @@ abstract class $LessonModelCopyWith<$Res> {
       List<String>? externalLinks,
       List<String>? topics,
       List<MindMap>? mindMaps,
-      List<MemoryTrick>? memoryTricks});
+      List<MemoryTrickModel>? memoryTricks});
 }
 
 /// @nodoc
@@ -98,7 +99,7 @@ class _$LessonModelCopyWithImpl<$Res, $Val extends LessonModel>
       memoryTricks: freezed == memoryTricks
           ? _value.memoryTricks
           : memoryTricks // ignore: cast_nullable_to_non_nullable
-              as List<MemoryTrick>?,
+              as List<MemoryTrickModel>?,
     ) as $Val);
   }
 }
@@ -117,7 +118,7 @@ abstract class _$$LessonModelImplCopyWith<$Res>
       List<String>? externalLinks,
       List<String>? topics,
       List<MindMap>? mindMaps,
-      List<MemoryTrick>? memoryTricks});
+      List<MemoryTrickModel>? memoryTricks});
 }
 
 /// @nodoc
@@ -164,7 +165,7 @@ class __$$LessonModelImplCopyWithImpl<$Res>
       memoryTricks: freezed == memoryTricks
           ? _value._memoryTricks
           : memoryTricks // ignore: cast_nullable_to_non_nullable
-              as List<MemoryTrick>?,
+              as List<MemoryTrickModel>?,
     ));
   }
 }
@@ -178,7 +179,7 @@ class _$LessonModelImpl implements _LessonModel {
       final List<String>? externalLinks,
       final List<String>? topics,
       final List<MindMap>? mindMaps,
-      final List<MemoryTrick>? memoryTricks})
+      final List<MemoryTrickModel>? memoryTricks})
       : _externalLinks = externalLinks,
         _topics = topics,
         _mindMaps = mindMaps,
@@ -221,9 +222,9 @@ class _$LessonModelImpl implements _LessonModel {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<MemoryTrick>? _memoryTricks;
+  final List<MemoryTrickModel>? _memoryTricks;
   @override
-  List<MemoryTrick>? get memoryTricks {
+  List<MemoryTrickModel>? get memoryTricks {
     final value = _memoryTricks;
     if (value == null) return null;
     if (_memoryTricks is EqualUnmodifiableListView) return _memoryTricks;
@@ -286,7 +287,7 @@ abstract class _LessonModel implements LessonModel {
       final List<String>? externalLinks,
       final List<String>? topics,
       final List<MindMap>? mindMaps,
-      final List<MemoryTrick>? memoryTricks}) = _$LessonModelImpl;
+      final List<MemoryTrickModel>? memoryTricks}) = _$LessonModelImpl;
 
   factory _LessonModel.fromJson(Map<String, dynamic> json) =
       _$LessonModelImpl.fromJson;
@@ -302,7 +303,7 @@ abstract class _LessonModel implements LessonModel {
   @override
   List<MindMap>? get mindMaps;
   @override
-  List<MemoryTrick>? get memoryTricks;
+  List<MemoryTrickModel>? get memoryTricks;
 
   /// Create a copy of LessonModel
   /// with the given fields replaced by the non-null parameter values.

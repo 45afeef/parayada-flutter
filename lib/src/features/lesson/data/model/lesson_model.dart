@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../content/presentation/memorizing/data/memory_trick_model.dart';
 import '../../../content/presentation/memorizing/domain/memory_trick.dart';
 import '../../../mind_map/domain/mind_map.dart';
 import '../../domain/lesson_entity.dart';
@@ -16,7 +17,7 @@ class LessonModel extends Lesson with _$LessonModel {
     List<String>? externalLinks,
     List<String>? topics,
     List<MindMap>? mindMaps,
-    List<MemoryTrick>? memoryTricks,
+    List<MemoryTrickModel>? memoryTricks,
   }) = _LessonModel;
 
   // A factory constructor that initializes an instance from a JSON map.
