@@ -6,33 +6,36 @@ part of 'mind_map.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MindMapNode _$MindMapNodeFromJson(Map<String, dynamic> json) => MindMapNode(
+_$MindMapNodeImpl _$$MindMapNodeImplFromJson(Map<String, dynamic> json) =>
+    _$MindMapNodeImpl(
       name: json['name'] as String,
-      description: json['description'] as String?,
-      image: json['image'] as String?,
-      excerpt: json['excerpt'] as String?,
       children: (json['children'] as List<dynamic>)
           .map((e) => MindMapNode.fromJson(e as Map<String, dynamic>))
           .toList(),
+      description: json['description'] as String?,
+      image: json['image'] as String?,
+      excerpt: json['excerpt'] as String?,
     );
 
-Map<String, dynamic> _$MindMapNodeToJson(MindMapNode instance) =>
+Map<String, dynamic> _$$MindMapNodeImplToJson(_$MindMapNodeImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'children': instance.children,
       'description': instance.description,
       'image': instance.image,
       'excerpt': instance.excerpt,
-      'children': instance.children.map((e) => e.toJson()).toList(),
     };
 
-MindMap _$MindMapFromJson(Map<String, dynamic> json) => MindMap(
+_$MindMapImpl _$$MindMapImplFromJson(Map<String, dynamic> json) =>
+    _$MindMapImpl(
       name: json['name'] as String,
-      caption: json['caption'] as String?,
       rootNode: MindMapNode.fromJson(json['rootNode'] as Map<String, dynamic>),
+      caption: json['caption'] as String?,
     );
 
-Map<String, dynamic> _$MindMapToJson(MindMap instance) => <String, dynamic>{
+Map<String, dynamic> _$$MindMapImplToJson(_$MindMapImpl instance) =>
+    <String, dynamic>{
       'name': instance.name,
+      'rootNode': instance.rootNode,
       'caption': instance.caption,
-      'rootNode': instance.rootNode.toJson(),
     };

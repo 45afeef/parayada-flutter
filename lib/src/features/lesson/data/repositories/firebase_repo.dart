@@ -1,4 +1,4 @@
-import '../model/lesson/model.dart';
+import '../model/lesson_model.dart';
 import '../../domain/repositories/lesson_repository.dart';
 
 class FirebaseLessonReopsitory extends LessonRepository {

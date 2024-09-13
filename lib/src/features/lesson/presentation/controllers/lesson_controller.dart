@@ -1,6 +1,5 @@
 import '../../../../core/app_export.dart';
-import '../../data/model/lesson/mapper.dart';
-import '../../data/model/lesson/model.dart';
+import '../../data/model/lesson_model.dart';
 import '../../data/repositories/dummy_repo.dart';
 import '../../domain/lesson_entity.dart';
 import '../../domain/repositories/lesson_repository.dart';
@@ -15,10 +14,9 @@ class LessonController extends GetxController {
   Future<Lesson> fetchLesson(int id) async {
     LessonModel response = await _repo.getLesson(id);
 
-    Lesson lessonEntity = LessonMapper.toEntity(response);
+    // TODO - Deside what to do with this response either to assaign to lesson.value or to return.
+    lesson.value = response;
 
-    lesson.value = lessonEntity;
-
-    return lessonEntity;
+    return response;
   }
 }

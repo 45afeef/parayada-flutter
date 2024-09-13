@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:parayada/src/features/lesson/presentation/widgets/lesson_card.dart';
 
 import '../../../../core/app_export.dart';
 import '../controllers/lesson_controller.dart';
+import '../widgets/lesson_card.dart';
 
 class LessonScreen extends GetWidget<LessonController> {
   const LessonScreen({super.key});
@@ -26,7 +26,7 @@ class LessonScreen extends GetWidget<LessonController> {
                   if (!snapshort.hasData) {
                     return const CircularProgressIndicator();
                   }
-                  
+
                   return LessonCard(lesson: snapshort.data!)
                       .animate(delay: const Duration(milliseconds: 100))
                       .scale();

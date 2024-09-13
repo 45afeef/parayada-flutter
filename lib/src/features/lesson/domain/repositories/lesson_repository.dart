@@ -1,5 +1,5 @@
 // Define the interface for the repository
-import '../../data/model/lesson/model.dart';
+import '../../data/model/lesson_model.dart';
 // import '../lesson_entity.dart';
 
 abstract class LessonRepository {

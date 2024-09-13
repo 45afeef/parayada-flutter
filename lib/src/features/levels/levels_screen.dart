@@ -31,7 +31,7 @@ class _LevelsScreenState extends State<LevelsScreen> {
                   child: DuolingoIconButton(
                     borderWidth: 3,
                     onPressed: () {
-                      Get.toNamed(AppRoutes.lessonsScreen);
+                      Get.toNamed(AppRoutes.lessonScreen);
                     },
                     padding: EdgeInsets.zero,
                     child: Align(child: Text('${index + 1}')),

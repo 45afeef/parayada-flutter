@@ -1,4 +1,9 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../domain/content.dart';
+
+part 'memory_trick.freezed.dart';
+part 'memory_trick.g.dart';
 
 enum MemoryTrickType {
   acrostic,
@@ -14,12 +19,13 @@ enum MemoryTrickType {
   mnemonics,
 }
 
-class MemoryTrick extends Content {
-  String content;
-  MemoryTrickType type;
+@freezed
+class MemoryTrick extends Content with _$MemoryTrick {
+  const factory MemoryTrick({
+    required String content,
+    required MemoryTrickType type,
+  }) = _MemoryTrick;
 
-  MemoryTrick(
-    this.content,
-    this.type,
-  );
+  factory MemoryTrick.fromJson(Map<String, dynamic> json) =>
+      _$MemoryTrickFromJson(json);
 }

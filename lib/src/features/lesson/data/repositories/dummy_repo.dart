@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../../domain/repositories/lesson_repository.dart';
-import '../model/lesson/model.dart';
+import '../model/lesson_model.dart';
 
 class DummyLessonRepo implements LessonRepository {
   @override
