@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../domain/closed_ended/match_the_following.dart';
@@ -197,7 +196,6 @@ class Item extends StatelessWidget {
         border: Border.all(color: selectionColor, width: 2),
         elevation: const Offset(0, 4),
         onPressed: () {
-          HapticFeedback.lightImpact();
           onSelection(text);
         },
         child: Center(child: Text(text)),

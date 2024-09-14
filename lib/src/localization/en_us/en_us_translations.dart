@@ -313,4 +313,6 @@ final Map<String, String> enUs = {
   "lbl_assessment_end_screen":
       "You have completed all the questions in this Assessment.",
   "lbl_do_you_want_to_submit": "Do you want to submit",
+  "lbl_start_exam": "Click here to Start Exam",
+  "msg_confirm_exam":"You are about to start the exam. Click the bellow button and enjoy your day",
 };

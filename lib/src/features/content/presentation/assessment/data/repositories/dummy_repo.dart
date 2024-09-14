@@ -10,6 +10,8 @@ class DummyAssessmentRepo implements AssessmentRepository {
   Future<AssessmentModel> getAssessment(int id) async {
     final input = await rootBundle.loadString('assets/dummy_assessment.json');
 
+    await Future.delayed(const Duration(seconds: 2));
+
     var map = jsonDecode(input);
     return AssessmentModel.fromJson(map);
   }

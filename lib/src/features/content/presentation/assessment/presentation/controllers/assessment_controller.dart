@@ -20,20 +20,26 @@ class AssessmentController extends GetxController {
   Rx<Assessment> assessment = Assessment.empty().obs;
 
   /// Stores the current question index. this helps in managing the state and context
-  int currentQuestionIndex = 0;
+  Rx<int> currentQuestionIndex = (-1).obs;
 
   Timer? _timer;
 
   // Update the current question index and start time
-  set currentQuestion(int index) => currentQuestionIndex = index;
+  set currentQuestion(int index) => currentQuestionIndex.value = index;
 
   String get timeSpentOnCurrentQuestion =>
-      _getTimeSpentOnQuestion(currentQuestionIndex);
+      _getTimeSpentOnQuestion(currentQuestionIndex.value);
+
+  bool get isExamStarted => currentQuestionIndex.value != -1;
+
+  bool get isExamOngoing =>
+      currentQuestionIndex.value >= 0 &&
+      currentQuestionIndex.value < assessment.value.items.length;
 
   void startExam() {
     if (assessment.value == Assessment.empty()) return;
 
-    currentQuestionIndex = 0;
+    currentQuestionIndex.value = 0;
 
     // Start or reset the timer when the exam starts
     _timer?.cancel();
@@ -59,13 +65,14 @@ class AssessmentController extends GetxController {
 
     // Update the total time for the current question
     if (assessmentResult.value.studentResponse
-        .containsKey(currentQuestionIndex)) {
-      assessmentResult.value.studentResponse[currentQuestionIndex]!
+        .containsKey(currentQuestionIndex.value)) {
+      assessmentResult.value.studentResponse[currentQuestionIndex.value]!
           .incrementTimeTaken(timeSpent * 1000);
     } else {
       AssessmentItemResponse response =
           AssessmentItemResponse(timeTakenInMillisecond: timeSpent * 1000);
-      assessmentResult.value.setItemResponse(currentQuestionIndex, response);
+      assessmentResult.value
+          .setItemResponse(currentQuestionIndex.value, response);
     }
 
     // This will trigger the Obx widget to rebuild every second
@@ -73,7 +80,7 @@ class AssessmentController extends GetxController {
   }
 
   void handleStudentResponse(dynamic response, BuildContext context) {
-    assessmentResult.value.studentResponse[currentQuestionIndex]!
+    assessmentResult.value.studentResponse[currentQuestionIndex.value]!
         .updateResponse(response.toString());
 
     Get.closeAllSnackbars();
@@ -128,6 +135,6 @@ class AssessmentController extends GetxController {
 
     // reset all variables
     assessmentResult = AssessmentResult().obs;
-    currentQuestionIndex = -1;
+    currentQuestionIndex.value = -1;
   }
 }
