@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../domain/closed_ended/flashcard.dart';
-import '../assessment_screen.dart';
+import 'assessment_widget.dart';
 
-class FlashCardWidget extends AssessmentWidget<FlashCard> {
+class FlashCardWidget extends StatelessAssessmentWidget<FlashCard> {
   FlashCardWidget({
     super.key,
     required super.item,

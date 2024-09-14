@@ -4,9 +4,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../../../../../../core/app_export.dart';
 import '../../../../../../widgets/gap.dart';
 import '../../domain/closed_ended/mcq.dart';
-import '../assessment_screen.dart';
+import 'assessment_widget.dart';
 
-class MCQWidget extends AssessmentWidget<MCQ> {
+class MCQWidget extends StatelessAssessmentWidget<MCQ> {
   MCQWidget({
     super.key,
     required super.item,

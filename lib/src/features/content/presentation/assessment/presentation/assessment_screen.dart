@@ -10,6 +10,7 @@ import '../domain/closed_ended/match_the_following.dart';
 import '../domain/closed_ended/mcq.dart';
 import '../domain/open_ended/one_word.dart';
 import 'controllers/assessment_controller.dart';
+import 'widgets/assessment_widget.dart';
 import 'widgets/completed.dart';
 import 'widgets/flash_card.dart';
 import 'widgets/match_the_tollowing_widget.dart';
@@ -23,14 +24,12 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
   @override
   Widget build(BuildContext context) {
     // handle the UI of each assessment item based on type
-    Widget buildAssessmentWidget(AssessmentItem assessmentItem) {
+    AssessmentWidget buildAssessmentWidget(AssessmentItem assessmentItem) {
       if (assessmentItem is MCQ) {
-        return Obx(
-          () => MCQWidget(
-            item: assessmentItem,
-            selectedAnswer: controller.getSelectionFor(assessmentItem),
-            onResponse: (res) => controller.handleStudentResponse(res, context),
-          ),
+        return MCQWidget(
+          item: assessmentItem,
+          selectedAnswer: controller.getSelectionFor(assessmentItem),
+          onResponse: (res) => controller.handleStudentResponse(res, context),
         );
       }
       if (assessmentItem is FlashCard) {
@@ -131,20 +130,4 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
       ),
     );
   }
-}
-
-abstract class AssessmentWidget<T> extends StatelessWidget {
-  const AssessmentWidget({
-    super.key,
-    required this.item,
-    required this.onResponse,
-  });
-
-  /// The AssessemntItem
-  final T item;
-
-  /// The callback that is called when the button is tapped or otherwise activated.
-  ///
-  /// If this is set to null, the button will be disabled.
-  final void Function(dynamic) onResponse;
 }

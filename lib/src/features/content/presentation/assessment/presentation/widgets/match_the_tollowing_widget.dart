@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/app_export.dart';
 import '../../domain/closed_ended/match_the_following.dart';
+import 'assessment_widget.dart';
 
-class MatchTheFollowingWidget extends StatefulWidget {
+class MatchTheFollowingWidget
+    extends StatefulAssessmentWidget<MatchTheFollowing> {
   const MatchTheFollowingWidget({
     super.key,
-    required this.item,
-    required this.onResponse,
+    required super.item,
+    required super.onResponse,
   });
-
-  final MatchTheFollowing item;
-  final void Function(dynamic) onResponse;
 
   @override
   State<MatchTheFollowingWidget> createState() =>

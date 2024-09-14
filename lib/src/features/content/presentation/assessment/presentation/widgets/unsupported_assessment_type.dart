@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../assessment_screen.dart';
+import 'assessment_widget.dart';
 
-class UnSupportedAssessmentItemTypeWidget extends AssessmentWidget {
+class UnSupportedAssessmentItemTypeWidget extends StatelessAssessmentWidget {
   UnSupportedAssessmentItemTypeWidget({super.key})
       : super(
           item: null,
