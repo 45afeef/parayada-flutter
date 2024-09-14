@@ -1,5 +1,5 @@
-import '../assessment.dart';
+import '../../data/models/assessment_model.dart';
 
 abstract class AssessmentRepository {
-  Future<Assessment> getAssessment(int id);
+  Future<AssessmentModel> getAssessment(int id);
 }
