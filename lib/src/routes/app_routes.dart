@@ -6,6 +6,8 @@ import '../features/content/presentation/assessment/application/assessment_bindi
 import '../features/content/presentation/assessment/presentation/assessment_screen.dart';
 import '../features/content/presentation/assessment/presentation/result/presentation/result_screen.dart';
 import '../features/content/presentation/memorizing/presentation/pages/memory_tricks_screen.dart';
+import '../features/course/application/course_binding.dart';
+import '../features/course/presentation/course_page.dart';
 import '../features/lesson/application/lesson_binding.dart';
 import '../features/lesson/presentation/pages/lesson_screen.dart';
 import '../features/levels/levels_screen.dart';
@@ -16,6 +18,8 @@ class AppRoutes {
   static const String affiliateUrlScreen = '/affiliate_url_screen';
 
   static const String homeScreen = '/';
+
+  static const String coursePage = '/course';
 
   static const String mindMapScreen = '/mindmap';
 
@@ -38,7 +42,14 @@ class AppRoutes {
         bindings: [
           AffiliateUrlBinding(),
         ]),
-    GetPage(name: homeScreen, page: () => const LevelsScreen()),
+    GetPage(
+        name: homeScreen,
+        page: () => const LevelsScreen()), // TODO - Create Home Page
+    GetPage(
+      name: coursePage,
+      page: () => const CoursePage(),
+      binding: CourseBinding(),
+    ),
     GetPage(name: onboardingScreen, page: () => const OnboardingScreen()),
     GetPage(name: mindMapScreen, page: () => const MindMapScreen()),
     GetPage(name: levelsScreen, page: () => const LevelsScreen()),
@@ -56,6 +67,6 @@ class AppRoutes {
     GetPage(
       name: memoryTricksScreen,
       page: () => const MemoryTrickScreen(),
-    )
+    ),
   ];
 }

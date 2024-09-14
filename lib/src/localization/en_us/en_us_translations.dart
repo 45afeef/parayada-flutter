@@ -314,5 +314,9 @@ final Map<String, String> enUs = {
       "You have completed all the questions in this Assessment.",
   "lbl_do_you_want_to_submit": "Do you want to submit",
   "lbl_start_exam": "Click here to Start Exam",
-  "msg_confirm_exam":"You are about to start the exam. Click the bellow button and enjoy your day",
+  "msg_confirm_exam":
+      "You are about to start the exam. Click the bellow button and enjoy your day",
+  "msg_find_the_right_topic_to_learn":
+      "Find the \n Right topic \n to learn \n Your self",
+  "lbl_start_learning": "Learn Now",
 };
