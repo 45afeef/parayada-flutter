@@ -10,6 +10,7 @@ class AssessmentResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO - remove controller dependency and add params and arguments
     AssessmentController controller = Get.find();
 
     return AppLayout(
@@ -48,8 +49,9 @@ class AssessmentResultScreen extends StatelessWidget {
                               style: AppTextStyle.choosenAnswer,
                             ),
                             Text(
-                              controller.formatedSeconds(
-                                  response?.timeTakenInMillisecond ?? 0),
+                              response?.timeTakenInMillisecond
+                                      .toReadableTimeDelta() ??
+                                  "",
                               style: AppTextStyle.contentStyleSmall,
                             ),
                           ],

@@ -95,16 +95,6 @@ class AssessmentController extends GetxController {
     return assessmentResult.value.studentResponse[index]?.studentAnswer;
   }
 
-  String formatedSeconds(int seconds) {
-    seconds ~/= 1000;
-    int minutes = seconds ~/ 60;
-    int remainingSeconds = seconds % 60;
-
-    String formattedTime =
-        '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
-    return formattedTime;
-  }
-
   String _getTimeSpentOnQuestion(int questionIndex) {
     // Return the total time spent on a specific question
 
@@ -112,7 +102,7 @@ class AssessmentController extends GetxController {
             .value.studentResponse[questionIndex]?.timeTakenInMillisecond ??
         0;
 
-    return formatedSeconds(seconds);
+    return seconds.toReadableTimeDelta(pattern: 'm:s');
   }
 
   Future<Assessment> fetchAssessment() async {

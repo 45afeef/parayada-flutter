@@ -23,17 +23,10 @@ class AssessmentItemResponse {
   String? studentAnswer;
   String? currectAnswer;
 
-  /// True only if the studentAnswer is atleast 90% similar to currentAnswer
-  bool? isCurrect;
-
-  double? markScored;
-
   AssessmentItemResponse({
     required this.timeTakenInMillisecond,
     this.studentAnswer,
-    this.markScored,
     this.currectAnswer,
-    this.isCurrect,
   });
 
   void incrementTimeTaken(int increment) {
