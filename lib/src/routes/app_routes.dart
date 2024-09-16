@@ -7,7 +7,9 @@ import '../features/content/presentation/assessment/presentation/assessment_scre
 import '../features/content/presentation/assessment/presentation/result/presentation/result_screen.dart';
 import '../features/content/presentation/memorizing/presentation/pages/memory_tricks_screen.dart';
 import '../features/course/application/course_binding.dart';
+import '../features/course/application/subject_binding.dart';
 import '../features/course/presentation/course_page.dart';
+import '../features/course/presentation/subject_page.dart';
 import '../features/lesson/application/lesson_binding.dart';
 import '../features/lesson/presentation/pages/lesson_screen.dart';
 import '../features/levels/levels_screen.dart';
@@ -20,6 +22,8 @@ class AppRoutes {
   static const String homeScreen = '/';
 
   static const String coursePage = '/course';
+
+  static const String subjectPage = '/subject';
 
   static const String mindMapScreen = '/mindmap';
 
@@ -49,6 +53,11 @@ class AppRoutes {
       name: coursePage,
       page: () => const CoursePage(),
       binding: CourseBinding(),
+    ),
+    GetPage(
+      name: subjectPage,
+      page: () => const SubjectPage(),
+      binding: SubjectBinding(),
     ),
     GetPage(name: onboardingScreen, page: () => const OnboardingScreen()),
     GetPage(name: mindMapScreen, page: () => const MindMapScreen()),

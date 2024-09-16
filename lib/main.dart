@@ -32,12 +32,10 @@ class MyApp extends StatelessWidget {
       locale: Get.deviceLocale,
       //for setting localization strings
       fallbackLocale: const Locale('en', 'US'),
-      defaultTransition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 300),
       title: 'Parayada',
       initialBinding: InitialBindings(),
       initialRoute: PrefUtils().isVisitedOnboarding
-          ? AppRoutes.homeScreen
+          ? AppRoutes.coursePage
           : AppRoutes.onboardingScreen,
       getPages: AppRoutes.pages,
     );
