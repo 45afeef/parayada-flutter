@@ -53,21 +53,24 @@ class CoursePage extends GetWidget<CourseController> {
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.33),
             child: Row(
-              children: controller.course.subjects
-                  .map((SubjectEntity s) => InkWell(
-                        onTap: () {
-                          HapticFeedback.lightImpact();
-                          throw UnimplementedError();
-                        },
-                        splashColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        child: SimpleImageCard(
-                          imageUrl: s.imageUrl,
-                          name: s.name,
-                          caption: s.name,
-                        ),
-                      ))
-                  .toList(),
+              children: [
+                if (controller.course.subjects != null)
+                  ...controller.course.subjects!
+                      .map((SubjectEntity subject) => InkWell(
+                            onTap: () {
+                              HapticFeedback.lightImpact();
+                              Get.toNamed(AppRoutes.subjectPage,
+                                  arguments: subject);
+                            },
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            child: SimpleImageCard(
+                              imageUrl: subject.imageUrl,
+                              name: subject.name,
+                              caption: subject.name,
+                            ),
+                          ))
+              ],
             ),
           ),
           DuolingoButton(

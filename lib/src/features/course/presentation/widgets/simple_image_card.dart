@@ -24,9 +24,12 @@ class SimpleImageCard extends StatelessWidget {
             height: 150,
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(15.0)),
-              child: Image.network(
-                imageUrl,
-                fit: BoxFit.cover,
+              child: Hero(
+                tag: "$name $imageUrl",
+                child: Image.network(
+                  imageUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
