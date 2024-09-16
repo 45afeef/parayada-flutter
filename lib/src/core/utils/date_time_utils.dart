@@ -18,16 +18,17 @@ extension DateTimeExtension on DateTime {
 
 extension TimeDeltaString on int {
   String toReadableTimeDelta({String pattern = 'h:m:s'}) {
-    int seconds = this;
-    int hours = seconds ~/ 3600;
-    seconds %= 3600;
-    int minutes = seconds ~/ 60;
-    seconds %= 60;
+    int totalSeconds = this ~/ 1000;
+    int totalMinutes = totalSeconds ~/ 60;
+    int totalHours = totalMinutes ~/ 60;
+
+    int secondsFromMinute = totalSeconds % 60;
+    int minutesFromHour = totalMinutes % 60;
 
     String formattedTime = pattern
-        .replaceAll('h', hours.toString().padLeft(2, '0'))
-        .replaceAll('m', minutes.toString().padLeft(2, '0'))
-        .replaceAll('s', seconds.toString().padLeft(2, '0'));
+        .replaceAll('h', totalHours.toString().padLeft(2, '0'))
+        .replaceAll('m', minutesFromHour.toString().padLeft(2, '0'))
+        .replaceAll('s', secondsFromMinute.toString().padLeft(2, '0'));
 
     return formattedTime;
   }
