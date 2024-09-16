@@ -74,9 +74,6 @@ class AssessmentController extends GetxController {
       assessmentResult.value
           .setItemResponse(currentQuestionIndex.value, response);
     }
-
-    // This will trigger the Obx widget to rebuild every second
-    assessmentResult.refresh();
   }
 
   void handleStudentResponse(dynamic response, BuildContext context) {

@@ -56,11 +56,6 @@ class AssessmentScreen extends GetWidget<AssessmentController> {
     }
 
     return AppLayout(
-      actions: [
-        Text('lbl_time_spent'.tr,
-            style: const TextStyle(fontWeight: FontWeight.bold)),
-        Obx(() => Text(controller.timeSpentOnCurrentQuestion)),
-      ],
       child: Center(
         child: FutureBuilder<Assessment>(
           future: controller.fetchAssessment(),
