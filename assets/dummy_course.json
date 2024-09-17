@@ -1,0 +1,86 @@
+{
+    "title": "This is the title of the Course",
+    "subjects": [
+        {
+            "name": "Maths",
+            "imageUrl": "https://picsum.photos/200/300"
+        },
+        {
+            "name": "Social Science",
+            "imageUrl": "https://picsum.photos/200/300",
+            "units": [
+                {
+                    "name": "Unit 1",
+                    "lessons": [
+                        {
+                            "title": "This is the title of the lesson",
+                            "description": "no description"
+                        },
+                        {
+                            "title": "This is the title of the lesson",
+                            "description": "no description"
+                        },
+                        {
+                            "title": "This is the title of the lesson",
+                            "description": "no description"
+                        },
+                        {
+                            "title": "This is the title of the lesson",
+                            "description": "no description"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unit 2",
+                    "lessons": [
+                        {
+                            "title": "This is the title of the lesson",
+                            "description": "no description"
+                        },
+                        {
+                            "title": "This is the title of the lesson",
+                            "description": "no description"
+                        },
+                        {
+                            "title": "This is the title of the lesson",
+                            "description": "no description"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unit 3",
+                    "lessons": [
+                        {
+                            "title": "This is the title of the lesson",
+                            "description": "no description"
+                        },
+                        {
+                            "title": "This is the title of the lesson",
+                            "description": "no description"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Basic Science",
+            "imageUrl": "https://picsum.photos/200/300"
+        },
+        {
+            "name": "English",
+            "imageUrl": "https://picsum.photos/200/300"
+        },
+        {
+            "name": "Malayalm",
+            "imageUrl": "https://picsum.photos/200/300"
+        },
+        {
+            "name": "Hindi",
+            "imageUrl": "https://picsum.photos/200/300"
+        },
+        {
+            "name": "Physics",
+            "imageUrl": "https://picsum.photos/200/300"
+        }
+    ]
+}

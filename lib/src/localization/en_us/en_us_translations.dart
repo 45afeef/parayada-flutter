@@ -300,7 +300,10 @@ final Map<String, String> enUs = {
   "msg_4517_washington": "4517 Washington Ave. Manchester, Kentucky 39495",
   "lbl_xl": "XL",
   "lbl_chart_01_pdf": "Chart-01.pdf",
-  "afeef": "afeef",
+
+  // Parayada App section
+  // From here onward My works starts
+
   "lbl_mind_map": "Mind Map",
   "lbl_memory_trick": "Memory Trick",
   "lbl_assess": "Assess Now",
@@ -318,5 +321,5 @@ final Map<String, String> enUs = {
       "You are about to start the exam. Click the bellow button and enjoy your day",
   "msg_find_the_right_topic_to_learn":
       "Find the \n Right topic \n to learn \n Your self",
-  "lbl_start_learning": "Learn Now",
+  "lbl_start_learning": "Continue Learning",
 };

@@ -19,15 +19,15 @@ class LessonScreen extends GetWidget<LessonController> {
             padding: SizeConstant.smallPadding,
             child: FutureBuilder(
                 future: future,
-                builder: (context, snapshort) {
-                  if (snapshort.hasError) {
-                    return Card(child: Text("error_fetching_lesson".tr));
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Card(child: Text("error_fetching".tr));
                   }
-                  if (!snapshort.hasData) {
+                  if (!snapshot.hasData) {
                     return const CircularProgressIndicator();
                   }
 
-                  return LessonCard(lesson: snapshort.data!)
+                  return LessonCard(lesson: snapshot.data!)
                       .animate(delay: const Duration(milliseconds: 100))
                       .scale();
                 })),
