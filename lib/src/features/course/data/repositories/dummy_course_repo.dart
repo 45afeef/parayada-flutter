@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../../domain/repositories/course_repository.dart';
-import '../course_model.dart';
+import '../models/course_model.dart';
 
 class DummyCourseRepo extends CourseRepository {
   @override
