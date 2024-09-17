@@ -12,15 +12,18 @@ class SubjectPage extends GetWidget<SubjectController> {
   Widget build(BuildContext context) {
     SubjectEntity subject = Get.arguments as SubjectEntity;
 
-    
     return Scaffold(
       body: Column(
         children: [
           Hero(
             tag: "${subject.name} ${subject.imageUrl}",
-            child: Image.network(
-              subject.imageUrl,
-              fit: BoxFit.cover,
+            child: AspectRatio(
+              aspectRatio: 3 / 2,
+              child: Image.network(
+                subject.imageUrl,
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
             ),
           ),
           Text(subject.name),

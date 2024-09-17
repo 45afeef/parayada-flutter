@@ -3,11 +3,11 @@
     "subjects": [
         {
             "name": "Maths",
-            "imageUrl": "https://picsum.photos/200/300"
+            "imageUrl": "https://picsum.photos/seed/Maths/200/300"
         },
         {
             "name": "Social Science",
-            "imageUrl": "https://picsum.photos/200/300",
+            "imageUrl": "https://picsum.photos/seed/Social/200/300",
             "units": [
                 {
                     "name": "Unit 1",
@@ -64,23 +64,23 @@
         },
         {
             "name": "Basic Science",
-            "imageUrl": "https://picsum.photos/200/300"
+            "imageUrl": "https://picsum.photos/seed/Basic/200/300"
         },
         {
             "name": "English",
-            "imageUrl": "https://picsum.photos/200/300"
+            "imageUrl": "https://picsum.photos/seed/English/200/300"
         },
         {
             "name": "Malayalm",
-            "imageUrl": "https://picsum.photos/200/300"
+            "imageUrl": "https://picsum.photos/seed/Malayalm/200/300"
         },
         {
             "name": "Hindi",
-            "imageUrl": "https://picsum.photos/200/300"
+            "imageUrl": "https://picsum.photos/seed/Hindi/200/300"
         },
         {
             "name": "Physics",
-            "imageUrl": "https://picsum.photos/200/300"
+            "imageUrl": "https://picsum.photos/seed/Physics/200/300"
         }
     ]
 }
