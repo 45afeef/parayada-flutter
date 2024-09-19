@@ -48,7 +48,7 @@ class AppRoutes {
         ]),
     GetPage(
         name: homeScreen,
-        page: () => const LevelsScreen()), // TODO - Create Home Page
+        page: () => const CoursePage()), // TODO - Create Home Page
     GetPage(
       name: coursePage,
       page: () => const CoursePage(),

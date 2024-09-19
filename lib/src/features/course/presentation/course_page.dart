@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../core/app_export.dart';
@@ -18,18 +19,18 @@ class CoursePage extends GetWidget<CourseController> {
     // TODO - Important make sure this is called only once
     final future = controller.fetchCourse();
 
-    return FutureBuilder(
-      future: future,
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return Card(child: Text("error_fetching".tr));
-        }
-        if (!snapshot.hasData) {
-          return const CircularProgressIndicator();
-        }
+    return Scaffold(
+      body: FutureBuilder(
+        future: future,
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return Card(child: Text("error_fetching".tr));
+          }
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
 
-        return Scaffold(
-          body: Column(
+          return Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Column(
@@ -43,7 +44,7 @@ class CoursePage extends GetWidget<CourseController> {
                     style: TextStyle(fontSize: 8),
                   )
                 ],
-              ),
+              ).animate().fadeIn(duration: 300.ms).moveY(),
               HighlightedText(
                 text: 'msg_find_the_right_topic_to_learn'.tr,
                 highlightWords: const ['Your', 'self'],
@@ -58,7 +59,10 @@ class CoursePage extends GetWidget<CourseController> {
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
-              ),
+              )
+                  .animate(delay: 400.ms)
+                  .fade(duration: 400.ms)
+                  .moveY(begin: 25, duration: 400.ms),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
@@ -80,26 +84,34 @@ class CoursePage extends GetWidget<CourseController> {
                                   imageUrl: subject.imageUrl,
                                   name: subject.name,
                                   caption: subject.name,
-                                ),
+                                )
+                                    .animate(
+                                        delay: (controller.course!.subjects!
+                                                        .indexOf(subject) *
+                                                    300 +
+                                                900)
+                                            .ms)
+                                    .fade()
+                                    .moveX(begin: 50),
                               ))
                   ],
                 ),
               ),
-              // DuolingoButton(
-              //   color: Colors.deepOrangeAccent,
-              //   child: Text(
-              //     "lbl_start_learning".tr,
-              //     style: const TextStyle(
-              //       color: Colors.white,
-              //       fontWeight: FontWeight.bold,
-              //     ),
-              //   ),
-              //   onPressed: () => {},
-              // ),
+              DuolingoButton(
+                color: Colors.deepOrangeAccent,
+                child: Text(
+                  "lbl_start_learning".tr,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onPressed: () => {},
+              ).animate(delay: 3000.ms).fade(),
             ],
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

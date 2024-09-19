@@ -1,16 +1,18 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import 'src/core/app_export.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  Animate.restartOnHotReload = true;
   Future.wait([
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]),
-    PrefUtils().init()
+    PrefUtils().init(),
   ]).then((value) {
     Logger.init(kReleaseMode ? LogMode.live : LogMode.debug);
     runApp(const MyApp());
@@ -27,10 +29,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.standard,
+        scaffoldBackgroundColor: Colors.white,
       ),
       translations: AppLocalization(),
       locale: Get.deviceLocale,
-      //for setting localization strings
       fallbackLocale: const Locale('en', 'US'),
       title: 'Parayada',
       initialBinding: InitialBindings(),
