@@ -13,30 +13,45 @@ class SubjectPage extends GetWidget<SubjectController> {
     SubjectEntity subject = Get.arguments as SubjectEntity;
 
     return Scaffold(
-      body: Column(
-        children: [
-          Hero(
-            tag: "${subject.name} ${subject.imageUrl}",
-            child: AspectRatio(
-              aspectRatio: 3 / 2,
-              child: Image.network(
-                subject.imageUrl,
-                fit: BoxFit.cover,
-                width: double.infinity,
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            expandedHeight: MediaQuery.of(context).size.width / 1.5, //250.0,
+            // pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(subject.name),
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  // Background image
+                  Image.network(
+                    subject.imageUrl,
+                    fit: BoxFit.cover,
+                  ),
+                  // Gradient overlay
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.black.withOpacity(0.7),
+                          Colors.black.withOpacity(0.0),
+                        ],
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
-          Text(subject.name),
           if (subject.units != null)
-            Expanded(
-              child: ListView.separated(
-                shrinkWrap: true,
-                itemCount: subject.units!.length,
-                itemBuilder: (context, index) =>
-                    UnitWidget(unit: subject.units![index]),
-                separatorBuilder: (BuildContext context, int index) =>
-                    const Divider(),
-              ),
+            SliverList.separated(
+              itemCount: subject.units!.length,
+              itemBuilder: (context, index) =>
+                  UnitWidget(unit: subject.units![index]),
+              separatorBuilder: (BuildContext context, int index) =>
+                  const Divider(),
             ),
         ],
       ),
