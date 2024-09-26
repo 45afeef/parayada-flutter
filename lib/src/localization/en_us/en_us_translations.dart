@@ -321,5 +321,5 @@ final Map<String, String> enUs = {
       "You are about to start the exam. Click the bellow button and enjoy your day",
   "msg_find_the_right_topic_to_learn":
       "Find the \n Right topic \n to learn \n Your self",
-  "lbl_start_learning": "Continue Learning",
+  "lbl_start_learning": "MAGIC LEARN",
 };

@@ -14,6 +14,9 @@ const String logoBlack = 'assets/images/logo/black.svg';
 class CoursePage extends GetWidget<CourseController> {
   const CoursePage({super.key});
 
+  final Duration delay = const Duration(seconds: 1);
+  final Duration duration = const Duration(milliseconds: 500);
+
   @override
   Widget build(BuildContext context) {
     // TODO - Important make sure this is called only once
@@ -44,7 +47,10 @@ class CoursePage extends GetWidget<CourseController> {
                     style: TextStyle(fontSize: 8),
                   )
                 ],
-              ).animate().fadeIn(duration: 300.ms).moveY(),
+              )
+                  .animate(delay: delay)
+                  .fadeIn(duration: duration)
+                  .moveY(begin: 25, duration: duration),
               HighlightedText(
                 text: 'msg_find_the_right_topic_to_learn'.tr,
                 highlightWords: const ['Your', 'self'],
@@ -60,9 +66,9 @@ class CoursePage extends GetWidget<CourseController> {
                 ),
                 textAlign: TextAlign.center,
               )
-                  .animate(delay: 400.ms)
-                  .fade(duration: 400.ms)
-                  .moveY(begin: 25, duration: 400.ms),
+                  .animate(delay: delay * 1.5)
+                  .fade(duration: duration)
+                  .moveY(begin: 25, duration: duration),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
@@ -71,29 +77,30 @@ class CoursePage extends GetWidget<CourseController> {
                 child: Row(
                   children: [
                     if (controller.course?.subjects != null)
-                      ...controller.course!.subjects!
-                          .map((SubjectEntity subject) => InkWell(
-                                onTap: () {
-                                  HapticFeedback.lightImpact();
-                                  Get.toNamed(AppRoutes.subjectPage,
-                                      arguments: subject);
-                                },
-                                splashColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                child: SimpleImageCard(
-                                  imageUrl: subject.imageUrl,
-                                  name: subject.name,
-                                  caption: subject.name,
-                                )
-                                    .animate(
-                                        delay: (controller.course!.subjects!
-                                                        .indexOf(subject) *
-                                                    300 +
-                                                900)
-                                            .ms)
-                                    .fade()
-                                    .moveX(begin: 50),
-                              ))
+                      ...controller.course!.subjects!.map(
+                        (SubjectEntity subject) => InkWell(
+                          onTap: () {
+                            HapticFeedback.lightImpact();
+                            Get.toNamed(AppRoutes.subjectPage,
+                                arguments: subject);
+                          },
+                          splashColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          child: SimpleImageCard(
+                            imageUrl: subject.imageUrl,
+                            name: subject.name,
+                            caption: subject.name,
+                          )
+                              .animate(
+                                  delay: delay * 2 +
+                                      (controller.course!.subjects!
+                                                  .indexOf(subject) *
+                                              300)
+                                          .ms)
+                              .fade(duration: duration)
+                              .moveX(begin: 50, duration: duration),
+                        ),
+                      ),
                   ],
                 ),
               ),
@@ -107,7 +114,7 @@ class CoursePage extends GetWidget<CourseController> {
                   ),
                 ),
                 onPressed: () => {},
-              ).animate(delay: 3000.ms).fade(),
+              ).animate(delay: delay * 3).fade(duration: duration),
             ],
           );
         },
