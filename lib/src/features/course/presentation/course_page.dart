@@ -27,7 +27,7 @@ class CoursePage extends GetWidget<CourseController> {
         future: future,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return Card(child: Text("error_fetching".tr));
+            return Center(child: Text("error_fetching".tr));
           }
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());

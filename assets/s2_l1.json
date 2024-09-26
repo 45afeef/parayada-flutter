@@ -1,0 +1,68 @@
+{
+    "title": "Measures of Central Tendency",
+    "description": "Measures of central tendency are statistical measures that describe the center point or typical value of a dataset. The main measures are mean, median, and mode. The mean is the average of all data points, the median is the middle value when data points are ordered, and the mode is the most frequently occurring value.",
+    "topics": [
+        "Mean",
+        "Median",
+        "Mode"
+    ],
+    "externalLinks": [
+        "https://www.youtube.com/watch?v=5C9LBF3b65s"
+    ],
+    "memoryTricks": [
+        {
+            "content": "MMM (Mean, Median, Mode)",
+            "type": "acronyms"
+        },
+        {
+            "content": "Mean is the average, Median is the middle, Mode is the most.",
+            "type": "acrostic"
+        },
+        {
+            "content": "Imagine the mean as the balancing point of a seesaw.",
+            "type": "association"
+        },
+        {
+            "content": "Chunking: Group data points to easily find the mean, median, and mode.",
+            "type": "chunking"
+        },
+        {
+            "content": "Method of Loci: Visualize mean, median, and mode in different rooms of your house.",
+            "type": "methodOfLoci"
+        },
+        {
+            "content": "Mind Palace: Create a mental palace where each room represents a measure of central tendency.",
+            "type": "mindPalace"
+        },
+        {
+            "content": "Central Tendency Song: 'Mean, Median, Mode, let's find the central node!'",
+            "type": "songOrRhymes"
+        }
+    ],
+    "mindMaps": [
+        {
+            "name": "Measures of Central Tendency",
+            "caption": "Understanding Mean, Median, and Mode",
+            "rootNode": {
+                "name": "Central Tendency",
+                "description": "Measures of central tendency describe the center point of a dataset.",
+                "image": "https://picsum.photos/seed/CentralTendency/200/300",
+                "excerpt": "Understanding Mean, Median, and Mode.",
+                "children": [
+                    {
+                        "name": "Mean",
+                        "children": []
+                    },
+                    {
+                        "name": "Median",
+                        "children": []
+                    },
+                    {
+                        "name": "Mode",
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ]
+}

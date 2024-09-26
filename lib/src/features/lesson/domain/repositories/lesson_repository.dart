@@ -2,10 +2,10 @@
 import '../../data/model/lesson_model.dart';
 
 abstract class LessonRepository {
-  Future<LessonModel> getLesson(int id);
+  Future<LessonModel> getLesson(String id);
   Future<List<LessonModel>> getAllLessons();
   Future<void> saveLesson(LessonModel lesson);
-  Future<void> deleteLesson(int id);
+  Future<void> deleteLesson(String id);
 }
 
 // /// Weather Repository using the http client. Calls API methods and parses responses.

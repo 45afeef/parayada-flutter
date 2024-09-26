@@ -9,10 +9,12 @@
                     "name": "Unit 1: Basics",
                     "lessons": [
                         {
+                            "id": "s1_l1",
                             "title": "What is Data Science?",
                             "description": "An introduction to the field of data science."
                         },
                         {
+                            "id": "s1_l2",
                             "title": "Data Science Process",
                             "description": "Understanding the data science workflow."
                         }
@@ -28,10 +30,12 @@
                     "name": "Unit 1: Descriptive Statistics",
                     "lessons": [
                         {
+                            "id": "s2_l1",
                             "title": "Measures of Central Tendency",
                             "description": "Mean, median, and mode."
                         },
                         {
+                            "id": "s2_l2",
                             "title": "Measures of Dispersion",
                             "description": "Range, variance, and standard deviation."
                         }
@@ -41,10 +45,12 @@
                     "name": "Unit 2: Inferential Statistics",
                     "lessons": [
                         {
+                            "id": "s2_l3",
                             "title": "Hypothesis Testing",
                             "description": "Understanding null and alternative hypotheses."
                         },
                         {
+                            "id": "s2_l4",
                             "title": "Confidence Intervals",
                             "description": "Calculating and interpreting confidence intervals."
                         }
@@ -60,10 +66,12 @@
                     "name": "Unit 1: Supervised Learning",
                     "lessons": [
                         {
+                            "id": "s3_l1",
                             "title": "Linear Regression",
                             "description": "Introduction to linear regression."
                         },
                         {
+                            "id": "s3_l2",
                             "title": "Classification Algorithms",
                             "description": "Overview of classification techniques."
                         }
@@ -73,10 +81,12 @@
                     "name": "Unit 2: Unsupervised Learning",
                     "lessons": [
                         {
+                            "id": "s3_l3",
                             "title": "Clustering",
                             "description": "Understanding clustering algorithms."
                         },
                         {
+                            "id": "s3_l4",
                             "title": "Dimensionality Reduction",
                             "description": "Techniques for reducing the number of features."
                         }
@@ -92,10 +102,12 @@
                     "name": "Unit 1: Neural Networks",
                     "lessons": [
                         {
+                            "id": "s4_l1",
                             "title": "Introduction to Neural Networks",
                             "description": "Basics of neural networks."
                         },
                         {
+                            "id": "s4_l2",
                             "title": "Training Neural Networks",
                             "description": "How to train neural networks."
                         }
@@ -105,10 +117,12 @@
                     "name": "Unit 2: Advanced Topics",
                     "lessons": [
                         {
+                            "id": "s4_l3",
                             "title": "Convolutional Neural Networks",
                             "description": "Understanding CNNs."
                         },
                         {
+                            "id": "s4_l4",
                             "title": "Recurrent Neural Networks",
                             "description": "Understanding RNNs."
                         }

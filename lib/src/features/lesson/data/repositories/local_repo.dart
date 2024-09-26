@@ -1,9 +1,9 @@
-import '../model/lesson_model.dart';
 import '../../domain/repositories/lesson_repository.dart';
+import '../model/lesson_model.dart';
 
 class LocalLessonRepository extends LessonRepository {
   @override
-  Future<void> deleteLesson(int id) {
+  Future<void> deleteLesson(String id) {
     // TODO: implement deleteLesson
     throw UnimplementedError();
   }
@@ -15,7 +15,7 @@ class LocalLessonRepository extends LessonRepository {
   }
 
   @override
-  Future<LessonModel> getLesson(int id) {
+  Future<LessonModel> getLesson(String id) {
     // TODO: implement getLesson
     throw UnimplementedError();
   }

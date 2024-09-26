@@ -3,7 +3,7 @@ import '../../domain/repositories/lesson_repository.dart';
 
 class FirebaseLessonReopsitory extends LessonRepository {
   @override
-  Future<void> deleteLesson(int id) {
+  Future<void> deleteLesson(String id) {
     // TODO: implement deleteLesson
     throw UnimplementedError();
   }
@@ -15,7 +15,7 @@ class FirebaseLessonReopsitory extends LessonRepository {
   }
 
   @override
-  Future<LessonModel> getLesson(int id) {
+  Future<LessonModel> getLesson(String id) {
     // TODO: implement getLesson
     throw UnimplementedError();
   }

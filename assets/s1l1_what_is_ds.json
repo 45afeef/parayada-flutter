@@ -1,0 +1,44 @@
+{
+    "title": "What is Data Science?",
+    "description": "An introduction to the field of data science.",
+    "topics": [
+        "Definition of Data Science",
+        "Importance of Data Science",
+        "Applications of Data Science"
+    ],
+    "externalLinks": [
+        "https://www.youtube.com/watch?v=ua-CiDNNj30"
+    ],
+    "memoryTricks": [
+        {
+            "content": "DIA (Data, Importance, Applications)",
+            "type": "acronyms"
+        }
+    ],
+    "mindMaps": [
+        {
+            "name": "Introduction to Data Science",
+            "caption": "Overview of Data Science",
+            "rootNode": {
+                "name": "Data Science",
+                "description": "An introduction to the field of data science.",
+                "image": "https://picsum.photos/seed/DataScienceIntro/200/300",
+                "excerpt": "An introduction to the field of data science.",
+                "children": [
+                    {
+                        "name": "Definition",
+                        "children": []
+                    },
+                    {
+                        "name": "Importance",
+                        "children": []
+                    },
+                    {
+                        "name": "Applications",
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ]
+}

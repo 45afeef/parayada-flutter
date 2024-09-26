@@ -32,7 +32,7 @@ class UnitWidget extends StatelessWidget {
                     child: DuolingoIconButton(
                       borderWidth: 3,
                       onPressed: () {
-                        Get.toNamed(AppRoutes.lessonScreen);
+                        Get.toNamed(AppRoutes.lessonScreen, arguments: lesson.id);
                       },
                       padding: EdgeInsets.zero,
                       child: Align(child: Text(lesson.title)),

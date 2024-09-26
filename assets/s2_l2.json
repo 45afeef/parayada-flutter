@@ -1,0 +1,68 @@
+{
+    "title": "Measures of Dispersion",
+    "description": "Measures of dispersion describe the spread or variability of a dataset. The main measures are range, variance, and standard deviation. The range is the difference between the highest and lowest values. Variance measures the average squared deviation from the mean, and standard deviation is the square root of the variance.",
+    "topics": [
+        "Range",
+        "Variance",
+        "Standard Deviation"
+    ],
+    "externalLinks": [
+        "https://www.youtube.com/watch?v=WVx3MYd-Q9w"
+    ],
+    "memoryTricks": [
+        {
+            "content": "RVS (Range, Variance, Standard deviation)",
+            "type": "acronyms"
+        },
+        {
+            "content": "Range is the span, Variance is the spread, Standard deviation is the square root of the spread.",
+            "type": "acrostic"
+        },
+        {
+            "content": "Imagine the range as the distance between two points on a ruler.",
+            "type": "association"
+        },
+        {
+            "content": "Chunking: Break down the calculation of variance and standard deviation into smaller steps.",
+            "type": "chunking"
+        },
+        {
+            "content": "Method of Loci: Visualize range, variance, and standard deviation in different rooms of your house.",
+            "type": "methodOfLoci"
+        },
+        {
+            "content": "Mind Palace: Create a mental palace where each room represents a measure of dispersion.",
+            "type": "mindPalace"
+        },
+        {
+            "content": "Dispersion Song: 'Range, Variance, Standard Deviation, let's measure the variation!'",
+            "type": "songOrRhymes"
+        }
+    ],
+    "mindMaps": [
+        {
+            "name": "Measures of Dispersion",
+            "caption": "Understanding Range, Variance, and Standard Deviation",
+            "rootNode": {
+                "name": "Dispersion",
+                "description": "Measures of dispersion describe the spread of a dataset.",
+                "image": "https://picsum.photos/seed/Dispersion/200/300",
+                "excerpt": "Understanding Range, Variance, and Standard Deviation.",
+                "children": [
+                    {
+                        "name": "Range",
+                        "children": []
+                    },
+                    {
+                        "name": "Variance",
+                        "children": []
+                    },
+                    {
+                        "name": "Standard Deviation",
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ]
+}

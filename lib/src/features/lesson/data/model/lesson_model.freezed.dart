@@ -22,6 +22,7 @@ LessonModel _$LessonModelFromJson(Map<String, dynamic> json) {
 mixin _$LessonModel {
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   List<String>? get externalLinks => throw _privateConstructorUsedError;
   List<String>? get topics => throw _privateConstructorUsedError;
   List<MindMapModel>? get mindMaps => throw _privateConstructorUsedError;
@@ -47,6 +48,7 @@ abstract class $LessonModelCopyWith<$Res> {
   $Res call(
       {String title,
       String description,
+      String? id,
       List<String>? externalLinks,
       List<String>? topics,
       List<MindMapModel>? mindMaps,
@@ -70,6 +72,7 @@ class _$LessonModelCopyWithImpl<$Res, $Val extends LessonModel>
   $Res call({
     Object? title = null,
     Object? description = null,
+    Object? id = freezed,
     Object? externalLinks = freezed,
     Object? topics = freezed,
     Object? mindMaps = freezed,
@@ -84,6 +87,10 @@ class _$LessonModelCopyWithImpl<$Res, $Val extends LessonModel>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       externalLinks: freezed == externalLinks
           ? _value.externalLinks
           : externalLinks // ignore: cast_nullable_to_non_nullable
@@ -115,6 +122,7 @@ abstract class _$$LessonModelImplCopyWith<$Res>
   $Res call(
       {String title,
       String description,
+      String? id,
       List<String>? externalLinks,
       List<String>? topics,
       List<MindMapModel>? mindMaps,
@@ -136,6 +144,7 @@ class __$$LessonModelImplCopyWithImpl<$Res>
   $Res call({
     Object? title = null,
     Object? description = null,
+    Object? id = freezed,
     Object? externalLinks = freezed,
     Object? topics = freezed,
     Object? mindMaps = freezed,
@@ -150,6 +159,10 @@ class __$$LessonModelImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       externalLinks: freezed == externalLinks
           ? _value._externalLinks
           : externalLinks // ignore: cast_nullable_to_non_nullable
@@ -176,6 +189,7 @@ class _$LessonModelImpl implements _LessonModel {
   const _$LessonModelImpl(
       {required this.title,
       required this.description,
+      this.id,
       final List<String>? externalLinks,
       final List<String>? topics,
       final List<MindMapModel>? mindMaps,
@@ -192,6 +206,8 @@ class _$LessonModelImpl implements _LessonModel {
   final String title;
   @override
   final String description;
+  @override
+  final String? id;
   final List<String>? _externalLinks;
   @override
   List<String>? get externalLinks {
@@ -234,7 +250,7 @@ class _$LessonModelImpl implements _LessonModel {
 
   @override
   String toString() {
-    return 'LessonModel(title: $title, description: $description, externalLinks: $externalLinks, topics: $topics, mindMaps: $mindMaps, memoryTricks: $memoryTricks)';
+    return 'LessonModel(title: $title, description: $description, id: $id, externalLinks: $externalLinks, topics: $topics, mindMaps: $mindMaps, memoryTricks: $memoryTricks)';
   }
 
   @override
@@ -245,6 +261,7 @@ class _$LessonModelImpl implements _LessonModel {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality()
                 .equals(other._externalLinks, _externalLinks) &&
             const DeepCollectionEquality().equals(other._topics, _topics) &&
@@ -259,6 +276,7 @@ class _$LessonModelImpl implements _LessonModel {
       runtimeType,
       title,
       description,
+      id,
       const DeepCollectionEquality().hash(_externalLinks),
       const DeepCollectionEquality().hash(_topics),
       const DeepCollectionEquality().hash(_mindMaps),
@@ -284,6 +302,7 @@ abstract class _LessonModel implements LessonModel {
   const factory _LessonModel(
       {required final String title,
       required final String description,
+      final String? id,
       final List<String>? externalLinks,
       final List<String>? topics,
       final List<MindMapModel>? mindMaps,
@@ -296,6 +315,8 @@ abstract class _LessonModel implements LessonModel {
   String get title;
   @override
   String get description;
+  @override
+  String? get id;
   @override
   List<String>? get externalLinks;
   @override

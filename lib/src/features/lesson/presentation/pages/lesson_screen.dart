@@ -10,8 +10,10 @@ class LessonScreen extends GetWidget<LessonController> {
 
   @override
   Widget build(BuildContext context) {
+    final String lessonId = Get.arguments as String;
+
     // TODO - Important make sure this is called only once
-    final future = controller.fetchLesson(1);
+    final future = controller.fetchLesson(lessonId);
 
     return AppLayout(
       child: Center(
@@ -21,7 +23,7 @@ class LessonScreen extends GetWidget<LessonController> {
                 future: future,
                 builder: (context, snapshot) {
                   if (snapshot.hasError) {
-                    return Card(child: Text("error_fetching".tr));
+                    return Card(child: Text(snapshot.error.toString()));
                   }
                   if (!snapshot.hasData) {
                     return const CircularProgressIndicator();

@@ -8,7 +8,7 @@ import '../model/lesson_model.dart';
 
 class DummyLessonRepo implements LessonRepository {
   @override
-  Future<void> deleteLesson(int id) {
+  Future<void> deleteLesson(String id) {
     // TODO: implement deleteLesson
     throw UnimplementedError();
   }
@@ -20,8 +20,8 @@ class DummyLessonRepo implements LessonRepository {
   }
 
   @override
-  Future<LessonModel> getLesson(int id) async {
-    final input = await rootBundle.loadString('assets/dummy_lesson.json');
+  Future<LessonModel> getLesson(String id) async {
+    final input = await rootBundle.loadString('assets/$id.json');
 
     await Future.delayed(Durations.extralong4);
 

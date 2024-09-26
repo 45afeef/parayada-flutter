@@ -1,0 +1,59 @@
+{
+    "title": "Data Science Process",
+    "description": "Understanding the data science workflow.",
+    "topics": [
+        "Data Collection",
+        "Data Cleaning",
+        "Data Analysis",
+        "Model Building",
+        "Model Evaluation",
+        "Deployment"
+    ],
+    "externalLinks": [
+        "https://www.youtube.com/watch?v=5iSpAOD6K8k"
+    ],
+    "memoryTricks": [
+        {
+            "content": "CCDAME (Collection, Cleaning, Analysis, Model Building, Evaluation, Deployment)",
+            "type": "acronyms"
+        }
+    ],
+    "mindMaps": [
+        {
+            "name": "Data Science Process",
+            "caption": "Steps in the Data Science Process",
+            "rootNode": {
+                "name": "Data Science Process",
+                "description": "Understanding the data science workflow.",
+                "image": "https://picsum.photos/seed/DataScienceProcess/200/300",
+                "excerpt": "Understanding the data science workflow.",
+                "children": [
+                    {
+                        "name": "Data Collection",
+                        "children": []
+                    },
+                    {
+                        "name": "Data Cleaning",
+                        "children": []
+                    },
+                    {
+                        "name": "Data Analysis",
+                        "children": []
+                    },
+                    {
+                        "name": "Model Building",
+                        "children": []
+                    },
+                    {
+                        "name": "Model Evaluation",
+                        "children": []
+                    },
+                    {
+                        "name": "Deployment",
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -10,6 +10,7 @@ _$LessonModelImpl _$$LessonModelImplFromJson(Map<String, dynamic> json) =>
     _$LessonModelImpl(
       title: json['title'] as String,
       description: json['description'] as String,
+      id: json['id'] as String?,
       externalLinks: (json['externalLinks'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -27,6 +28,7 @@ Map<String, dynamic> _$$LessonModelImplToJson(_$LessonModelImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'description': instance.description,
+      'id': instance.id,
       'externalLinks': instance.externalLinks,
       'topics': instance.topics,
       'mindMaps': instance.mindMaps,

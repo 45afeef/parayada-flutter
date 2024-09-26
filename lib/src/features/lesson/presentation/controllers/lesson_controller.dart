@@ -11,7 +11,7 @@ class LessonController extends GetxController {
 
   Rx<Lesson> lesson = Lesson.empty().obs;
 
-  Future<Lesson> fetchLesson(int id) async {
+  Future<Lesson> fetchLesson(String id) async {
     LessonModel response = await _repo.getLesson(id);
 
     // TODO - Deside what to do with this response either to assaign to lesson.value or to return.

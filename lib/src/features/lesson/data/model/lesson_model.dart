@@ -13,6 +13,7 @@ class LessonModel extends Lesson with _$LessonModel {
   const factory LessonModel({
     required String title,
     required String description,
+    String? id,
     List<String>? externalLinks,
     List<String>? topics,
     List<MindMapModel>? mindMaps,
