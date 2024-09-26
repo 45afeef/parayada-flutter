@@ -14,8 +14,9 @@ class SimpleImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 150,
+    return Container(
+      margin: const EdgeInsets.all(8),
+      width: 120,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -37,7 +38,8 @@ class SimpleImageCard extends StatelessWidget {
             tag: name,
             child: Text(
               name,
-              softWrap: false,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.normal,
@@ -47,7 +49,7 @@ class SimpleImageCard extends StatelessWidget {
           if (caption != null)
             Text(
               caption!,
-              softWrap: false,
+              softWrap: true,
               style: TextStyle(
                 fontSize: 14.0,
                 color: Colors.grey[600],

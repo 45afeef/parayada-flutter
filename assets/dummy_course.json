@@ -1,86 +1,120 @@
 {
-    "title": "This is the title of the Course",
+    "title": "Data Science Course",
     "subjects": [
         {
-            "name": "Maths",
-            "imageUrl": "https://picsum.photos/seed/Maths/200/300"
-        },
-        {
-            "name": "Social Science",
-            "imageUrl": "https://picsum.photos/seed/Social/200/300",
+            "name": "Introduction to Data Science",
+            "imageUrl": "https://picsum.photos/seed/DataScienceIntro/200/300",
             "units": [
                 {
-                    "name": "Unit 1",
+                    "name": "Unit 1: Basics",
                     "lessons": [
                         {
-                            "title": "This is the title of the lesson",
-                            "description": "no description"
+                            "title": "What is Data Science?",
+                            "description": "An introduction to the field of data science."
                         },
                         {
-                            "title": "This is the title of the lesson",
-                            "description": "no description"
-                        },
-                        {
-                            "title": "This is the title of the lesson",
-                            "description": "no description"
-                        },
-                        {
-                            "title": "This is the title of the lesson",
-                            "description": "no description"
-                        }
-                    ]
-                },
-                {
-                    "name": "Unit 2",
-                    "lessons": [
-                        {
-                            "title": "This is the title of the lesson",
-                            "description": "no description"
-                        },
-                        {
-                            "title": "This is the title of the lesson",
-                            "description": "no description"
-                        },
-                        {
-                            "title": "This is the title of the lesson",
-                            "description": "no description"
-                        }
-                    ]
-                },
-                {
-                    "name": "Unit 3",
-                    "lessons": [
-                        {
-                            "title": "This is the title of the lesson",
-                            "description": "no description"
-                        },
-                        {
-                            "title": "This is the title of the lesson",
-                            "description": "no description"
+                            "title": "Data Science Process",
+                            "description": "Understanding the data science workflow."
                         }
                     ]
                 }
             ]
         },
         {
-            "name": "Basic Science",
-            "imageUrl": "https://picsum.photos/seed/Basic/200/300"
+            "name": "Statistics",
+            "imageUrl": "https://picsum.photos/seed/Statistics/200/300",
+            "units": [
+                {
+                    "name": "Unit 1: Descriptive Statistics",
+                    "lessons": [
+                        {
+                            "title": "Measures of Central Tendency",
+                            "description": "Mean, median, and mode."
+                        },
+                        {
+                            "title": "Measures of Dispersion",
+                            "description": "Range, variance, and standard deviation."
+                        }
+                    ]
+                },
+                {
+                    "name": "Unit 2: Inferential Statistics",
+                    "lessons": [
+                        {
+                            "title": "Hypothesis Testing",
+                            "description": "Understanding null and alternative hypotheses."
+                        },
+                        {
+                            "title": "Confidence Intervals",
+                            "description": "Calculating and interpreting confidence intervals."
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "name": "English",
-            "imageUrl": "https://picsum.photos/seed/English/200/300"
+            "name": "Machine Learning",
+            "imageUrl": "https://picsum.photos/seed/MachineLearning/200/300",
+            "units": [
+                {
+                    "name": "Unit 1: Supervised Learning",
+                    "lessons": [
+                        {
+                            "title": "Linear Regression",
+                            "description": "Introduction to linear regression."
+                        },
+                        {
+                            "title": "Classification Algorithms",
+                            "description": "Overview of classification techniques."
+                        }
+                    ]
+                },
+                {
+                    "name": "Unit 2: Unsupervised Learning",
+                    "lessons": [
+                        {
+                            "title": "Clustering",
+                            "description": "Understanding clustering algorithms."
+                        },
+                        {
+                            "title": "Dimensionality Reduction",
+                            "description": "Techniques for reducing the number of features."
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "name": "Malayalm",
-            "imageUrl": "https://picsum.photos/seed/Malayalm/200/300"
-        },
-        {
-            "name": "Hindi",
-            "imageUrl": "https://picsum.photos/seed/Hindi/200/300"
-        },
-        {
-            "name": "Physics",
-            "imageUrl": "https://picsum.photos/seed/Physics/200/300"
+            "name": "Deep Learning",
+            "imageUrl": "https://picsum.photos/seed/DeepLearning/200/300",
+            "units": [
+                {
+                    "name": "Unit 1: Neural Networks",
+                    "lessons": [
+                        {
+                            "title": "Introduction to Neural Networks",
+                            "description": "Basics of neural networks."
+                        },
+                        {
+                            "title": "Training Neural Networks",
+                            "description": "How to train neural networks."
+                        }
+                    ]
+                },
+                {
+                    "name": "Unit 2: Advanced Topics",
+                    "lessons": [
+                        {
+                            "title": "Convolutional Neural Networks",
+                            "description": "Understanding CNNs."
+                        },
+                        {
+                            "title": "Recurrent Neural Networks",
+                            "description": "Understanding RNNs."
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

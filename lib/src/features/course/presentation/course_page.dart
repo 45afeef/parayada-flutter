@@ -75,6 +75,7 @@ class CoursePage extends GetWidget<CourseController> {
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.33),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (controller.course?.subjects != null)
                       ...controller.course!.subjects!.map(
