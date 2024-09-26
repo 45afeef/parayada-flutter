@@ -33,12 +33,15 @@ class SimpleImageCard extends StatelessWidget {
               ),
             ),
           ),
-          Text(
-            name,
-            softWrap: false,
-            style: const TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.normal,
+          Hero(
+            tag: name,
+            child: Text(
+              name,
+              softWrap: false,
+              style: const TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.normal,
+              ),
             ),
           ),
           if (caption != null)

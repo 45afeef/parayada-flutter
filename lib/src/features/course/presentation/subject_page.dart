@@ -19,14 +19,23 @@ class SubjectPage extends GetWidget<SubjectController> {
             expandedHeight: MediaQuery.of(context).size.width / 1.5, //250.0,
             // pinned: true,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(subject.name),
+              title: Hero(
+                tag: subject.name,
+                child: Text(
+                  subject.name,
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
               background: Stack(
                 fit: StackFit.expand,
                 children: [
                   // Background image
-                  Image.network(
-                    subject.imageUrl,
-                    fit: BoxFit.cover,
+                  Hero(
+                    tag: "${subject.name} ${subject.imageUrl}",
+                    child: Image.network(
+                      subject.imageUrl,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   // Gradient overlay
                   Container(

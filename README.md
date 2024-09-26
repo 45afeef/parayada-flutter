@@ -160,3 +160,28 @@ Here’s a brief overview of what each file might contain:
 This structure ensures that each layer has a single responsibility and that the code is clean, testable, and maintainable. 
 
 the whole template is avaliablde at [here](CleanArchitecureTemplate.md)
+
+
+
+# How to deal with Learn Now MAGIC LEARN BUTTON
+ 
+Consider from the first time user onwards. 
+
+it is very clear that the user has not yet started learning using this beautiful app -PARAYADA
+
+so we prompt them to choose the course he/she want to learn. 
+
+Then on the first click of the MAGIC LEARN BUTTON, the app will create a learning queue of lessons. this queue consist of first lessons of every subject in the course 
+
+(optional - this item is not going to implement in mvp - User can choose multiple courses and excel simulteneusly. eventhough the lesson queue and revision scheduler will only have one instence. Now we are not focusing on multi course learning assistent model.)
+
+The MAGIC LEARN BUTTON will choose either revision session or learning session based on priority. It is considered that once learned should not be forgoten so I think it is important to give more important to revision. 
+
+CHALLENGE - 
+  * how to determine the right time to stop revision.
+  * how to determine WHICH TOPIC should be taken to revise as there is more remains to learn.
+  * When to introduce new learning session.
+
+
+
+Add option to add custom revision session by the user itself. this is helpful for thoose topics and lessons that the user has learnt outside of the app. This help the visibility and usability of the app to enchance the memory of the student irrespective of the source of the lesson(may be youtube, classess, text books, pdf and anythig).
