@@ -1,74 +1,53 @@
 {
-    "title": "Hypothesis Testing",
-    "description": "Hypothesis testing is a statistical method used to make decisions about the properties of a population based on a sample. It involves formulating a null hypothesis (H0) and an alternative hypothesis (H1), and using a test statistic to determine whether to reject the null hypothesis.",
+    "title": "Confidence Intervals",
+    "description": "Confidence intervals are a range of values used to estimate the true value of a population parameter. They provide an interval within which we can be certain, to a specified level of confidence (usually 95%), that the true parameter lies. The width of the interval depends on the sample size and variability in the data.",
     "topics": [
-        "Null Hypothesis",
-        "Alternative Hypothesis",
-        "Test Statistic",
-        "P-value",
-        "Significance Level"
+        "Definition of Confidence Intervals",
+        "Calculating Confidence Intervals",
+        "Interpreting Confidence Intervals",
+        "Applications of Confidence Intervals"
     ],
     "externalLinks": [
-        "https://www.youtube.com/watch?v=0zZYBALbZgg"
+        "https://www.youtube.com/watch?v=tFWsuO9f74o"
     ],
     "memoryTricks": [
         {
-            "content": "NATPS (Null, Alternative, Test statistic, P-value, Significance level)",
+            "content": "CI (Confidence Intervals)",
             "type": "acronyms"
         },
         {
-            "content": "Null is no effect, Alternative is the effect, Test statistic is the measure, P-value is the probability, Significance level is the threshold.",
-            "type": "acrostic"
-        },
-        {
-            "content": "Imagine the null hypothesis as the default assumption and the alternative as the challenger.",
+            "content": "Confidence intervals give us a range, like a safety net, to catch the true value.",
             "type": "association"
         },
         {
-            "content": "Chunking: Break down the steps of hypothesis testing into smaller parts.",
-            "type": "chunking"
-        },
-        {
-            "content": "Method of Loci: Visualize each step of hypothesis testing in different rooms of your house.",
-            "type": "methodOfLoci"
-        },
-        {
-            "content": "Mind Palace: Create a mental palace where each room represents a step in hypothesis testing.",
-            "type": "mindPalace"
-        },
-        {
-            "content": "Hypothesis Testing Song: 'Null or Alternative, let's test the hypothesis!'",
+            "content": "Confidence Interval Song: 'Estimate with confidence, find the range, it's common sense!'",
             "type": "songOrRhymes"
         }
     ],
     "mindMaps": [
         {
-            "name": "Hypothesis Testing",
-            "caption": "Steps in Hypothesis Testing",
+            "name": "Confidence Intervals",
+            "caption": "Understanding Confidence Intervals",
             "rootNode": {
-                "name": "Hypothesis Testing",
-                "description": "A method to make decisions about population properties.",
-                "image": "https://picsum.photos/seed/HypothesisTesting/200/300",
-                "excerpt": "Understanding Hypothesis Testing.",
+                "name": "Confidence Intervals",
+                "description": "A range of values used to estimate the true value of a population parameter.",
+                "image": "https://picsum.photos/seed/ConfidenceIntervals/200/300",
+                "excerpt": "Understanding Confidence Intervals.",
                 "children": [
                     {
-                        "name": "Null Hypothesis",
+                        "name": "Definition",
                         "children": []
                     },
                     {
-                        "name": "Alternative Hypothesis",
+                        "name": "Calculation",
                         "children": []
                     },
                     {
-                        "name": "Test Statistic",
+                        "name": "Interpretation",
                         "children": []
                     },
                     {
-                        "name": "P-value",
-                        "children": []
-                    },
-                    {
-                        "name": "Significance Level",
+                        "name": "Applications",
                         "children": []
                     }
                 ]

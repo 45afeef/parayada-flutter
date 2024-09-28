@@ -23,7 +23,12 @@ class LessonScreen extends GetWidget<LessonController> {
                 future: future,
                 builder: (context, snapshot) {
                   if (snapshot.hasError) {
-                    return Card(child: Text(snapshot.error.toString()));
+                    return Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(snapshot.error.toString()),
+                      ),
+                    );
                   }
                   if (!snapshot.hasData) {
                     return const CircularProgressIndicator();
