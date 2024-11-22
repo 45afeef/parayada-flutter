@@ -12,6 +12,9 @@ enum MemoryTrickType {
   pegs,
   pao,
   mnemonics,
+  eduSong,
+  eduRap,
+  sayItAloud,
 }
 
 class MemoryTrick extends Content {
